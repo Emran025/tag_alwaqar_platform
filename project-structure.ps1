@@ -1,51 +1,66 @@
-# تعيين اسم مجلد المشروع الرئيسي
-$ProjectRoot = "my-educational-platform"
+# This script creates a professional and standardized project structure
+# for the educational platform's front-end interface.
 
-# إنشاء المجلد الرئيسي
-New-Item -ItemType Directory -Path $ProjectRoot -Force
+# The script does not automatically create the project root directory
+# or fill files with content to give the user full control.
 
-# الانتقال إلى المجلد الرئيسي
-Set-Location -Path $ProjectRoot
+Write-Host "Starting project structure creation..." -ForegroundColor Cyan
 
-# إنشاء مجلدات الأصول (assets)
-New-Item -ItemType Directory -Path assets/css/abstracts -Force
-New-Item -ItemType Directory -Path assets/css/base -Force
-New-Item -ItemType Directory -Path assets/css/components -Force
-New-Item -ItemType Directory -Path assets/css/layout -Force
-New-Item -ItemType Directory -Path assets/css/pages -Force
-New-Item -ItemType Directory -Path assets/css/vendor -Force
-New-Item -ItemType Directory -Path assets/images/icons -Force
-New-Item -ItemType Directory -Path assets/images/illustrations -Force
-New-Item -ItemType Directory -Path assets/js/modules -Force
+# --- Main Directories ---
+# This section creates the top-level directories for the project.
+New-Item -ItemType Directory -Force -Path "assets"
+New-Item -ItemType Directory -Force -Path "pages"
+New-Item -ItemType Directory -Force -Path "docs"
 
-# إنشاء مجلد الصفحات (pages)
-New-Item -ItemType Directory -Path pages -Force
+# --- Assets Directories ---
+# This section creates all subdirectories within the 'assets' folder
+# to organize CSS, JavaScript, and images according to best practices.
+New-Item -ItemType Directory -Force -Path "assets/css"
+New-Item -ItemType Directory -Force -Path "assets/css/abstracts"
+New-Item -ItemType Directory -Force -Path "assets/css/base"
+New-Item -ItemType Directory -Force -Path "assets/css/components"
+New-Item -ItemType Directory -Force -Path "assets/css/layout"
+New-Item -ItemType Directory -Force -Path "assets/css/pages"
+New-Item -ItemType Directory -Force -Path "assets/css/themes"
+New-Item -ItemType Directory -Force -Path "assets/css/vendors"
 
-# إنشاء مجلد الوثائق (docs)
-New-Item -ItemType Directory -Path docs -Force
+New-Item -ItemType Directory -Force -Path "assets/js"
+New-Item -ItemType Directory -Force -Path "assets/js/modules"
+New-Item -ItemType Directory -Force -Path "assets/js/utils"
 
-# إنشاء الملفات الأساسية
-New-Item -ItemType File -Path assets/css/main.scss -Force
-New-Item -ItemType File -Path assets/js/main.js -Force
-New-Item -ItemType File -Path assets/js/vendor.js -Force
+New-Item -ItemType Directory -Force -Path "assets/images"
+New-Item -ItemType Directory -Force -Path "assets/images/icons"
+New-Item -ItemType Directory -Force -Path "assets/images/illustrations"
 
-# إنشاء ملفات HTML الأساسية
-New-Item -ItemType File -Path pages/index.html -Force
-New-Item -ItemType File -Path pages/about-us.html -Force
-New-Item -ItemType File -Path pages/contact-us.html -Force
+# --- Core Files ---
+# This section creates all the necessary files at the root and within
+# the main directories, serving as the project's foundation.
+New-Item -ItemType File -Force -Path "assets/css/main.scss"
+New-Item -ItemType File -Force -Path "assets/js/main.js"
+New-Item -ItemType File -Force -Path "assets/js/vendor.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/school-registration.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/school-blog-page.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/student-registration.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/teacher-registration.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/achievements.js"
+New-Item -ItemType File -Force -Path "assets/js/modules/about-us-and-policies.js"
 
-# إنشاء ملفات الجذر (Root Files)
-New-Item -ItemType File -Path .gitignore -Force
-New-Item -ItemType File -Path CONTRIBUTING.md -Force
-New-Item -ItemType File -Path README.md -Force
+New-Item -ItemType File -Force -Path "pages/index.html"
+New-Item -ItemType File -Force -Path "pages/school-registration.html"
+New-Item -ItemType File -Force -Path "pages/school-blog-page.html"
+New-Item -ItemType File -Force -Path "pages/student-registration.html"
+New-Item -ItemType File -Force -Path "pages/teacher-registration.html"
+New-Item -ItemType File -Force -Path "pages/about-us-and-policies.html"
+New-Item -ItemType File -Force -Path "pages/achievements.html"
+New-Item -ItemType File -Force -Path "pages/contact-us.html"
 
-# إضافة محتوى إلى ملفات معينة
-"node_modules`n`n# SASS compilation files`nassets/css/main.css" | Out-File -FilePath .gitignore
-"نص ملف المساهمة الذي قمنا بإنشائه" | Out-File -FilePath CONTRIBUTING.md
-"نص ملف README الذي قمنا بإنشائه" | Out-File -FilePath README.md
-"<!DOCTYPE html>`n<html lang='ar' dir='rtl'>`n<head>`n    <meta charset='UTF-8'>`n    <meta name='viewport' content='width=device-width, initial-scale=1.0'>`n    <title>المنصة التعليمية</title>`n    <link rel='stylesheet' href='../assets/css/main.css'>`n</head>`n<body>`n    <header>`n        <h1>المنصة التعليمية</h1>`n    </header>`n    <main>`n        <p>مرحباً بكم في صفحتنا الرئيسية.</p>`n    </main>`n    <footer>`n        <p>&copy; 2025 المنصة التعليمية</p>`n    </footer>`n    <script src='../assets/js/main.js'></script>`n</body>`n</html>" | Out-File -FilePath pages/index.html
-"" | Out-File -FilePath assets/css/main.scss
-"" | Out-File -FilePath assets/js/main.js
+New-Item -ItemType File -Force -Path ".gitignore"
+# New-Item -ItemType File -Force -Path "CONTRIBUTING.md"
+# New-Item -ItemType File -Force -Path "README.md"
+New-Item -ItemType File -Force -Path "docs/srs-document.md"
 
-# رسالة تأكيد النجاح
-Write-Host "✅ تم إنشاء هيكل المشروع بنجاح في مجلد '$ProjectRoot'." -ForegroundColor Green
+Write-Host "Project structure created successfully. Ready for development." -ForegroundColor Green
+
+# for build this tree you have to follow this steps :
+#       1. build folder and make it name tag_alwaqar_platform 
+#       2. open terminal with powersell and get this command:  ./project-structure.ps1

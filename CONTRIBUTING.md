@@ -1,437 +1,209 @@
-### **1.1. الهيكل العام للملفات والمجلدات**
+### **1. Project Structure**
 
-لتجنب الفوضى وضمان سهولة التوسع والصيانة، يجب أن يتبع المشروع هيكلًا معياريًا وواضحًا. هذا الهيكل مصمم ليكون بديهيًا ويساعد على الفصل بين الأدوار والوظائف المختلفة للملفات، مما يسهل على المطورين الجدد فهم المشروع والمساهمة فيه بسرعة.
+The following structure is the definitive blueprint for our project's file organization. It is designed to be highly modular, scalable, and easy for any contributor to navigate. All files and directories must adhere to this structure to ensure consistency.
+
+#### **3.1. General File and Folder Structure**
 
 ```
-/project-root
-|-- /assets
-|   |-- /css
-|   |   |-- /abstracts/          # (Variables, Mixins, Functions)
-|   |   |-- /base/               # (Typography, Reset, General styles)
-|   |   |-- /components/         # (Buttons, Forms, Cards, etc.)
-|   |   |-- /layout/             # (Grid, Header, Footer)
-|   |   |-- /pages/              # (Page-specific styles)
-|   |   |-- /vendor/             # (External libraries, if any)
-|   |   |-- main.css             # (Main compiled stylesheet)
-|   |   `-- main.scss            # (Main Sass entry point)
-|   |-- /images/                 # (All images used in the project)
-|   |   |-- /icons/
-|   |   `-- /illustrations/
-|   `-- /js/
-|       |-- /modules/            # (Modular JavaScript functions/classes)
-|       |   `-- registration.js
-|       |-- main.js              # (Main JavaScript entry point)
-|       `-- vendor.js            # (External JavaScript libraries)
-|-- /pages
-|   |-- index.html               # (Homepage)
-|   |-- about-us.html            # (About Us page)
-|   |-- contact-us.html          # (Contact page)
-|   `-- ...
-|-- /docs
-|   `-- srs-document.md          # (Software Requirements Specification)
-|-- .gitignore                   # (Specifies files to be ignored by Git)
-|-- CONTRIBUTING.md              # (This contribution guide)
-`-- README.md                    # (Project overview and quick-start guide)
+/tag_alwaqar_platform
+│   .gitignore                  # Specifies files and folders to be excluded from Git version control.
+│   CONTRIBUTING.md             # A guide for new contributors on how to set up the project and adhere to coding standards.
+│   project-structure.ps1       # A PowerShell script to automate the creation of the project's standardized directory structure.
+│   README.md                   # The primary project overview, detailing its purpose, technologies, and quick-start instructions.
+│
+├───assets                      # Contains all static assets, including CSS, JavaScript, and images.
+│   ├───css                     # Houses all stylesheets.
+│   │   │   main.scss           # The main Sass entry file where all other partials are imported.
+│   │   │
+│   │   ├───abstracts           # Stores Sass variables, mixins, and functions that don't output CSS directly.
+│   │   ├───base                # Contains foundational styles like typography, reset rules, and general styles.
+│   │   ├───components          # Styles for small, reusable UI components (e.g., buttons, forms, cards).
+│   │   ├───layout              # Styles for the overall page structure and grid systems.
+│   │   ├───pages               # Styles specific to individual pages.
+│   │   ├───themes              # Styles for different visual themes (e.g., dark/light mode).
+│   │   └───vendors             # Stores styles from external CSS libraries.
+│   ├───images                  # All project image files.
+│   │   ├───icons               # A dedicated folder for all SVG or PNG icon assets.
+│   │   └───illustrations       # Stores illustrations and visual graphics.
+│   └───js                      # Contains all JavaScript files.
+│       │   main.js             # The primary JavaScript entry point for the application logic.
+│       │   vendor.js           # For third-party JavaScript libraries.
+│       │
+│       ├───modules             # A collection of modular JavaScript files, each handling a specific feature.
+│       │       about-us-and-policies.js # Handles logic for the "About Us" and "Policies" page.
+│       │       achievements.js          # Manages logic for the achievements page.
+│       │       school-blog-page.js      # Handles dynamic functionality for the blog page.
+│       │       school-registration.js   # Contains validation logic for the school registration form.
+│       │       student-registration.js  # Manages form validation for student registration.
+│       │       teacher-registration.js  # Contains form validation for teacher registration.
+│       │
+│       └───utils               # Holds reusable utility functions and helpers.
+├───docs                        # Project documentation.
+│       srs-document.md         # The Software Requirements Specification document.
+│
+└───pages                       # Contains all HTML pages that form the website's structure.
+        about-us-and-policies.html # The "About Us" and "Policies" content page.
+        achievements.html            # The page showcasing project achievements.
+        contact-us.html              # The contact form page.
+        index.html                   # The homepage and main landing page.
+        school-blog-page.html        # The school's blog page.
+        school-registration.html     # The registration page for schools.
+        student-registration.html    # The registration page for students.
+        teacher-registration.html    # The registration page for teachers.
 ```
 
-#### **شرح المجلدات الرئيسية:**
+---
 
-- **`/assets`**: هذا المجلد هو الحاوية الرئيسية لجميع الملفات الثابتة (static files) المستخدمة في المشروع.
+#### **1.2. File and Component Naming Guide**
 
-  - **`/css`**: يضم جميع ملفات الأنماط. نوصي هنا باستخدام **Sass (SCSS)** لإنشاء هيكل أنماط معياري ومنظم وفقًا لمنهجية **7-1 Pattern**.
-    - `abstracts/`: يحتوي على ملفات لا تُنتج أي CSS مباشرةً، مثل المتغيرات (variables)، والـ Mixins، والوظائف (functions) التي يمكن إعادة استخدامها.
-    - `base/`: يضم الأنماط الأساسية للمشروع مثل إعادة ضبط الأنماط (reset)، والخطوط، والأنماط العامة للعناصر (مثل `<body>` و `<h1>`).
-    - `components/`: يحتوي على الأنماط الخاصة بالمكونات الصغيرة والقابلة لإعادة الاستخدام (reusable components) مثل الأزرار، والنماذج، والبطاقات.
-    - `layout/`: يضم الأنماط الخاصة بهيكل الصفحة وتخطيطها (Grid System, Header, Footer).
-    - `pages/`: يحتوي على الأنماط الخاصة بصفحات معينة فقط.
-  - **`/images`**: يضم جميع الأصول الرسومية للمشروع، ويتم تقسيمه داخليًا لسهولة الوصول (مثل الأيقونات والرسوم التوضيحية).
-  - **`/js`**: يضم جميع ملفات JavaScript. يجب أن تكون الوظائف منظمة في وحدات (modules) منفصلة لتسهيل إدارتها واختبارها، مع وجود ملف رئيسي (`main.js`) يربطها معًا.
+To maintain clarity and consistency, all files, directories, and components must follow a strict naming convention.
 
-- **`/pages`**: يضم جميع ملفات HTML الخاصة بصفحات الموقع. يجب أن يكون اسم الملف معبرًا عن محتواه (مثال: `about-us.html`).
+- **Lowercase Only:** All file and directory names must be in lowercase.
+- **Kebab-Case:** Use hyphens (`-`) to separate words in file names (e.g., `about-us.html`, `school-registration.js`).
 
-- **`/docs`**: يضم الوثائق والمستندات الهامة للمشروع مثل وثيقة متطلبات النظام (SRS).
+**Examples:**
 
-- **ملفات الجذر (Root Files)**:
+- `pages/contact-us.html` (Correct)
+- `pages/ContactUs.html` (Incorrect)
 
-  - `CONTRIBUTING.md`: هذا الملف الذي تقوم بقراءته الآن.
-  - `README.md`: ملف رئيسي يوضح لمحة عامة عن المشروع، وكيفية إعداد بيئة العمل، وتشغيل المشروع محليًا.
-  - `.gitignore`: يحدد الملفات والمجلدات التي يجب أن يتجاهلها نظام التحكم في الإصدار **Git** (مثل مجلد `node_modules`).
+**CSS/Sass Files:**
+
+- Use a leading underscore (`_`) for Sass partials to prevent them from being compiled as separate CSS files (e.g., `_variables.scss`).
+
+**JavaScript Files:**
+
+- Name JavaScript modules based on their specific function (e.g., `school-registration.js` for validation logic).
 
 ---
 
-### **1.2. دليل تسمية الملفات والمكونات**
+### **2. Code Standards**
 
-للحفاظ على الاتساق والوضوح في جميع أنحاء المشروع، يجب أن تتبع جميع الملفات والمكونات قواعد تسمية صارمة. التسمية الموحدة تسهل البحث عن الملفات، وتتبع التغييرات، وتضمن أن يكون الكود قابلًا للقراءة والصيانة حتى مع توسع المشروع.
+Adhering to a uniform set of coding standards is essential for a collaborative project. These guidelines ensure that our codebase is clean, consistent, and easy for any developer to read and understand.
 
----
+#### **2.1. HTML Guidelines**
 
-### **قواعد التسمية العامة**
+We use **semantic HTML5** to build a robust and accessible structure for our web pages. This means using elements for their intended purpose, not just their appearance.
 
-- **استخدام حروف صغيرة فقط (lowercase):** يجب أن تكون جميع أسماء الملفات والمجلدات مكتوبة بأحرف صغيرة.
-- **استخدام الشرطة الواصلة (kebab-case):** يجب فصل الكلمات في الأسماء باستخدام الشرطة الواصلة (`-`).
+- **HTML5 Doctype:** Every HTML file must start with `<!DOCTYPE html>`.
+- **Semantic Elements:** Use elements like `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>` to define the structure of the page. Avoid using generic `<div>` tags when a more descriptive element is available.
+- **Language and Direction:** The `<html>` tag must include `lang="ar"` and `dir="rtl"` to correctly define the language and text direction.
+- **Indentation:** Use **2 spaces** for indentation. Avoid using tabs.
+- **Self-Closing Tags:** Do not use a trailing slash for self-closing tags (e.g., `<img src="...">`, not `<img src="..." />`).
+- **Attribute Quotes:** Use double quotes (`"`) for all attribute values.
 
-#### **أمثلة:**
+#### **2.2. CSS/Sass Guidelines**
 
-✅ `about-us.html`
-✅ `contact-form.js`
-❌ `AboutUs.html`
-❌ `contactForm.js`
+Our styling is powered by **Sass (SCSS)**, which is organized using the **7-1 Pattern** for ultimate scalability. We also adopt the **BEM (Block, Element, Modifier)** methodology for class naming to prevent style conflicts.
 
----
+- **File Structure:** All Sass files must reside in the `assets/css` directory and its subfolders as specified in the project structure.
+- **BEM Naming:** Use `block__element--modifier` for all component-specific class names. This makes the purpose and relationship of each class immediately clear.
+  - **Example:** `.card__title` and `.btn--primary`.
+- **Sass Variables:** Store all colors, fonts, and spacing values in `_variables.scss` within the `abstracts` directory. This promotes consistency and makes global style changes easy.
+- **Nesting:** Avoid excessive nesting in Sass. Limit nesting to a maximum of 3 levels to maintain readability.
+- **Indentation and Spacing:** Use **2 spaces** for indentation.
 
-### **تسمية ملفات HTML**
+#### **2.3. JavaScript Guidelines**
 
-يجب أن تعكس أسماء ملفات HTML محتوى الصفحة بوضوح.
+We use **vanilla JavaScript** to maintain a lean, high-performance, and dependency-free front-end. Our JavaScript code should be modular and follow modern syntax.
 
-- **الصفحة الرئيسية:** `index.html` (معيار عالمي).
-- **صفحات المحتوى:** استخدم اسمًا معبرًا عن المحتوى، مثل:
-  - `about-us.html`
-  - `school-registration.html`
-  - `student-profile.html`
-
----
-
-### **تسمية ملفات CSS/Sass**
-
-يجب أن تعكس أسماء ملفات الأنماط وظيفتها ضمن هيكل `assets/css` الذي تم تحديده سابقًا.
-
-- **الملف الرئيسي:** `main.scss`
-- **ملفات الأقسام (Sass Partials):** استخدم بادئة الشرطة السفلية (`_`) للإشارة إلى أن الملف هو جزء (partial) يُدرج في ملف آخر ولا يتم تجميعه بشكل منفصل.
-  - `_variables.scss` (ضمن مجلد `abstracts`)
-  - `_buttons.scss` (ضمن مجلد `components`)
-- **ملفات CSS المجمعة:** يجب تسمية الملفات الناتجة عن تجميع Sass بوضوح، مثل: `main.css`.
+- **Modularity:** All JavaScript functionality should be encapsulated within modules and placed in the `assets/js/modules` directory. Avoid writing a single, monolithic script.
+- **Variable Declarations:** Use `const` for variables that do not change and `let` for variables that will be reassigned. Avoid using `var`.
+- **Arrow Functions:** Prefer arrow functions (`=>`) for concise syntax, especially for callbacks.
+- **DOM Access:** Cache DOM elements in variables to avoid repetitive queries.
+  - **Good:** `const button = document.querySelector('.my-btn'); button.addEventListener(...)`
+  - **Bad:** `document.querySelector('.my-btn').addEventListener(...)`
+- **Comments:** Use comments to explain the "why" behind a piece of code, not just the "what." Explain complex logic or a function's purpose.
 
 ---
 
-### **تسمية ملفات JavaScript**
+### **3. UI/UX Guidelines**
 
-يجب أن تكون أسماء ملفات JavaScript وصفية وتتبع نمط `kebab-case`.
+A successful interface is not just about functionality; it's about providing a seamless, intuitive, and visually appealing experience for all users. The following guidelines ensure our platform is both beautiful and highly usable.
 
-- **الملف الرئيسي:** `main.js`
-- **ملفات الوحدات (Modules):** سمّ الملفات بناءً على الوحدة أو الوظيفة التي تؤديها.
-  - `registration-form.js`
-  - `donation-handler.js`
-  - `modal-viewer.js`
+#### **3.1. Responsive Design Principles**
 
----
+Our platform adopts a **mobile-first approach**. This strategy ensures that our core content and functionality are prioritized on small screens before we progressively enhance the design for larger devices.
 
----
+- **Fluid Units:** Use relative units like percentages (`%`), `rem`, and `em` for layouts and typography. Avoid fixed units like pixels (`px`) wherever possible to ensure components scale smoothly.
+- **Flexible Grid:** The layout must be built using a flexible grid system, leveraging CSS Flexbox or Grid. This allows elements to fluidly reflow and adapt to different screen sizes.
+- **Media Queries:** Use media queries to apply style adjustments at specific **breakpoints**. Breakpoints should be based on the content's needs, not on predefined device sizes. For example, if a navigation menu looks cluttered at 768px, that's where a breakpoint should be added to adjust its layout.
+- **Responsive Images:** All images must be responsive. Use the CSS properties `max-width: 100%;` and `height: auto;` to prevent images from overflowing their containers. For performance, consider using the HTML `<picture>` element or the `srcset` attribute to serve different image sizes based on the user's viewport.
 
-### **2.1. إرشادات HTML**
+#### **3.2. Browser Compatibility**
 
-لضمان جودة الكود وسهولة صيانته، يجب أن يلتزم جميع المساهمين بالمعايير التالية لكتابة HTML. الهدف هو كتابة كود دلالي (semantic)، منظم، ومتوافق مع أحدث المعايير العالمية.
+We ensure our platform works correctly and consistently across the most popular web browsers. While modern browsers are the priority, the core experience must be functional on slightly older versions.
 
-#### **مبادئ أساسية**
-
-- **HTML5 Doctype:** يجب أن تبدأ كل صفحة بتعريف نوع المستند HTML5.
-  ```html
-  <!DOCTYPE html>
-  <html lang="ar" dir="rtl"></html>
-  ```
-  - **خاصية `lang`**: يجب دائمًا تحديد خاصية `lang` في عنصر `<html>` للإشارة إلى لغة الصفحة. استخدم `ar` للغة العربية.
-  - **خاصية `dir`**: بما أن اللغة الأساسية هي العربية، يجب تحديد اتجاه النص من اليمين إلى اليسار باستخدام `dir="rtl"`.
-- **استخدام الكود الدلالي (Semantic HTML):** استخدم العناصر المناسبة لوظيفتها ومعناها، وليس فقط لمظهرها. هذا يحسن من سهولة الوصول (accessibility) وفهم محتوى الصفحة.
-  - **مثال:** استخدم `<header>` لرأس الصفحة، `<nav>` للقائمة، `<main>` للمحتوى الرئيسي، `<article>` للمحتوى المستقل، و`<section>` للأقسام الفرعية، و`<footer>` للتذييل.
-  - **مثال عملي:** بدلًا من استخدام `<div>` لكل شيء، استخدم:
-    - `<header>` و `<footer>` للمحتوى العلوي والسفلي للصفحة.
-    - `<nav>` لتحديد قوائم التنقل.
-    - `<form>` لإحاطة جميع حقول النموذج.
-    - `<button>` للأزرار التي تؤدي وظيفة.
-
-#### **التنظيم والتنسيق**
-
-- **المسافة البادئة (Indentation):** استخدم **مسافتين (2 spaces)** للمسافة البادئة. تجنب استخدام Tab. هذا يضمن أن الكود يظهر بشكل متناسق في جميع البيئات.
-- **الترتيب:** يجب ترتيب عناصر `<head>` بشكل منطقي.
-  1.  ترميز المحارف (Character set): `<meta charset="UTF-8">`
-  2.  خصائص عرض الصفحة (Viewport): `<meta name="viewport" ...>`
-  3.  وصف الصفحة (Description) والكلمات المفتاحية (Keywords).
-  4.  روابط الأنماط (CSS).
-  5.  روابط الخطوط (Fonts).
-  6.  عنوان الصفحة (`<title>`).
-- **الإغلاق الذاتي للعناصر (Self-closing tags):** لا حاجة لاستخدام الشرطة المائلة الأمامية في العناصر التي تُغلق ذاتيًا في HTML5.
-  - ✅ `<img src="..." alt="...">`
-  - ❌ `<img src="..." alt="..." />`
-- **الاقتباسات:** استخدم الاقتباسات المزدوجة (`"`) للخصائص.
-  - ✅ `<a href="/about-us" class="nav-link">...</a>`
-  - ❌ `<a href='/about-us' class='nav-link'>...</a>`
-
-#### **الوضوح والتعليقات**
-
-- **خاصية `alt` للصور:** يجب أن تحتوي جميع الصور على خاصية `alt` مع نص وصفي. هذا ضروري لسهولة الوصول (screen readers) وفي حالة عدم تحميل الصورة.
-  - **مثال:** `<img src="logo.png" alt="شعار المنصة التعليمية">`
-- **التعليقات:** استخدم التعليقات لتوضيح أجزاء الكود المعقدة أو غير البديهية، لكن تجنب الإفراط في استخدامها. يجب أن تكون التعليقات موجزة ومفيدة.
-  - **مثال:** \`\`
+- **Baseline Support:** The project must function correctly on the two most recent major versions of the following browsers: **Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari**.
+- **Progressive Enhancement:** Build upon a solid foundation of widely supported CSS and JavaScript features. Advanced or experimental features should be layered on top, so the core functionality remains accessible even if a browser doesn't support the latest technology.
+- **Vendor Prefixes:** Utilize a build tool like **Autoprefixer** to automatically add vendor prefixes to CSS properties (e.g., `-webkit-`, `-moz-`). This prevents manual errors and ensures broad compatibility.
+- **Testing:** Before pushing a new feature, a basic cross-browser check should be performed to catch any major rendering issues.
 
 ---
 
-### **2.2. إرشادات CSS/Sass**
+#### **3.3. Accessibility Guidelines (WCAG)**
 
-لضمان أن تكون الأنماط (styles) قابلة للإدارة، وقابلة للتوسع، وسهلة الصيانة، نلتزم بالمعايير التالية لكتابة CSS وSass. الهدف هو إنشاء كود أنيق، منظم، وفعال.
+Our goal is to create a web experience that is accessible to all users, including those with disabilities. Our guidelines are based on the **Web Content Accessibility Guidelines (WCAG) 2.1**, a globally recognized standard.
 
-#### **مبادئ أساسية**
+- **Semantic HTML:** We rely on semantic HTML to provide a meaningful structure that screen readers and other assistive technologies can interpret. For example, use `<nav>` for navigation menus and `<button>` for interactive buttons, not `<div>` tags.
+- **Keyboard Navigation:** All interactive elements, such as links, buttons, and form fields, must be fully navigable and usable with a keyboard alone. Ensure that the focus indicator (`:focus`) is always clearly visible.
+- **Color Contrast:** All text and critical UI elements must have a sufficient **color contrast ratio** against their background. This ensures readability for users with low vision. You can use online tools to check contrast ratios.
+- **Alternative Text for Images:** All images that convey information must include descriptive `alt` text. This provides a textual alternative for screen readers and in cases where images fail to load. Decorative images can have an empty `alt=""` attribute.
+- **Accessible Forms:** All form inputs must have a corresponding `<label>` tag linked via the `for` attribute. This allows screen readers to announce the purpose of each field. Error messages must be clearly associated with their respective input fields.
 
-- **استخدام Sass (SCSS) بشكل حصري:** نستخدم Sass لتنظيم الأنماط واستغلال ميزاته المتقدمة مثل المتغيرات (variables)، والـ Mixins، والـ Nesting، والـ Partials.
-- **هيكلية 7-1 Pattern:** نتبع هذه المنهجية لتنظيم ملفات Sass، مما يضمن الفصل الواضح بين أنواع الأنماط المختلفة.
-- **استخدام BEM (Block, Element, Modifier) للتسمية:** نعتمد منهجية BEM لإنشاء أسماء فئات (class names) واضحة وذات مغزى. هذا يمنع تداخل الأنماط (style collisions) ويوضح العلاقة بين الأجزاء المختلفة للمكون.
-  - **Block (الكتلة):** يمثل كيانًا مستقلًا بذاته (مثل `.card`).
-  - **Element (العنصر):** يمثل جزءًا من الكتلة (مثل `.card__header`).
-  - **Modifier (المُعدّل):** يغير مظهر أو سلوك الكتلة أو العنصر (مثل `.card--featured`).
+#### **3.4. Ideal User Experience (UX)**
 
-#### **أمثلة على BEM:**
+Beyond the code, we strive to build a user experience that is intuitive, efficient, and enjoyable. Our UX principles focus on minimizing user friction and providing clear, actionable feedback.
 
-```css
-/* Block */
-.form-input {
-  /* Common styles for all form inputs */
-}
-
-/* Element */
-.form-input__label {
-  /* Styles for the label within the form input block */
-}
-
-/* Modifier */
-.form-input--error {
-  /* Styles for an input that has an error */
-}
-```
-
-#### **التنظيم والتنسيق**
-
-- **المسافة البادئة (Indentation):** استخدم **مسافتين (2 spaces)** للمسافة البادئة.
-
-- **ترتيب الخصائص:** قم بترتيب خصائص CSS بطريقة منطقية، على سبيل المثال:
-
-  1.  `@include` (لـ Mixins)
-  2.  خصائص الموقع (Positioning: `position`, `top`, `left`, `z-index`, etc.)
-  3.  خصائص النموذج (Box Model: `display`, `width`, `height`, `margin`, `padding`, `border`, etc.)
-  4.  خصائص الطباعة (Typography: `font-family`, `font-size`, `color`, `text-align`, etc.)
-  5.  خصائص الخلفية (Backgrounds)
-  6.  الانتقالات (Transitions) والرسوم المتحركة (Animations)
-  7.  الخصائص الأخرى
-
-- **المتغيرات (Variables):** استخدم متغيرات Sass لتخزين الألوان، والخطوط، وأحجام الخطوط، والمسافات. هذا يسهل تحديث الأنماط بشكل شامل.
-
-- **التعليقات:** استخدم التعليقات لتوضيح أجزاء معينة من الكود أو لتقسيم الملفات إلى أقسام منطقية.
+- **Clarity and Simplicity:** The interface should be uncluttered and easy to understand. Every element, from a button to a text block, must have a clear purpose. Avoid unnecessary visual noise.
+- **Instant Feedback:** Users should receive immediate feedback for their actions. This includes visual cues like button state changes on hover/click, as well as clear success or error messages for forms. This helps users understand the status of their actions and builds trust in the system.
+- **Intuitive Navigation:** The site's navigation must be consistent and predictable across all pages. Users should be able to find their way around without a learning curve.
+- **Error Prevention and Recovery:** Design forms to prevent errors where possible (e.g., using date pickers) and provide clear, friendly error messages when they do occur. Help users understand what went wrong and how to fix it.
 
 ---
 
-### **2.3. إرشادات JavaScript**
+#### **3.5. Color and Typography Style Guide**
 
-لكتابة كود JavaScript نظيف، وفعال، وقابل لإعادة الاستخدام، يجب الالتزام بالمعايير التالية. هذه الإرشادات تضمن أن يكون الكود آمنًا، ومرتبًا، ومتوافقًا مع المعايير الحديثة.
+A consistent visual identity is key to a professional and trustworthy brand. This style guide outlines the definitive color palette and typography rules to be used throughout the platform.
 
-#### **مبادئ أساسية**
+- **Color Palette:** We use a specific set of colors to maintain brand consistency. The color palette is categorized by function:
+  - **Primary Colors:** Used for main branding elements, such as the logo and key calls-to-action (CTAs).
+  - **Accent Colors:** Used to highlight important information, links, and interactive elements.
+  - **System Colors:** A set of colors dedicated to specific system states, such as green for **success**, red for **errors**, and blue for **information**.
+- **Typography:** Our fonts are chosen for optimal readability and a professional look.
+  - **Main Font:** Used for all body text. It must be clear and readable at various sizes.
+  - **Heading Font:** Used for titles (H1, H2, H3, etc.).
+  - **Font Sizes:** We use a modular scale for font sizes to ensure harmony. All font sizes should be defined using `rem` units to support accessibility and responsive scaling.
 
-- **تجنب jQuery:** يعتمد المشروع على **JavaScript الأصيل (Vanilla JavaScript)** لضمان الأداء الأمثل، وتقليل حجم الملفات، والاعتماد على مكتبات خارجية.
-- **استخدام النمط الوحدوي (Modular Pattern):** قم بتنظيم الكود في وحدات (modules) منفصلة. كل ملف `js` يجب أن يركز على وظيفة واحدة محددة (مثل: `registration.js`، `contact-form.js`).
-- **التعامل مع DOM بفعالية:** قم بالاستعلام عن عناصر الـ DOM مرة واحدة فقط وقم بتخزينها في متغير.
+---
 
-  - **مثال:**
+### **4. Tools and Work Environment**
 
-    ```javascript
-    // Non-optimal: query for the element on every use
-    document.querySelector('.my-button').addEventListener(...);
+This section provides the essential tools and a step-by-step guide to set up a local development environment. Following these instructions will ensure a consistent and efficient workflow for all contributors.
 
-    // Optimal: store in a variable
-    const myButton = document.querySelector('.my-button');
-    myButton.addEventListener(...);
+#### **4.1. Recommended Development Tools**
+
+To ensure a smooth and standardized development process, we recommend using the following tools:
+
+- **Code Editor:** We highly recommend **Visual Studio Code (VS Code)**. It's a powerful and free code editor with a rich ecosystem of extensions that enhance front-end development.
+- **Version Control:** **Git** is our version control system. All code contributions must be managed through Git.
+- **Extensions for VS Code:**
+  - **Prettier:** A code formatter that ensures a consistent coding style across the project.
+  - **Live Sass Compiler:** Automatically compiles your Sass (`.scss`) files into CSS (`.css`) in real-time.
+  - **Live Server:** Launches a local development server with live reload functionality, so you can see your changes instantly.
+
+#### **4.2. Local Development Environment Setup**
+
+Follow these steps to get your local environment ready for development:
+
+1.  **Clone the Repository:** Open your terminal or Git Bash and clone the project to your local machine. This command will create the project's root directory.
+    ```bash
+    git clone [your-repository-url]
     ```
-
-#### **التنظيم والتنسيق**
-
-- **استخدام `const` و `let`:** استخدم `const` للمتغيرات التي لن يتم تغيير قيمتها أبدًا. استخدم `let` للمتغيرات التي قد تتغير قيمتها. تجنب استخدام `var` تمامًا.
-- **استخدام الدوال السهمية (Arrow Functions):** استخدم دوال السهم (`=>`) لتسهيل كتابة الكود وجعله أكثر وضوحًا، خصوصًا في دوال رد الاتصال (callbacks).
-- **التعليقات:** استخدم التعليقات لتوضيح الغرض من الدوال أو الكتل المعقدة من الكود.
-- **التعامل مع الأخطاء (Error Handling):** استخدم `try...catch` للتعامل مع الأخطاء المحتملة. قم بتوفير رسائل خطأ واضحة للمستخدمين، وتأكد من أن الأخطاء لا تسبب تعطل التطبيق.
-
----
-
-### **3.1. مبادئ التصميم المتجاوب (Responsive Design)**
-
-لضمان أن تكون الواجهة سهلة الاستخدام وجذابة على مختلف الأجهزة، من الهواتف الذكية الصغيرة إلى شاشات العرض الكبيرة، يجب أن نلتزم بمبادئ التصميم المتجاوب. يهدف هذا النهج إلى إنشاء واجهة مستخدم (UI) تتكيف بذكاء مع حجم شاشة المستخدم واتجاهها.
-
-#### **منهجية العمل**
-
-- **"الهاتف أولاً" (Mobile-First):** نبدأ بتصميم وتطوير الواجهة لأجهزة الهاتف المحمول أولًا، حيث تكون القيود أكثر وضوحًا. هذا يضمن أن يكون المحتوى الأساسي هو الأولوية، ويساعد على تجنب إثقال الصفحة بعناصر غير ضرورية. بعد ذلك، نقوم بتوسيع التصميم تدريجيًا ليشمل الأجهزة اللوحية ثم أجهزة الكمبيوتر المكتبية، مع إضافة المزيد من التفاصيل والعناصر كلما زاد حجم الشاشة.
-- **استخدام الـ `Meta Viewport`:** يجب أن تحتوي كل صفحة HTML على علامة `meta` الخاصة بـ `viewport` لضبط عرض الصفحة على حجم شاشة الجهاز. هذا السطر ضروري لتمكين التجاوب.
-  ```html
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  ```
-
-#### **إرشادات CSS للتجاوب**
-
-- **استخدام الوحدات المرنة (Flexible Units):** بدلًا من استخدام وحدات البكسل الثابتة (px)، نستخدم الوحدات المرنة مثل النسب المئوية (`%`)، و`em`، و`rem`، ووحدات الـ `viewport` (`vw`, `vh`).
-  - **مثال:** `font-size: 1rem;`
-- **نظام الشبكة المرن (Flexible Grid System):** نبني تخطيط الصفحة باستخدام نظام شبكة قائم على Flexbox أو CSS Grid. هذا يسمح للعناصر بالتدفق وإعادة الترتيب تلقائيًا بناءً على المساحة المتاحة.
-  - **مثال (Flexbox):** `display: flex; flex-wrap: wrap;`
-- **استخدام استعلامات الوسائط (Media Queries):** تُستخدم استعلامات الوسائط لتطبيق أنماط مختلفة على نقاط توقف (breakpoints) محددة. يجب أن تكون نقاط التوقف هذه مستوحاة من المحتوى، وليس من أحجام الأجهزة الشائعة.
-
-  - **مثال:**
-
-    ```css
-    /* Styles for mobile-first */
-    .container {
-      width: 100%;
-      padding: 1rem;
-    }
-
-    /* Adjust styles for wider screens (e.g., tablets) */
-    @media (min-width: 768px) {
-      .container {
-        width: 80%;
-        margin: auto;
-      }
-    }
+2.  **Run the Setup Script:** Navigate into the newly created project directory and execute the PowerShell script we created. This will automatically generate the entire file and folder structure.
+    ```bash
+    cd tag_alwaqar_platform
+    .\project-structure.ps1
     ```
-
-- **الصور المتجاوبة (Responsive Images):** يجب أن تتكيف الصور مع حجم الشاشة. نستخدم الخصائص التالية لتحقيق ذلك:
-  - `max-width: 100%;` و `height: auto;` في CSS لضمان عدم تجاوز الصورة لحاوية الأب الخاصة بها.
-  - استخدام عنصر `<picture>` أو السمة `srcset` لتقديم صور مختلفة الدقة بناءً على شاشة المستخدم.
-    - **مثال:** `<img src="image-small.jpg" srcset="image-medium.jpg 1024w, image-large.jpg 1920w" alt="...">`
-
----
-
-### **3.2. التوافقية مع المتصفحات (Browser Compatibility)**
-
-لضمان أن المنصة تعمل بشكل صحيح على مختلف المتصفحات الشائعة، يجب أن نتبع إرشادات التوافقية مع المتصفحات. الهدف هو تقديم تجربة مستخدم متسقة وفعالة للجميع، بغض النظر عن المتصفح الذي يستخدمونه.
-
-#### **مبادئ أساسية**
-
-- **الدعم الأساسي (Baseline Support):** يجب أن تدعم المنصة أحدث إصدارين رئيسيين من المتصفحات التالية:
-  - **Google Chrome** (على سطح المكتب والجوال)
-  - **Mozilla Firefox** (على سطح المكتب والجوال)
-  - **Safari** (على سطح المكتب والجوال)
-  - **Microsoft Edge** (على سطح المكتب والجوال)
-  - **Samsung Internet** (على الجوال)
-- **التصميم المتدرج (Progressive Enhancement):** نبني المشروع باستخدام الميزات الأساسية والمدعومة على نطاق واسع أولاً، ثم نضيف الميزات المتقدمة (مثل الرسوم المتحركة المعقدة) التي قد لا تكون متاحة في المتصفحات القديمة. هذا يضمن أن يكون المحتوى الأساسي وظيفيًا دائمًا.
-
-#### **إرشادات CSS للتوافقية**
-
-- **استخدام `Autoprefixer`:** يجب استخدام أداة مثل Autoprefixer لتوليد بادئات البائع (vendor prefixes) تلقائيًا للخصائص التجريبية أو الحديثة في CSS. هذا يضمن أن تعمل الأنماط على المتصفحات المختلفة دون الحاجة لكتابة بادئات يدوية.
-- **تجنب الخصائص غير المدعومة:** قبل استخدام خاصية CSS جديدة، يجب التحقق من دعم المتصفحات لها عبر مواقع مثل **Can I use...**.
-- **الخصائص الاحتياطية (Fallback Properties):** عند استخدام خصائص CSS حديثة، يجب توفير خاصية احتياطية مدعومة على نطاق أوسع.
-  - **مثال:**
-    ```css
-    .element {
-      display: block; /* Fallback for older browsers */
-      display: flex; /* Modern property */
-    }
-    ```
-
----
-
-### **3.3. إرشادات سهولة الوصول (Accessibility - WCAG)**
-
-نلتزم بتصميم وبناء واجهة يمكن للجميع استخدامها، بما في ذلك الأشخاص ذوي الإعاقة. هذه الإرشادات تستند إلى **إرشادات محتوى الويب لإمكانية الوصول (WCAG 2.1)**، وهي معيار عالمي.
-
-#### **مبادئ أساسية**
-
-- **التركيز على الدلالية (Semantics):** استخدام عناصر HTML الدلالية (مثل `<nav>`, `<main>`, `<button>`) بدلاً من عناصر `<div>` العامة. هذا يساعد برامج قراءة الشاشة (screen readers) على فهم بنية الصفحة ومحتواها.
-- **إمكانية التنقل بلوحة المفاتيح:** يجب أن يكون من الممكن التنقل في جميع الأجزاء التفاعلية من الموقع (مثل الروابط والأزرار) باستخدام لوحة المفاتيح فقط.
-- **التباين الكافي للألوان (Sufficient Color Contrast):** يجب أن يكون هناك تباين كافٍ بين ألوان النصوص والخلفيات لضمان سهولة القراءة للأشخاص ذوي الإعاقة البصرية.
-
-#### **قواعد تطبيقية**
-
-- **النص البديل للصور (Alternative Text):** يجب أن تحتوي جميع عناصر `<img>` على خاصية `alt` ذات محتوى وصفي. هذا يسمح لبرامج قراءة الشاشة بوصف الصورة للمستخدمين.
-  - **مثال:** `<img src="user-icon.png" alt="أيقونة المستخدم">`
-- **وصف الروابط والأزرار:** استخدم نصوصًا واضحة وذات مغزى للروابط والأزرار.
-  - ✅ `<a href="...">اقرأ المزيد عن المنصة</a>`
-  - ❌ `<a href="...">اضغط هنا</a>`
-- **خاصيات ARIA (Accessible Rich Internet Applications):** استخدم خصائص ARIA لتوفير سياق إضافي للعناصر التي لا تحتوي على دلالية طبيعية.
-  - **مثال:** `aria-label`، `aria-controls`، `aria-expanded`.
-- **النموذج (Form) سهل الوصول:** يجب أن تكون حقول النماذج مرتبطة بعلاماتها (`<label>`) باستخدام خاصية `for`. يجب أن تكون رسائل الخطأ واضحة ومرئية لبرامج قراءة الشاشة.
-
----
-
-### **3.4. تجربة المستخدم (UX) المثالية**
-
-تهدف هذه الإرشادات إلى خلق تجربة مستخدم سلسة وبديهية، مما يجعل التفاعل مع المنصة ممتعًا وخاليًا من الإحباط.
-
-#### **مبادئ أساسية**
-
-- **الوضوح والبساطة:** يجب أن تكون الواجهة خالية من الفوضى. كل عنصر، سواء كان نصًا أو زرًا أو صورة، يجب أن يكون له غرض واضح ومحدد.
-- **التغذية الراجعة (Feedback) الفورية:** يجب أن يتلقى المستخدمون **تغذية راجعة فورية** عند التفاعل مع الواجهة. على سبيل المثال، يجب أن يتغير لون الزر عند النقر عليه، ويجب أن تظهر رسالة نجاح عند إرسال نموذج.
-- **البديهية وسهولة التنقل:** يجب أن يكون المستخدم قادرًا على فهم كيفية استخدام الموقع دون الحاجة إلى دليل. يجب أن تكون عناصر التنقل (Navigation) متسقة وموجودة في أماكن متوقعة.
-- **تقليل الاحتكاك (Reducing Friction):** يجب أن تكون العمليات الأساسية، مثل التسجيل، بسيطة ومباشرة قدر الإمكان.
-  - **مثال:** تقسيم نماذج التسجيل الطويلة إلى خطوات متعددة يقلل من العبء المعرفي ويجعل العملية تبدو أسهل.
-- **مراعاة المستخدم:** يجب تصميم الواجهة لمراعاة احتياجات المستخدمين المختلفين. وهذا يشمل:
-  - رسائل خطأ واضحة وودية.
-  - إرشادات بسيطة ومرئية عند تعبئة الحقول.
-  - عدم إجبار المستخدمين على إدخال معلومات غير ضرورية.
-
----
-
-### **3.5. دليل الألوان والخطوط (Style Guide)**
-
-لضمان الاتساق البصري والهوية البصرية الموحدة للمنصة، يجب الالتزام بدليل الألوان والخطوط المحدد. يسهل هذا الدليل على المصممين والمطورين الحفاظ على مظهر متناغم للموقع.
-
-#### **لوحة الألوان (Color Palette)**
-
-يجب استخدام الألوان التالية بشكل متناسق في جميع أنحاء الواجهة:
-
-- **الألوان الأساسية (Primary Colors):** تُستخدم هذه الألوان للهوية البصرية الرئيسية للمنصة، مثل الشعار، والأزرار الرئيسية، وعناوين الأقسام.
-- **ألوان التباين (Accent Colors):** تُستخدم هذه الألوان لجذب الانتباه إلى عناصر مهمة، مثل الروابط، والأيقونات، والعناصر التفاعلية.
-- **ألوان النظام (System Colors):** تُستخدم للإشارة إلى حالات معينة:
-  - **أخضر:** للنجاح أو التأكيد (مثال: رسالة "تم التسجيل بنجاح").
-  - **أحمر:** للخطأ أو التحذير (مثال: رسالة "خطأ في إدخال البيانات").
-  - **أزرق:** للمعلومات أو الإشعارات.
-
-#### **الخطوط (Typography)**
-
-يجب أن تكون الخطوط سهلة القراءة وذات مظهر احترافي:
-
-- **الخط الأساسي (Body Font):** يُستخدم للنصوص الرئيسية في الموقع.
-- **خط العناوين (Heading Font):** يُستخدم لجميع العناوين (H1, H2, H3, etc.).
-- **أحجام الخطوط (Font Sizes):** يجب تحديد أحجام الخطوط الرئيسية (مثل 16px للنص الأساسي) واستخدام وحدات `rem` للتأكد من أنها متجاوبة وقابلة للتكيف.
-
----
-
-تفضل، إليك النصوص الخاصة بأدوات وبيئة العمل. هذه الأقسام تضع اللمسات الأخيرة على ملف المساهمة، وتزود المطورين بالإرشادات العملية التي يحتاجونها للبدء.
-
----
-
-### **4.1. أدوات التطوير الموصى بها**
-
-لضمان سير عملية التطوير بسلاسة وفعالية، نوصي جميع المساهمين باستخدام مجموعة الأدوات التالية. هذه الأدوات تساعد على كتابة كود عالي الجودة ومتناسق، وتسهل إدارة المشروع.
-
-- **محرر الأكواد (Code Editor):** نوصي بشدة باستخدام **Visual Studio Code (VS Code)**. إنه مجاني، قوي، ويدعم العديد من الإضافات (extensions) التي تعزز تجربة المطور.
-- **امتدادات (Extensions) مفيدة لـ VS Code:**
-  - **Prettier:** لتنسيق الكود تلقائيًا (code formatter) وضمان الاتساق في المسافات البادئة والأسطر.
-  - **Live Server:** لإنشاء خادم محلي بسيط يسمح بالمعاينة المباشرة للتغييرات في المتصفح.
-  - **Sass (Live Sass Compiler):** لتجميع ملفات Sass (`.scss`) تلقائيًا إلى ملفات CSS (`.css`).
-  - **ESLint:** لفحص كود JavaScript بحثًا عن الأخطاء المحتملة أو الأنماط غير المتوافقة مع معايير المشروع.
-- **نظام التحكم في الإصدار (Version Control System):** نستخدم **Git** لإدارة التغييرات في الكود. جميع المساهمات يجب أن تتم من خلال Git.
-
----
-
-### **4.2. إعداد بيئة التطوير المحلية**
-
-للبدء في المساهمة، اتبع الخطوات التالية لإعداد بيئة التطوير على جهازك.
-
-1.  **تثبيت Git:** تأكد من أن Git مُثبت على جهازك. إذا لم يكن كذلك، يمكنك تحميله من [الموقع الرسمي](https://git-scm.com/downloads) وتثبيته.
-
-2.  **استنساخ المستودع (Clone the Repository):**
-
-    - افتح نافذة Terminal (في نظام macOS/Linux) أو Git Bash (في نظام Windows).
-    - انتقل إلى المجلد الذي تريد حفظ المشروع فيه.
-    - نفذ الأمر التالي لاستنساخ المستودع:
-      ```bash
-      git clone [URL-المستودع-هنا]
-      ```
-
-3.  **فتح المشروع في VS Code:**
-
-    - بعد استنساخ المستودع، افتح مجلد المشروع في VS Code.
-
-4.  **تجميع Sass (Compile Sass):**
-
-    - إذا كنت تستخدم امتداد Live Sass Compiler، فقط انقر على "Watch Sass" في شريط الحالة السفلي في VS Code. سيقوم الامتداد بتجميع ملفات `.scss` إلى `.css` تلقائيًا.
-
-5.  **تشغيل الخادم المحلي (Run Local Server):**
-
-    - انقر بزر الفأرة الأيمن على ملف `index.html` داخل VS Code.
-    - اختر "Open with Live Server". سيتم فتح الصفحة في متصفحك.
-
-6.  **بدء المساهمة:**
-
-    - أنت الآن جاهز للبدء في كتابة الكود. تذكر دائمًا إنشاء فرع (branch) جديد لكل ميزة أو إصلاح قبل البدء في العمل.
+    You will see a confirmation message once the script has finished running successfully.
+3.  **Install VS Code Extensions:** Open the project in VS Code. Go to the Extensions view (Ctrl+Shift+X) and install the recommended extensions mentioned above.
+4.  **Start Development:** With the structure in place and your extensions installed, you are ready to begin coding. Use **Live Server** to view your changes in real time. Remember to create a new branch for each new feature or bug fix.
