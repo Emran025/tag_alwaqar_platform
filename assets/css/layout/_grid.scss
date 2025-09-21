@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// أنماط الشبكة (Grid Layout)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.container {
+    max-width: var.$breakpoint-xl;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var.$spacing-sm;
+    padding-right: var.$spacing-sm;
+}
+
+.section-spacing {
+    padding-top: var.$spacing-lg;
+    padding-bottom: var.$spacing-lg;
+}
+
+.content-block {
+    margin-bottom: var.$spacing-lg;
+}
+
+// Grid System (Flexbox-based)
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.grid-col {
+    padding-left: var.$spacing-sm;
+    padding-right: var.$spacing-sm;
+    flex-grow: 1;
+
+    // Default to a single column on small screens
+    flex-basis: 100%;
+    max-width: 100%;
+
+    // Responsive columns based on breakpoints
+    @include mix.breakpoint-up(md) {
+        &--1of2 {
+            flex-basis: 50%;
+            max-width: 50%;
+        }
+        &--1of3 {
+            flex-basis: 33.333%;
+            max-width: 33.333%;
+        }
+    }
+}

@@ -1,0 +1,149 @@
+// -----------------------------------------------------------------------------
+// School Registration Page Styling
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+// تنسيق قسم البطل (Hero Section)
+.registration-hero {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-xl 0;
+    text-align: center;
+
+    h1 {
+    font-size: var.$font-size-h1;
+    margin-bottom: var.$spacing-md;
+    @media (max-width: var.$breakpoint-md) {
+        font-size: 3.8rem;
+    }
+    }
+
+    p {
+    font-size: 2.2rem;
+    max-width: 75rem;
+    margin: 0 auto;
+    opacity: 0.9;
+    @media (max-width: var.$breakpoint-md) {
+        font-size: 1.8rem;
+    }
+    }
+}
+
+// Main Layout
+.main-layout {
+    display: flex;
+    flex-direction: column-reverse; 
+    gap: var.$spacing-md;
+    padding: var.$spacing-xm 0;
+
+    @include mixin.breakpoint-up(lg) {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var.$spacing-xm;
+    }
+}
+
+.registration-form {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: var.$spacing-lg;
+  background-color: #fff;
+  
+  border-radius: var.$border-radius-lg;
+  box-shadow: var.$box-shadow-lg;
+
+  // تنسيق مجموعة مربع الاختيار
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: var.$spacing-sm;
+    margin-top: var.$spacing-md;
+
+    input[type='checkbox'] {
+      width: 2rem;
+      height: 2rem;
+      font-family: var.$font-family-primary;
+
+      border: 1px solid var.$color-border;
+      accent-color: var.$color-primary;
+    }
+
+    label {
+      display: inline;
+      font-size: var.$font-size-base;
+
+      a {
+        color: var.$color-accent;
+        text-decoration: none;
+        font-weight: bold;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  
+  .form-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: var.$spacing-md;
+    margin-top: var.$spacing-lg;
+    flex-wrap: wrap;
+
+    .button--large {
+      padding: var.$spacing-sm var.$spacing-lg;
+      font-size: 1.8rem;
+      font-family: var.$font-family-primary;
+    }
+
+    .button--secondary{
+        font-size: 1.4rem;
+        font-family: var.$font-family-primary;
+    }
+  }
+}
+
+// تنسيق قسم طلب المساعدة
+.contact-prompt {
+  padding: var.$spacing-xl 0;
+  background-color: var.$color-background-light;
+
+  h2 {
+    font-size: var.$font-size-h2;
+    color: var.$color-primary;
+    margin-bottom: var.$spacing-md;
+  }
+
+  p {
+    font-size: 1.8rem;
+    color: var.$color-text-dark;
+    max-width: 70rem;
+    margin: 0 auto;
+
+    a {
+      color: var.$color-accent;
+      text-decoration: none;
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// تنسيق خاص بتجاهل تنسيق الـ RTL في بعض الأماكن
+ input,
+ select {
+  &[dir='rtl'] {
+    direction: rtl;
+  }
+  &[dir='ltr'] {
+    direction: ltr;
+  }
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="تواصل معنا للحصول على الدعم أو للاستفسار عن خدمات منصة الوقار. املأ النموذج أو استخدم معلومات الاتصال المباشرة."
+    />
+    <meta
+      name="keywords"
+      content="اتصل بنا, دعم, استفسار, تواصل, نموذج اتصال, بريد إلكتروني, هاتف"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>اتصل بنا - منصة الوقار التعليمية</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body data-page="contact-us">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">من نحن</a>
+              <div class="dropdown-content">
+                <a href="about-us.html">عنا</a>
+                <a href="policies.html">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ادعمنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="about-us.html">من نحن</a></li>
+        <li><a href="policies.html">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="student-registration.html">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="#">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="contact-hero section-spacing">
+        <div class="container text-center">
+          <h1>تواصل معنا</h1>
+          <p>
+            نحن هنا للإجابة على جميع استفساراتكم ومساعدتكم. لا تترددوا في
+            التواصل معنا عبر النموذج أدناه أو باستخدام قنوات الاتصال الأخرى.
+          </p>
+        </div>
+      </section>
+
+      <section class="contact-form-section section-spacing bg-light">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-info">
+              <h2>معلومات الاتصال</h2>
+              <p>
+                <strong>البريد الإلكتروني:</strong> info@alwaqarplatform.com
+              </p>
+              <p><strong>الهاتف:</strong> +966 50 123 4567</p>
+              <p>
+                <strong>العنوان:</strong> المملكة العربية السعودية، الرياض، شارع
+                الأمير محمد بن سلمان
+              </p>
+              <div class="social-links-contact">
+                <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+                <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+                <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+              </div>
+            </div>
+            <form id="contact-form" class="contact-form form">
+              <h2>أرسل رسالة</h2>
+              <div class="form-group">
+                <label for="full-name">الاسم الكامل:</label>
+                <input
+                  type="text"
+                  id="full-name"
+                  name="full-name"
+                  required
+                  placeholder="اسمك الكامل"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">البريد الإلكتروني:</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="name@example.com"
+                />
+              </div>
+              <div class="form-group">
+                <label for="subject">الموضوع:</label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  required
+                  placeholder="موضوع الرسالة"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">رسالتك:</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                  placeholder="اكتب رسالتك هنا..."
+                ></textarea>
+              </div>
+              <div class="form-actions">
+                <a
+                  type="submit"
+                  class="button button--primary button--horizontal-large"
+                >
+                  إرسال الرسالة
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="policies.html">من نحن</a></li>
+              <li><a href="about-us.html">سياساتنا</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="student-registration.html">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="contribute.html">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

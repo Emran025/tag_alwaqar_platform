@@ -1,0 +1,82 @@
+
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+.sidebar {
+    // position:fixed;
+    flex-basis: 30rem; // تم تصغير عرض الشريط الجانبي قليلاً
+    flex-shrink: 0;
+    padding-top: var.$spacing-lg;
+    
+    .sidebar-module {
+        background-color: #fff;
+        padding: var.$spacing-lg var.$spacing-md;
+        border-radius: var.$border-radius-base;
+        box-shadow: var.$box-shadow-base;
+        margin-bottom: var.$spacing-md;
+        
+        h3 {
+            font-size: 2.2rem;
+            color: var.$color-primary;
+            margin-bottom: var.$spacing-md;
+            position: relative;
+            padding-bottom: var.$spacing-sm;
+
+            @include mixin.breakpoint-down(sm) {
+                font-size: var.$font-size-h3;
+            }
+            
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0; 
+                right: 0;
+                width: 5rem;
+                height: 3px;
+                background-color: var.$color-accent;
+                border-radius: 2px;
+            }
+        }
+        p {
+            font-size: var.$font-size-base;
+            line-height: var.$line-height-base;
+            margin-bottom: var.$spacing-md;
+        }
+    }
+
+    
+    // Filter Module
+    .filter-group {
+        margin-bottom: var.$spacing-md;
+        label {
+            display: block;
+            font-size: var.$font-size-base;
+            font-weight: 500;
+            color: var.$color-form-label;
+            margin-bottom: var.$spacing-xs;
+        }
+        select {
+            width: 100%;
+            padding: var.$spacing-sm;
+            border: 1px solid var.$color-form-input-border;
+            border-radius: var.$border-radius-base;
+            font-size: var.$font-size-base;
+            appearance: none; 
+            background-color: #fff;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: left 1rem center; 
+            background-size: 1.5rem;
+            cursor: pointer;
+            &:focus {
+                outline: none;
+                border-color: var.$color-form-input-focus;
+            }
+        }
+    }
+    .filter-apply {
+        margin-top: var.$spacing-sm;
+    }
+}
+

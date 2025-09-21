@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="منصة الوقار التعليمية - بوابتكم للتميز الأكاديمي والمهني. تسجيل المدارس والطلاب والمعلمين ودعم مسيرة التعليم."
+    />
+    <meta
+      name="keywords"
+      content="تعليم, منصة تعليمية, مدارس, طلاب, معلمين, تسجيل, دعم التعليم, الوقار"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>منصة الوقار التعليمية - الرئيسية</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">من نحن</a>
+              <div class="dropdown-content">
+                <a href="about-us.html">عنا</a>
+                <a href="policies.html">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ادعمنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="about-us.html">من نحن</a></li>
+        <li><a href="policies.html">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="student-registration.html">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="hero-section">
+        <div class="container">
+          <div class="hero-content">
+            <h1>بوابة التميز التعليمي للجميع</h1>
+            <p>
+              منصة الوقار: حيث يلتقي الطموح بالفرصة. ندعم المدارس والطلاب
+              والمعلمين لخلق بيئة تعليمية محفزة ومستقبل واعد.
+            </p>
+            <div class="hero-actions">
+              <a href="school-registration.html" class="button button--primary"
+                >سجل مدرستك الآن</a
+              >
+              <a
+                href="about-us-and-policies.html"
+                class="button button--secondary"
+                >اكتشف المزيد عنا</a
+              >
+            </div>
+          </div>
+          <div class="hero-image">
+            <img
+              src="../assets/images/illustrations/hero.jpg"
+              alt="صورة توضيحية للتعليم الرقمي"
+            />
+          </div>
+        </div>
+        <div class="header__elements">
+          <div class="dots">
+            <img src="../assets/images/iconElements/dots.svg" alt="element" />
+          </div>
+        </div>
+      </section>
+
+      <section class="features-section section-spacing">
+        <div class="container">
+          <h2 class="section-title">لماذا منصة الوقار؟</h2>
+          <div class="features-grid">
+            <div class="feature-item">
+              <img src="../assets/images/icons/school.svg" alt="أيقونة مدرسة" />
+              <h3>للمدارس</h3>
+              <p>
+                نقدم للمدارس منصة متكاملة لتسجيل وتوثيق الإنجازات، مما يعزز من
+                مكانتها وشفافيتها.
+              </p>
+              <a href="school-registration.html" class="link-more"
+                >سجل مدرستك</a
+              >
+            </div>
+            <div class="feature-item">
+              <img src="../assets/images/icons/student.svg" alt="أيقونة طالب" />
+              <h3>للطلاب</h3>
+              <p>
+                ندعم الطلاب بتوفير فرص تعليمية مميزة، وتمكينهم من الوصول إلى
+                أفضل المدارس والمعلمين.
+              </p>
+              <a href="student-registration.html" class="link-more"
+                >انضم كطالب</a
+              >
+            </div>
+            <div class="feature-item">
+              <img src="../assets/images/icons/teacher.png" alt="أيقونة معلم" />
+              <h3>للمعلمين</h3>
+              <p>
+                نربط المعلمين المتميزين بالمدارس والطلاب الذين يحتاجون إلى
+                خبراتهم، مع فرص للتطوير المهني.
+              </p>
+              <a href="teacher-registration.html" class="link-more"
+                >سجل كمعلم</a
+              >
+            </div>
+            <div class="feature-item">
+              <img
+                src="../assets/images/icons/handshake.svg"
+                alt="أيقونة دعم"
+              />
+              <h3>للداعمين</h3>
+              <p>
+                مكّنوا الأجيال القادمة من خلال دعمكم للمنصة، للمدارس، أو لحلقات
+                الدراسة المحددة.
+              </p>
+              <a href="contribute.html" class="link-more">ادعم مسيرتنا</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-us-preview section-spacing bg-light">
+        <div class="container">
+          <div class="about-content-grid">
+            <div class="about-text">
+              <h2 class="section-title">من نحن</h2>
+              <p>
+                منصة الوقار التعليمية هي مبادرة تهدف إلى رقمنة وتسهيل الوصول إلى
+                التعليم الجيد في منطقتنا. نحن نؤمن بأن التعليم هو حجر الزاوية
+                لتقدم المجتمعات، ونسعى لتوفير بيئة شفافة وداعمة للجميع.
+              </p>
+              <p>
+                التزامنا ينبع من قيمنا الأساسية: الجودة، الشفافية، والشمولية.
+                نحن نعمل بشغف لبناء جسور بين المؤسسات التعليمية والمستفيدين
+                منها.
+              </p>
+              <a href="about-us.html" class="button button--secondary"
+                >اعرف المزيد عن رؤيتنا</a
+              >
+            </div>
+            <div class="about-image">
+              <img
+                src="../assets/images/illustrations/about-us.jpeg"
+                alt="صورة توضيحية عن رؤية المنصة"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contribute" class="call-to-action section-spacing">
+        <div class="container text-center">
+          <h2 class="section-title">ادعم مسيرة التعليم</h2>
+          <p>
+            مساهمتكم تحدث فرقاً حقيقياً. ساعدونا في تحقيق أهدافنا النبيلة ودعم
+            مستقبل التعليم لأبنائنا.
+          </p>
+          <a
+            href="contribute.html"
+            class="button button--primary button--horizontal-large"
+          >
+            ساهم الآن
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="policies.html">من نحن</a></li>
+              <li><a href="about-us.html">سياساتنا</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="student-registration.html">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="contribute.html">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

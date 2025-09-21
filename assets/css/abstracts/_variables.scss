@@ -1,0 +1,61 @@
+// -----------------------------------------------------------------------------
+// This file contains all Sass variables used across the project.
+// -----------------------------------------------------------------------------
+@use 'sass:color';
+// Colors
+$color-primary: #333; // A deep blue for primary actions and branding.
+$color-text-dark: #333; // Main text color.
+$color-text-light: #fefefe; // Light text for dark backgrounds.
+$color-background-light: #f0f4f7; // A light grey for section backgrounds.
+$color-accent: #DEAB4E;
+$color-background-dark:  color.adjust($color-primary, $lightness: -10%); // Dark background for the footer.
+$color-border: #ffffff4d; // Subtle borders.
+$color-primary-light: #d4d4d4; // 
+$color-secondary: color.adjust($color-primary, $lightness: -10%); 
+
+// Other variables for colors
+$color-form-label: #555; 
+$color-form-input-border: #ffffff4d;
+$color-form-input-focus: $color-accent; 
+$color-form-placeholder: #999; //(Placeholder)
+$color-success: #28a745; // 
+$color-error: #dc3545; // 
+$color-info: #17a2b8; // 
+
+
+// Typography
+// ! fonts
+$Lato: "Lato";
+$Cairo: "Cairo";
+$Tajawal: "Tajawal";
+$Noto-Kufi-Arabic: "Noto Kufi Arabic";
+$font-family-primary: $Cairo, sans-serif;
+$font-size-base-a: 1.2rem;
+$font-size-base: 1.6rem;
+$font-size-h1: 5.6rem;
+$font-size-h2: 4rem;
+$font-size-h3: 2.8rem;
+$line-height-base: 1.6;
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1.5rem;
+$spacing-md: 3rem;
+$spacing-xm: 4.5rem;
+$spacing-lg: 6rem;
+$spacing-xl: 12rem;
+
+//(Border Radius)
+$border-radius-base: 0.8rem;
+$border-radius-lg: 1.5rem;
+$border-radius-xl: 1.8rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+//(Box Shadows) and Other variables
+
+$box-shadow-base: 0 4px 10px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);

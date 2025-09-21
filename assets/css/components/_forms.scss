@@ -1,0 +1,123 @@
+// -----------------------------------------------------------------------------
+// أنماط النماذج (Forms)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+
+
+.form {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: var.$spacing-lg;
+  // تنسيق الزجاج المصنفر (Glassmorphism)
+  background-color: rgba(255, 255, 255, 0.15); // خلفية شبه شفافة
+  border-radius: var.$border-radius-lg;
+  border: 1px solid rgba(255, 255, 255, 0.3); // إطار شبه شفاف
+  backdrop-filter: blur(10px); // تمويه الخلفية
+  -webkit-backdrop-filter: blur(10px); // دعم سفاري
+
+
+  //(fieldset)
+  fieldset {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: var.$border-radius-base;
+    padding: var.$spacing-md;
+    // background-color: rgb(0, 0, 0);
+  }
+
+  // تنسيق عنوان مجموعة الحقول (legend)
+  legend {
+    font-size: var.$font-size-h3;
+    font-weight: bold;
+    color: #fff;
+    padding: 0 var.$spacing-sm;
+    margin-right: var.$spacing-sm;
+  }
+
+  // تنسيق مجموعة حقول النموذج (form-group)
+  .form-group {
+    margin-bottom: var.$spacing-md;
+
+    label {
+      display: block;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: var.$spacing-xs;
+      cursor: pointer;
+    }
+  }
+
+  // تنسيق مجموعة تحميل الملفات
+  .file-upload-group {
+    .file-upload-box {
+      display: flex;
+      align-items: center;
+      gap: var.$spacing-sm;
+      border: 2px dashed rgba(255, 255, 255, 0.5);
+      border-radius: var.$border-radius-base;
+      padding: var.$spacing-sm;
+      background-color: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+
+      input[type='file'] {
+        display: none;
+      }
+
+      .file-name {
+        flex: 1;
+        color: #fff;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .button--primary {
+        flex-shrink: 0;
+      }
+    }
+    .help-text {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: var.$spacing-xs;
+    }
+  }
+
+  // تنسيق مجموعة مربع الاختيار
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: var.$spacing-sm;
+    margin-top: var.$spacing-md;
+
+    input[type='checkbox'] {
+      width: 2rem;
+      height: 2rem;
+      font-family: var.$font-family-primary;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      accent-color: var.$color-primary;
+    }
+
+    label {
+      display: inline;
+      font-size: var.$font-size-base;
+      color: #fff;
+      a {
+        color: var.$color-accent;
+        text-decoration: none;
+        font-weight: bold;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.form input,
+.form select {
+  &[dir='rtl'] {
+    direction: rtl;
+  }
+  &[dir='ltr'] {
+    direction: ltr;
+  }
+}

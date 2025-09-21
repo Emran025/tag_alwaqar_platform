@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدارسنا</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/school-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <section class="school-hero">
+        <div class="container">
+            <h1>اكتشف مدارسنا</h1>
+            <p>
+                استعرض مجموعة مدارسنا المتنوعة واختر الأنسب لك ولعائلتك.
+            </p>
+        </div>
+    </section>
+
+    <main class="main-content container">
+        <div class="school-main-layout">
+
+            <section class="schools-grid-container">
+                <h2 class="section-title">جميع المدارس</h2>
+                
+                <div class="schools-grid">
+                    <article class="school-card">
+                        <img src="images/school-1.jpg" alt="مدرسة الأمل" class="school-thumbnail">
+                        <div class="school-content">
+                            <h3 class="school-title"><a href="#">مدرسة الأمل الدولية</a></h3>
+                            <p class="school-location">الرياض، حي النرجس</p>
+                            <p class="school-info">
+                                مدرسة دولية تتميز بمنهجها المتقدم والمرافق الحديثة.
+                            </p>
+                            <a href="#" class="button button--small button--primary">اكتشف المزيد</a>
+                        </div>
+                    </article>
+
+                    <article class="school-card">
+                        <img src="images/school-2.jpg" alt="مدرسة النجاح" class="school-thumbnail">
+                        <div class="school-content">
+                            <h3 class="school-title"><a href="#">مدرسة النجاح الأهلية</a></h3>
+                            <p class="school-location">جدة، حي الشاطئ</p>
+                            <p class="school-info">
+                                منهج وطني قوي مع تركيز على الأنشطة اللاصفية.
+                            </p>
+                            <a href="#" class="button button--small button--primary">اكتشف المزيد</a>
+                        </div>
+                    </article>
+                    
+                    <article class="school-card">
+                        <img src="images/school-3.jpg" alt="مدرسة الإبداع" class="school-thumbnail">
+                        <div class="school-content">
+                            <h3 class="school-title"><a href="#">مدرسة الإبداع للعلوم</a></h3>
+                            <p class="school-location">الدمام، حي الزهور</p>
+                            <p class="school-info">
+                                متخصصة في تدريس العلوم والتكنولوجيا والهندسة والرياضيات (STEM).
+                            </p>
+                            <a href="#" class="button button--small button--primary">اكتشف المزيد</a>
+                        </div>
+                    </article>
+                    <article class="school-card">
+                        <img src="images/school-4.jpg" alt="مدرسة المستقبل" class="school-thumbnail">
+                        <div class="school-content">
+                            <h3 class="school-title"><a href="#">مدرسة المستقبل المشرق</a></h3>
+                            <p class="school-location">الرياض، حي السليمانية</p>
+                            <p class="school-info">
+                                بيئة تعليمية محفزة للطلاب من جميع الأعمار.
+                            </p>
+                            <a href="#" class="button button--small button--primary">اكتشف المزيد</a>
+                        </div>
+                    </article>
+
+                </div>
+
+                <nav class="pagination">
+                    <ul>
+                        <li><a href="#" class="active">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">التالي</a></li>
+                    </ul>
+                </nav>
+
+            </section>
+
+            <aside class="school-sidebar">
+                <div class="sidebar-module search-module">
+                    <h3>البحث عن مدرسة</h3>
+                    <form class="search-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="البحث..." class="search-input">
+                            <button type="submit" class="search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="sidebar-module filter-module">
+                    <h3>التصفية حسب</h3>
+                    <div class="filter-group">
+                        <label for="city">المدينة</label>
+                        <select id="city">
+                            <option>الكل</option>
+                            <option>الرياض</option>
+                            <option>جدة</option>
+                            <option>الدمام</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="curriculum">المنهج الدراسي</label>
+                        <select id="curriculum">
+                            <option>الكل</option>
+                            <option>وطني</option>
+                            <option>دولي</option>
+                            <option>STEM</option>
+                        </select>
+                    </div>
+                </div>
+                
+                 <div class="sidebar-module contact-module">
+                    <h3>تواصل معنا</h3>
+                    <p>هل لديك استفسار؟ تواصل معنا مباشرة.</p>
+                    <a href="#" class="button button--secondary">أرسل استفسارك</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    </body>
+</html>

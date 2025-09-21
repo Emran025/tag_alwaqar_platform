@@ -1,0 +1,821 @@
+﻿// -----------------------------------------------------------------------------
+// This file contains all Sass variables used across the project.
+// -----------------------------------------------------------------------------
+@use 'sass:color';
+// Colors
+$color-primary: #333; // A deep blue for primary actions and branding.
+$color-text-dark: #333; // Main text color.
+$color-text-light: #fefefe; // Light text for dark backgrounds.
+$color-background-light: #f0f4f7; // A light grey for section backgrounds.
+$color-accent: #DEAB4E;
+$color-background-dark:  color.adjust($color-primary, $lightness: -10%); // Dark background for the footer.
+$color-border: #ffffff4d; // Subtle borders.
+$color-primary-light: #d4d4d4; // 
+$color-secondary: color.adjust($color-primary, $lightness: -10%); 
+
+// Other variables for colors
+$color-form-label: #555; 
+$color-form-input-border: #ffffff4d;
+$color-form-input-focus: $color-accent; 
+$color-form-placeholder: #999; //(Placeholder)
+$color-success: #28a745; // 
+$color-error: #dc3545; // 
+$color-info: #17a2b8; // 
+
+
+// Typography
+// ! fonts
+$Lato: "Lato";
+$Cairo: "Cairo";
+$Tajawal: "Tajawal";
+$Noto-Kufi-Arabic: "Noto Kufi Arabic";
+$font-family-primary: $Cairo, sans-serif;
+$font-size-base-a: 1.2rem;
+$font-size-base: 1.6rem;
+$font-size-h1: 5.6rem;
+$font-size-h2: 4rem;
+$font-size-h3: 2.8rem;
+$line-height-base: 1.6;
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1.5rem;
+$spacing-md: 3rem;
+$spacing-xm: 4.5rem;
+$spacing-lg: 6rem;
+$spacing-xl: 12rem;
+
+//(Border Radius)
+$border-radius-base: 0.8rem;
+$border-radius-lg: 1.5rem;
+$border-radius-xl: 1.8rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+//(Box Shadows) and Other variables
+
+$box-shadow-base: 0 4px 10px rgba(0, 0, 0, 0.05);
+$box-shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+
+
+
+
+// -----------------------------------------------------------------------------
+// هذا الملف يحتوي على جميع Mixins المستخدمة في المشروع.
+// -----------------------------------------------------------------------------
+@use 'variables' as var;
+@use 'sass:color';
+
+// Mixin لنقاط التوقف (Media Queries)
+// يتيح تطبيق أنماط متجاوبة بسهولة.
+// الاستخدام: @include breakpoint-up(md) { ... }
+@mixin breakpoint-up($size) {
+    @if $size == sm {
+        @media (min-width: var.$breakpoint-sm) { @content; }
+    } @else if $size == md {
+        @media (min-width: var.$breakpoint-md) { @content; }
+    } @else if $size == lg {
+        @media (min-width: var.$breakpoint-lg) { @content; }
+    } @else if $size == xl {
+        @media (min-width: var.$breakpoint-xl) { @content; }
+    }
+}
+
+// Mixin لنقاط التوقف (Desktop-first Media Queries)
+// الاستخدام: @include breakpoint-down(md) { ... }
+@mixin breakpoint-down($size) {
+    @if $size == sm {
+        @media (max-width: var.$breakpoint-sm) { @content; }
+    } @else if $size == md {
+        @media (max-width: var.$breakpoint-md) { @content; }
+    } @else if $size == lg {
+        @media (max-width: var.$breakpoint-lg) { @content; }
+    } @else if $size == xl {
+        @media (max-width: var.$breakpoint-xl) { @content; }
+    }
+}
+
+@mixin font($fontFamily, $fontSize, $fontWeight: 400, $fontStyle: normal) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    font-style: $fontStyle;
+}
+
+// Mixin لمركزة العناصر (Flexbox Centering)
+// يتيح مركزة أي عنصر باستخدام Flexbox.
+// الاستخدام: @include flex-center;
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Mixin لتصميم الأزرار
+// يتيح تطبيق أنماط الأزرار الأساسية بسرعة.
+// الاستخدام: @include button-style($color-primary, $color-text-light);
+@mixin button-style($bg-color, $text-color) {
+    display: inline-block;
+    padding: var.$spacing-sm var.$spacing-md;
+    border-radius: var.$border-radius-base;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: $bg-color;
+    color: $text-color;
+
+    &:hover {
+        background-color: color.adjust($bg-color, $lightness: -10%);
+        transform: translateY(-2px);
+    }
+}
+
+
+
+// -----------------------------------------------------------------------------
+// أنماط صفحة "من نحن والسياسات" (about-us-and-policies.html)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin; // تأكد من وجود ملف mixins
+
+.page-hero {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-lg var.$spacing-md; // استخدم المتغيرات لضبط المسافات
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    h1 {
+        font-size: clamp(3.2rem, 6vw, 4.8rem); // تجاوبي
+        margin-bottom: var.$spacing-sm;
+        position: relative;
+        z-index: 2;
+    }
+    p {
+        font-size: clamp(1.6rem, 2.5vw, 1.8rem); // تجاوبي
+        max-width: 800px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        line-height: 1.7;
+    }
+
+    // تأثيرات بصرية إضافية للخلفية إذا رغبت
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at top left, rgba(255,255,255,0.1), transparent 50%),
+                    radial-gradient(circle at bottom right, rgba(255,255,255,0.1), transparent 50%);
+        z-index: 1;
+    }
+}
+
+.about-section, .policies-section {
+    padding: var.$spacing-md var.$spacing-md; // استخدام متغيرات المسافات
+    .section-title {
+        font-size: clamp(2.8rem, 4vw, 3.8rem); // تجاوبي
+        margin-bottom: var.$spacing-lg;
+        text-align: center;
+        color: var.$color-primary;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var.$color-secondary;
+            margin: var.$spacing-sm auto 0;
+            border-radius: var.$border-radius-base;
+        }
+    }
+    .section-description { // نمط لوصف القسم
+        font-size: 1.8rem;
+        color: var.$color-text-dark;
+        max-width: 900px;
+        margin: - var.$spacing-sm auto var.$spacing-xl; // مسافة أكبر بعد الوصف
+        line-height: 1.7;
+    }
+}
+
+.about-section {
+    .content-block {
+        background-color: #fff;
+        border-radius: var.$border-radius-lg;
+        box-shadow: var.$box-shadow-base;
+        padding: var.$spacing-xl; // مساحة داخلية أكبر
+        margin-bottom: var.$spacing-xl; // مسافة بين الكتل
+        // @include mixin.transition-ease; // مثال على استخدام الميكسن
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: var.$box-shadow-base;
+        }
+
+        h3 {
+            font-size: clamp(2.2rem, 3vw, 3rem); // تجاوبي
+            color: var.$color-primary;
+            margin-bottom: var.$spacing-md;
+            display: flex;
+            align-items: center;
+
+            &::before { // أيقونة صغيرة قبل العنوان
+                content: ''; // ستكون صورة الخلفية هي الأيقونة
+                width: 32px;
+                height: 32px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: var.$spacing-sm;
+                flex-shrink: 0;
+            }
+        }
+        p {
+            font-size: 1.7rem;
+            line-height: 1.8;
+            color: var.$color-text-dark;
+        }
+
+        .values-list {
+            list-style-type: none;
+            padding-right: 0;
+            margin-top: var.$spacing-lg;
+
+            li {
+                margin-bottom: var.$spacing-md;
+                position: relative;
+                font-size: 1.7rem;
+                line-height: 1.6;
+                color: var.$color-text-dark;
+                display: flex;
+                align-items: flex-start;
+
+                strong {
+                    color: var.$color-secondary;
+                    margin-left: var.$spacing-xs;
+                    display: inline-block;
+                }
+
+                .value-icon {
+                    content: '';
+                    width: 24px;
+                    height: 24px;
+                    background-color: var.$color-primary; // لون خلفية الأيقونة
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: var.$color-text-light;
+                    font-weight: bold;
+                    font-size: 1.4rem;
+                    margin-left: var.$spacing-sm;
+                    flex-shrink: 0; // يمنع الأيقونة من الانكماش
+                }
+                // سيتم تحديد صورة الخلفية لكل أيقونة عبر JavaScript أو في CSS مخصص
+                &:nth-child(1) .value-icon { background-image: url('path/to/quality-icon.svg'); background-size: 60%; background-repeat: no-repeat; background-position: center;}
+                &:nth-child(2) .value-icon { background-image: url('path/to/transparency-icon.svg'); background-size: 60%; background-repeat: no-repeat; background-position: center;}
+                &:nth-child(3) .value-icon { background-image: url('path/to/inclusivity-icon.svg'); background-size: 60%; background-repeat: no-repeat; background-position: center;}
+                &:nth-child(4) .value-icon { background-image: url('path/to/innovation-icon.svg'); background-size: 60%; background-repeat: no-repeat; background-position: center;}
+                &:nth-child(5) .value-icon { background-image: url('path/to/responsibility-icon.svg'); background-size: 60%; background-repeat: no-repeat; background-position: center;}
+            }
+        }
+    }
+}
+
+.policies-section {
+    background-color: var.$color-background-light; // خلفية فاتحة للقسم
+    .policy-item {
+        background-color: #fff;
+        border-radius: var.$border-radius-base;
+        box-shadow: var.$box-shadow-base;
+        padding: var.$spacing-xl; // مساحة داخلية أكبر
+        margin-bottom: var.$spacing-xl; // مسافة بين السياسات
+        // @include mixin.transition-ease;
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: var.$box-shadow-base;
+        }
+
+        h3 {
+            font-size: clamp(2rem, 2.8vw, 2.8rem); // تجاوبي
+            color: var.$color-primary;
+            border-bottom: 2px solid var.$color-border;
+            padding-bottom: var.$spacing-sm;
+            margin-bottom: var.$spacing-lg;
+            display: flex;
+            align-items: center;
+
+            .policy-icon {
+                content: ''; // سيتم استبدالها بصورة الأيقونة
+                width: 36px;
+                height: 36px;
+                background-size: contain;
+                background-repeat: no-repeat;
+                margin-left: var.$spacing-sm;
+                flex-shrink: 0;
+                // قم بتحديد صورة الأيقونة لكل سياسة هنا أو في JS
+                &.privacy { background-image: url('path/to/privacy-icon.svg'); }
+                &.terms { background-image: url('path/to/terms-icon.svg'); }
+                &.community { background-image: url('path/to/community-icon.svg'); }
+            }
+        }
+        h4 {
+            font-size: clamp(1.8rem, 2.5vw, 2.2rem); // تجاوبي
+            color: var.$color-secondary;
+            margin-top: var.$spacing-xl;
+            margin-bottom: var.$spacing-md;
+            position: relative;
+            padding-bottom: var.$spacing-xs;
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 50px;
+                height: 2px;
+                background-color: var.$color-border;
+            }
+        }
+        p {
+            font-size: 1.7rem;
+            line-height: 1.7;
+            margin-bottom: var.$spacing-md;
+            color: var.$color-text-dark;
+        }
+        ul {
+            list-style-type: none;
+            padding-right: 0;
+            margin-top: var.$spacing-md;
+            li {
+                margin-bottom: var.$spacing-sm;
+                position: relative;
+                font-size: 1.7rem;
+                line-height: 1.6;
+                color: var.$color-text-dark;
+                display: flex;
+                align-items: flex-start; // محاذاة الأيقونة مع بداية النص
+
+                .guideline-icon { // أيقونة إرشادات المجتمع
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background-color: var.$color-secondary;
+                    border-radius: 50%;
+                    margin-left: var.$spacing-sm;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-image: url('path/to/check-icon.svg'); // أيقونة صح مثلاً
+                    background-size: 60%;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                }
+            }
+        }
+    }
+}
+
+.contact-us-prompt {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-xl var.$spacing-md; // مساحة داخلية كبيرة
+    text-align: center;
+    border-radius: var.$border-radius-lg; // حواف مستديرة للقسم
+    margin: var.$spacing-xl auto; // توسيط وتحديد هامش
+    max-width: 1000px;
+    box-shadow: var.$box-shadow-base;
+
+    h2 {
+        font-size: clamp(2.5rem, 4vw, 3.8rem); // تجاوبي
+        color: var.$color-text-light;
+        margin-bottom: var.$spacing-md;
+    }
+    p {
+        font-size: clamp(1.6rem, 2.5vw, 1.9rem); // تجاوبي
+        color: var.$color-text-light;
+        line-height: 1.7;
+        margin-bottom: var.$spacing-lg;
+
+        a {
+            color: var.$color-text-light;
+            text-decoration: underline;
+            font-weight: bold;
+            &:hover {
+                color: var.$color-secondary; // لون عند التحويم
+            }
+        }
+        .button--secondary { // نمط زر التواصل
+            background-color: var.$color-text-light;
+            color: var.$color-primary;
+            padding: var.$spacing-sm var.$spacing-lg;
+            border-radius: var.$border-radius-lg; // زر دائري
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: var.$spacing-md;
+            // @include mixin.transition-ease;
+
+            &:hover {
+                background-color: darken(var.$color-text-light, 5%);
+                color: var.$color-secondary;
+                transform: translateY(-2px);
+            }
+        }
+    }
+}
+
+
+
+
+
+========================================================================================================
+========================================================================================================
+========================================================================================================
+
+
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="اكتشف منصة الوقار التعليمية: رؤيتنا الملهمة، رسالتنا الهادفة، وقيمنا الراسخة. اطلع على سياسات الخصوصية وشروط الاستخدام وإرشادات المجتمع التي تضمن بيئة تعليمية آمنة وشفافة للجميع."
+    />
+    <meta
+      name="keywords"
+      content="من نحن, سياسات, خصوصية, شروط الخدمة, رؤية, رسالة, قيم, الوقار, تعليم, منصة تعليمية, مجتمع تعليمي"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>من نحن والسياسات - منصة الوقار التعليمية</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body data-page="about-us-and-policies">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn active">من نحن</a>
+              <div class="dropdown-content">
+                <a href="about-us-and-policies.html">عنا</a>
+                <a href="about-us-and-policies.html#policies-section"
+                  >سياساتنا</a
+                >
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="#contribute" class="button button--primary">ادعمنا</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <h1>من نحن والسياسات في منصة الوقار</h1>
+          <p>
+            في منصة الوقار، نؤمن بقوة التعليم في بناء المستقبل. اكتشف رؤيتنا
+            التي تلهمنا، رسالتنا التي تقودنا، وقيمنا التي نرتكز عليها. كما ندعوك
+            للاطلاع على سياساتنا الشاملة المصممة لضمان بيئة تعليمية آمنة، عادلة
+            وشفافة للجميع.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section bg-light">
+        <div class="container">
+          <h2 class="section-title">منصة الوقار: رؤيتنا، رسالتنا، وقيمنا</h2>
+          <p class="section-description">
+            نحن نلتزم بتقديم تجربة تعليمية استثنائية مبنية على مبادئ راسخة
+            وغايات واضحة، لتمكين كل فرد من تحقيق إمكاناته الكاملة.
+          </p>
+
+          <div class="content-block">
+            <h3><span class="icon vision-icon"></span>رؤيتنا الملهمة</h3>
+            <p>
+              أن نكون المنصة التعليمية الرائدة والمفضلة في العالم العربي
+              والعالم، نُمكِّن الأفراد والمؤسسات من تحقيق أقصى إمكاناتهم
+              التعليمية والمهنية، ونساهم بفاعلية في بناء مجتمع معرفي مزدهر
+              ومبتكر، يواكب تحديات المستقبل ويصنع فرصًا جديدة.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3><span class="icon mission-icon"></span>رسالتنا الهادفة</h3>
+            <p>
+              توفير بيئة تعليمية رقمية شاملة، آمنة، وداعمة، تربط بكفاءة بين
+              المدارس المتميزة، الطلاب الطموحين، والمعلمين ذوي الخبرة العالية.
+              نحن نقدم أدوات وموارد تعليمية مبتكرة تُعزز جودة التعليم، تُسهّل
+              الوصول إليه، وتُثري تجربة التعلم، مع الالتزام المطلق بالشفافية
+              والمسؤولية المجتمعية تجاه كل أصحاب المصلحة.
+            </p>
+          </div>
+
+          <div class="content-block">
+            <h3>قيمنا الأساسية التي نؤمن بها</h3>
+            <ul class="values-list">
+              <li>
+                <span class="icon quality-icon"></span>
+                <strong>الجودة والتميز:</strong> الالتزام الراسخ بتقديم أعلى
+                المعايير التعليمية والخدمات التقنية المبتكرة، لضمان تجربة تعلم
+                لا مثيل لها.
+              </li>
+              <li>
+                <span class="icon transparency-icon"></span>
+                <strong>الشفافية والنزاهة:</strong> الوضوح التام والصراحة في
+                جميع تعاملاتنا، سياساتنا، وعملياتنا، لبناء الثقة والمصداقية مع
+                مستخدمينا وشركائنا.
+              </li>
+              <li>
+                <span class="icon inclusivity-icon"></span>
+                <strong>الشمولية والإنصاف:</strong> توفير فرص تعليمية متساوية
+                للجميع، بغض النظر عن الخلفية الاجتماعية، القدرات، أو الموقع
+                الجغرافي، لتمكين كل فرد من تحقيق أحلامه.
+              </li>
+              <li>
+                <span class="icon innovation-icon"></span>
+                <strong>الابتكار والتطوير المستمر:</strong> البحث الدائم عن حلول
+                تعليمية وتقنية رائدة، وتبني أحدث المنهجيات لتطوير تجربة التعلم
+                والارتقاء بها.
+              </li>
+              <li>
+                <span class="icon responsibility-icon"></span>
+                <strong>المسؤولية المجتمعية والأخلاقية:</strong> الالتزام العميق
+                تجاه مجتمعنا التعليمي والعالمي، والمساهمة الفاعلة في تنميته
+                وتطوره، مع مراعاة القيم الأخلاقية في كل جانب من جوانب عملنا.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="policies-section" class="policies-section">
+        <div class="container">
+          <h2 class="section-title">سياسات منصة الوقار التعليمية</h2>
+          <p class="section-description">
+            تُشكل سياساتنا حجر الزاوية في بناء بيئة تعليمية آمنة وموثوقة. يرجى
+            الاطلاع عليها لضمان فهم شامل لحقوقكم ومسؤولياتكم كمستخدمين لمنصة
+            الوقار.
+          </p>
+
+          <div class="policy-item" id="privacy-policy">
+            <h3>
+              <span class="icon privacy-icon"></span> 1. سياسة الخصوصية وحماية
+              البيانات
+            </h3>
+            <p>
+              تلتزم منصة الوقار التزامًا مطلقًا بحماية خصوصية مستخدميها وسلامة
+              بياناتهم الشخصية. تُشرح هذه السياسة بوضوح كيفية قيامنا بجمع
+              واستخدام وتخزين وحماية معلوماتكم الشخصية، وكيف يمكنكم التحكم بها.
+            </p>
+            <h4>1.1. جمع المعلومات الشخصية</h4>
+            <p>
+              نقوم بجمع المعلومات التي تقدمونها لنا طواعية ومباشرة عند التسجيل
+              أو استخدام خدماتنا، مثل الاسم الكامل، البريد الإلكتروني، رقم
+              الهاتف، تاريخ الميلاد، ومعلومات خاصة بالدور (مدرسة، طالب، معلم).
+              كما نجمع بيانات الاستخدام المتعلقة بتفاعلكم مع المنصة (مثل الصفحات
+              التي تزورونها، وقت التصفح، الدورات التي تلتحقون بها) لتحسين
+              تجربتكم.
+            </p>
+            <h4>1.2. استخدام المعلومات</h4>
+            <ul>
+              <li>
+                <span class="icon check-icon"></span>
+                لتقديم وتحسين وتخصيص خدماتنا التعليمية ومنتجاتنا بما يلبي
+                احتياجاتكم.
+              </li>
+              <li>
+                <span class="icon check-icon"></span>
+                للتواصل معكم بخصوص حسابكم، تحديثات الخدمات، أو الإعلانات المهمة.
+              </li>
+              <li>
+                <span class="icon check-icon"></span>
+                لتحليل أنماط الاستخدام وتخصيص تجربتكم التعليمية، وتقديم توصيات
+                ذات صلة.
+              </li>
+              <li>
+                <span class="icon check-icon"></span>
+                لضمان الامتثال للمتطلبات القانونية والتنظيمية وحماية حقوق المنصة
+                والمستخدمين.
+              </li>
+            </ul>
+            <h4>1.3. مشاركة المعلومات</h4>
+            <p>
+              نحن لا نبيع، نؤجر، أو نتاجر بمعلوماتكم الشخصية لأطراف ثالثة لأغراض
+              تسويقية. قد نشاركها فقط مع مقدمي الخدمات الموثوقين الذين يعملون
+              بالنيابة عنا (مثل استضافة الخوادم، معالجة الدفع، تحليلات
+              البيانات)، مع ضمان التزامهم الصارم بمعايير حماية البيانات
+              والخصوصية المشابهة لمعاييرنا.
+            </p>
+            <h4>1.4. أمن وسلامة البيانات</h4>
+            <p>
+              نتخذ إجراءات أمنية تقنية وتنظيمية صارمة ومتعددة الطبقات لحماية
+              معلوماتكم من الوصول غير المصرح به، التعديل، الكشف، أو التدمير.
+              يشمل ذلك التشفير المتقدم (مثل HTTPS)، حماية كلمات المرور القوية،
+              التحكم في الوصول، والمراجعات الأمنية الدورية.
+            </p>
+            <h4>1.5. حقوق المستخدم</h4>
+            <p>
+              يحق لكم الوصول إلى معلوماتكم الشخصية، تصحيحها، تحديثها، أو طلب
+              حذفها في أي وقت. يمكنكم ممارسة هذه الحقوق من خلال إعدادات حسابكم
+              أو بالتواصل معنا مباشرة.
+            </p>
+          </div>
+
+          <div class="policy-item" id="terms">
+            <h3>
+              <span class="icon terms-icon"></span> 2. شروط الخدمة والاستخدام
+            </h3>
+            <p>
+              تحدد شروط الخدمة هذه القواعد واللوائح الأساسية التي تحكم استخدامكم
+              لمنصة الوقار التعليمية وجميع خدماتها. باستخدامكم للمنصة، فإنكم
+              تؤكدون موافقتكم على الالتزام بهذه الشروط بالكامل.
+            </p>
+            <h4>2.1. قبول الشروط</h4>
+            <p>
+              بدخولكم إلى هذه المنصة، تصفحها، أو استخدام أي من خدماتها، فإنكم
+              توافقون صراحة على الالتزام بشروط الخدمة هذه وجميع القوانين
+              واللوائح المعمول بها. إذا كنتم لا توافقون على أي جزء من هذه
+              الشروط، فيجب عليكم الامتناع عن استخدام المنصة.
+            </p>
+            <h4>2.2. الأهلية والاستخدام المشروع للمنصة</h4>
+            <p>
+              يجب أن تكونوا في السن القانوني (18 عامًا على الأقل) لاستخدام
+              المنصة أو الحصول على موافقة صريحة من ولي أمركم إذا كنتم طالبًا
+              قاصرًا. لا يجوز استخدام المنصة لأي غرض غير قانوني، غير أخلاقي، أو
+              غير مصرح به، بما في ذلك على سبيل المثال لا الحصر، نشر المحتوى
+              المسيء، أو انتهاك حقوق الملكية الفكرية.
+            </p>
+            <h4>2.3. حقوق الملكية الفكرية</h4>
+            <p>
+              جميع المحتويات المعروضة على المنصة، بما في ذلك النصوص، الرسومات،
+              الشعارات، الأيقونات، الصور، مقاطع الفيديو، الملفات الصوتية،
+              والبرمجيات، هي ملك حصري لمنصة الوقار أو لمرخصيها وهي محمية بموجب
+              قوانين الملكية الفكرية الدولية والمحلية. لا يجوز نسخها، إعادة
+              إنتاجها، أو استخدامها دون إذن كتابي مسبق.
+            </p>
+            <h4>2.4. إنهاء الخدمة والتعليق</h4>
+            <p>
+              نحتفظ بالحق المطلق في إنهاء أو تعليق وصولكم إلى المنصة وخدماتها
+              على الفور، دون إشعار مسبق أو تحمل أي مسؤولية، لأي سبب كان، بما في
+              ذلك على سبيل المثال لا الحصر، خرقكم لأي من شروط الخدمة هذه، أو في
+              حالة الاشتباه في نشاط غير قانوني.
+            </p>
+            <h4>2.5. إخلاء المسؤولية وحدودها</h4>
+            <p>
+              تُقدم المنصة "كما هي" و"كما هي متاحة" دون أي ضمانات من أي نوع.
+              منصة الوقار لا تضمن خلو المنصة من الأخطاء أو توفرها بشكل دائم. في
+              أقصى حد يسمح به القانون، لن تكون منصة الوقار مسؤولة عن أي أضرار
+              مباشرة أو غير مباشرة ناتجة عن استخدام المنصة.
+            </p>
+          </div>
+
+          <div class="policy-item" id="community-guidelines">
+            <h3>
+              <span class="icon community-icon"></span> 3. إرشادات المجتمع
+              والسلوك
+            </h3>
+            <p>
+              للحفاظ على بيئة تعليمية إيجابية، داعمة، ومحترمة للجميع، يرجى
+              الالتزام بالإرشادات التالية عند التفاعل مع منصة الوقار ومستخدميها
+              من طلاب، معلمين، وإداريين:
+            </p>
+            <ul>
+              <li>
+                <span class="icon handshake-icon"></span>
+                <strong>الاحترام المتبادل والتواصل الإيجابي:</strong> تعامل مع
+                الجميع باستخدام لغة مهذبة ومحترمة. تجنب التنابز بالألقاب،
+                الإهانات، أو أي شكل من أشكال التمييز أو التنمر.
+              </li>
+              <li>
+                <span class="icon content-icon"></span>
+                <strong>المحتوى المناسب والأصلي:</strong> تأكد من أن أي محتوى
+                تقوم بنشره (نصوص، صور، ملفات) مناسب للبيئة التعليمية، لا ينتهك
+                حقوق الملكية الفكرية للآخرين، ولا يحتوي على مواد مسيئة أو غير
+                قانونية.
+              </li>
+              <li>
+                <span class="icon privacy-shield-icon"></span>
+                <strong>حماية الخصوصية الشخصية:</strong> لا تشارك معلومات شخصية
+                خاصة بك أو بالآخرين (مثل أرقام الهواتف، العناوين، كلمات المرور)
+                على الملأ أو بدون موافقتهم الصريحة.
+              </li>
+              <li>
+                <span class="icon alert-icon"></span>
+                <strong>الأمان والإبلاغ الفوري:</strong> إذا صادفت أي سلوك
+                مشبوه، محتوى غير لائق، أو انتهاك لهذه الإرشادات، يرجى الإبلاغ
+                عنه لفريق دعم الوقار فورًا للمساعدة في الحفاظ على أمان مجتمعنا.
+              </li>
+              <li>
+                <span class="icon collaborate-icon"></span>
+                <strong>التعاون والبناء:</strong> شجع على النقاش البناء، تبادل
+                المعرفة، وتقديم الدعم لزملائك الطلاب والمعلمين لتعزيز تجربة
+                التعلم للجميع.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-us-prompt">
+        <div class="container">
+          <h2>هل لديك أسئلة أو تحتاج إلى توضيح بشأن سياساتنا؟</h2>
+          <p>
+            فريق دعم منصة الوقار مستعد دائمًا لمساعدتك! إذا كان لديكم أي
+            استفسارات، كنتم بحاجة إلى توضيح بشأن أي من سياساتنا، أو ترغبون في
+            تقديم ملاحظات، يرجى
+            <a href="contact-us.html" class="button button--secondary"
+              ><span class="icon chat-icon"></span>التواصل مع فريقنا المختص</a
+            >.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about-us-and-policies.html">من نحن</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="student-registration.html">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="#contribute">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

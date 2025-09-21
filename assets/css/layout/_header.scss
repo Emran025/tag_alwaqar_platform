@@ -1,0 +1,408 @@
+// -----------------------------------------------------------------------------
+// أنماط الترويسة (Header)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.main-header {
+    background-color: var.$color-text-light;
+    padding: var.$spacing-sm 0;
+    box-shadow: var.$box-shadow-base;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        a {
+            display: flex;
+            align-items: center;
+            text-decoration: none; // لمنع الخط تحت الشعار
+
+            img {
+                height: 40px;
+                margin-left: 0.5rem; // مسافة بين الصورة والنص
+            }
+
+            span {
+                margin-right: 1rem;
+                font-size: 2.4rem;
+                font-weight: bold;
+                color: var.$color-primary;
+            }
+        }
+    }
+
+    .main-nav {
+        display: none; // افتراضيًا، مخفي على الجوال
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+
+            li {
+                margin-right: var.$spacing-md;
+                position: relative; // لإظهار القوائم المنسدلة بشكل صحيح
+
+                &:last-child {
+                    margin-right: 0; // إزالة المسافة من آخر عنصر
+                }
+                
+                &:hover {
+                                        color: var.$color-accent;
+                    text-decoration: underline; // لضمان إزالة الخط السفلي إذا كان رابط
+
+                }
+            }
+
+            a {
+                color: var.$color-text-dark;
+                font-weight: 500;
+                padding: 0.5rem 1rem;
+
+                // transition: color 0.3s ease, background-color 0.3s ease;
+                // text-decoration: none;
+
+                &.button--primary {
+                    color: var.$color-text-light;
+                    margin-left:  15px;
+                    border: 2px solid var.$color-primary;
+
+                }
+
+
+            }
+        }
+    }
+
+    // القائمة المنسدلة (Dropdown)
+    .dropdown {
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: var.$color-text-light;
+            min-width: 160px;
+            box-shadow: var.$box-shadow-base;
+            z-index: 1;
+
+            border-radius: var.$border-radius-base;
+            padding: var.$spacing-xs 0; // تباعد داخلي
+
+            a {
+                color: var.$color-text-dark;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+                text-align: right;
+                font-weight: normal; // إعادة تعيين وزن الخط
+
+                &:hover {
+                    background-color: var.$color-background-light;
+                }
+            }
+        }
+
+        &:hover .dropdown-content {
+            display: block;
+        }
+    }
+
+    // زر تسجيل الدخول (Login Button) داخل الـ header
+    .login-button {
+        color: var.$color-primary;
+        padding: 0.6rem 1.2rem;
+        border-radius: var.$border-radius-base;
+        font-weight: 700;
+        margin-right: var.$spacing-sm; // مسافة بينه وبين العناصر الأخرى
+
+        &:hover {
+            background-color: var.$color-primary;
+            color: var.$color-accent;
+            text-decoration: underline; // لضمان إزالة الخط السفلي إذا كان رابط
+
+        }
+    }
+
+    // زر تبديل القائمة (Menu Toggle) للجوال
+    .menu-toggle {
+        display: block; // افتراضيًا، يظهر زر القائمة على الجوال
+        background: none;
+        border: none;
+        font-size: 2.4rem; // تم تعديل الحجم ليتناسب مع HTML
+        cursor: pointer;
+        color: var.$color-text-dark;
+    }
+
+    // على الشاشات الأكبر من 768px، أظهر القائمة الرئيسية وأخفِ زر القائمة
+    @include mix.breakpoint-up(md) {
+        .main-nav {
+            display: flex;
+        }
+        .menu-toggle {
+            display: none;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// أنماط نافذة الحوار (Dialog Overlay - Login Dialog)
+// -----------------------------------------------------------------------------
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+        display: flex;
+    }
+
+    .dialog-container {
+        background-color: var.$color-text-light;
+        border-radius: var.$border-radius-base;
+        box-shadow: var.$box-shadow-lg;
+        width: 90%;
+        max-width: 400px;
+        padding: var.$spacing-md;
+        position: relative;
+        animation: dialogFadeIn 0.3s ease;
+    }
+
+    @keyframes dialogFadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .dialog-close {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var.$color-text-dark;
+    }
+
+    .dialog-title {
+        text-align: center;
+        margin-bottom: var.$spacing-md;
+        color: var.$color-primary;
+    }
+
+    .login-form {
+        .form-group {
+            margin-bottom: var.$spacing-sm;
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: var.$color-form-label;
+            }
+
+            input {
+                color: var.$color-background-dark;
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid var.$color-primary;
+                border-radius: var.$border-radius-base;
+                font-family: inherit;
+                font-size: 1.4rem;
+
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 2px rgba(222, 171, 78, 0.2); // ظل حول الحقل عند التركيز
+                }
+                
+                &::placeholder {
+                    color: var.$color-background-dark ;// لون أفتح للنص التوضيحي
+                    opacity: 1;
+                }
+            }
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var.$spacing-sm;
+            font-size: 1.4rem;
+
+            a {
+                color: var.$color-primary;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1.2rem;
+            background-color: var.$color-primary;
+            color: var.$color-text-light;
+            border: none;
+            border-radius: var.$border-radius-base;
+            font-family: inherit;
+            font-size: 1.6rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                color: var.$color-accent;
+            }
+        }
+
+        .form-footer {
+            text-align: center;
+            margin-top: var.$spacing-sm;
+            font-size: 1.4rem;
+
+            a {
+                color: var.$color-primary;
+                text-decoration: none;
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// أنماط القائمة المتنقلة (Mobile Navigation)
+// -----------------------------------------------------------------------------
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%; // تبدأ مخفية خارج الشاشة
+    width: 80%;
+    max-width: 320px;
+    height: 100vh;
+    background-color: var.$color-text-light;
+    box-shadow: var.$box-shadow-lg;
+    z-index: 1500;
+    padding: var.$spacing-md;
+    transition: right 0.3s ease;
+    overflow-y: auto; // للسماح بالتمرير إذا كانت القائمة طويلة
+
+    &.active {
+        right: 0;
+    }
+
+    .mobile-nav-close {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        background: none;
+        border: none;
+        font-size: 2.4rem;
+        cursor: pointer;
+        color: var.$color-text-dark;
+    }
+
+    ul {
+        list-style: none;
+        margin-top: var.$spacing-md;
+        padding: 0;
+
+        li {
+            margin-bottom: var.$spacing-sm;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            display: block;
+            padding: 1rem;
+            color: var.$color-text-dark;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var.$color-background-light;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &.active {
+                color: var.$color-primary;
+                background-color: var.$color-background-light;
+                border-radius: var.$border-radius-base;
+                border-bottom-color: transparent; // إزالة الخط السفلي للعنصر النشط
+            }
+
+            &:hover:not(.button--primary) {
+                background-color: var.$color-background-light;
+                color: var.$color-primary;
+                border-radius: var.$border-radius-base;
+            }
+
+            // زر الدعم في القائمة المتنقلة
+            &.button--primary {
+                background-color: var.$color-primary;
+                color: var.$color-text-light;
+                text-align: center;
+                border-radius: var.$border-radius-base;
+                border-bottom: none; // إزالة الخط السفلي
+                margin-top: var.$spacing-md; // مسافة عن العناصر العلوية
+                padding: 1.2rem;
+
+                &:hover {
+                    background-color: var.$color-accent;
+                }
+            }
+        }
+    }
+}
+
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1400; // أقل من الـ mobile-nav
+
+    &.active {
+        display: block;
+    }
+}
+
+// إخفاء القائمة المتنقلة وتراكبها على الشاشات الكبيرة
+@include mix.breakpoint-up(md) {
+    .mobile-nav,
+    .mobile-overlay {
+        display: none !important; // استخدام !important لضمان الإخفاء
+    }
+}
+

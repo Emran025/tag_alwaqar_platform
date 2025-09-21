@@ -1,0 +1,141 @@
+// -----------------------------------------------------------------------------
+// أنماط صفحة "من نحن والسياسات" (about-us-and-policies.html)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+
+.page-hero {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-xl 0;
+    h1 {
+        font-size: 4.8rem;
+    }
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+.about-section, .policies-section {
+    .section-title {
+        font-size: 3.2rem;
+        margin-bottom: var.$spacing-lg;
+        text-align: center;
+        color: var.$color-primary;
+    }
+}
+
+.policies-section {
+    .policy-item {
+        background-color: #fff;
+        border-radius: var.$border-radius-base;
+        box-shadow: var.$box-shadow-base;
+        padding: var.$spacing-lg var.$spacing-lg var.$spacing-lg calc(var.$spacing-lg ); // مساحة إضافية لليسار للأيقونة
+        margin-bottom: var.$spacing-md;
+
+        h3 {
+            font-size: 2.4rem;
+            color: var.$color-primary;
+            border-bottom: 2px solid var.$color-border;
+            padding-bottom: var.$spacing-xs;
+            margin-bottom: var.$spacing-sm;
+        }
+        h4 {
+            font-size: 1.8rem;
+            color: var.$color-text-dark;
+            margin-top: var.$spacing-md;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 1.6;
+        }
+        ul {
+            list-style-type: none;
+            padding-right: 0;
+            li {
+                margin-bottom: var.$spacing-xs;
+                position: relative;
+                &::before {
+                    content: '•';
+                    color: var.$color-primary;
+                    font-weight: bold;
+                    display: inline-block;
+                    width: 1em;
+                    margin-right: -1em;
+                }
+            }
+        }
+    }
+}
+
+
+.icon{
+  color: var.$color-accent;
+  align-self: center;
+  font-size: 7rem;
+  justify-self: center;
+  padding: 3rem;
+  
+}
+
+.contact-us-prompt {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+
+    h2 {
+        font-size: 3.2rem;
+        color: var.$color-text-light;
+        margin-bottom: var.$spacing-sm;
+    }
+    p {
+        font-size: 1.8rem;
+        color: var.$color-text-light;
+    }
+}
+
+
+.items-grid{
+    display: grid;
+    gap: var.$spacing-lg;
+    grid-template-columns: 3fr 1fr;
+}
+.content-block  {
+
+    background-color: #fff;
+    border-radius: var.$border-radius-lg;
+    box-shadow: var.$box-shadow-base;
+    padding: var.$spacing-lg var.$spacing-lg var.$spacing-lg calc(var.$spacing-lg ); // مساحة إضافية لليسار للأيقونة
+    margin-bottom: var.$spacing-md;
+    position: relative; // حتى نضع الأيقونة داخله
+    // @include mixin.transition-ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var.$box-shadow-base;
+    }
+
+    // الأيقونة الخاصة بكل بلوك
+    &::before {
+      content: '';
+      position: absolute;
+      top: var.$spacing-xl;
+      right: var.$spacing-xl; // لأن الاتجاه RTL
+      width: 40px;
+      height: 40px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+
+    h3 {
+      font-size: clamp(2.2rem, 3vw, 3rem);
+      color: var.$color-primary;
+      margin-bottom: var.$spacing-md;
+    }
+
+    p {
+      font-size: 1.7rem;
+      line-height: 1.8;
+      color: var.$color-text-dark;
+    }
+
+}

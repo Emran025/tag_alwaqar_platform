@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="اكتشف منصة الوقار التعليمية: رؤيتنا الملهمة، رسالتنا الهادفة، وقيمنا الراسخة. اطلع على سياسات الخصوصية وشروط الاستخدام وإرشادات المجتمع التي تضمن بيئة تعليمية آمنة وشفافة للجميع."
+    />
+    <meta
+      name="keywords"
+      content="من نحن, سياسات, خصوصية, شروط الخدمة, رؤية, رسالة, قيم, الوقار, تعليم, منصة تعليمية, مجتمع تعليمي"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>من نحن والسياسات - منصة الوقار التعليمية</title>
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/fontawesome/css/all.min.css" />
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body data-page="about-us-and-policies">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">من نحن</a>
+              <div class="dropdown-content">
+                <a href="#">عنا</a>
+                <a href="policies.html">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ادعمنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="#">من نحن</a></li>
+        <li><a href="policies.html">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="student-registration.html">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="page-hero section-spacing">
+        <div class="container text-center">
+          <h1>من نحن كـ منصة الوقار</h1>
+          <p>
+            في منصة الوقار، نؤمن بقوة التعليم في بناء المستقبل. اكتشف رؤيتنا
+            التي تلهمنا، رسالتنا التي تقودنا، وقيمنا التي نرتكز عليها.
+          </p>
+        </div>
+      </section>
+
+      <section class="about-section section-spacing">
+        <div class="container">
+          <h2 class="section-title">منصة الوقار: رؤيتنا، رسالتنا، وقيمنا</h2>
+          <p class="section-description">
+            نحن نلتزم بتقديم تجربة تعليمية استثنائية مبنية على مبادئ راسخة
+            وغايات واضحة، لتمكين كل فرد من تحقيق إمكاناته الكاملة والمساهمة في
+            بناء مجتمع معرفي متطور.
+          </p>
+
+          <div class="content-block items-grid">
+            <div class="text-item">
+              <h3>رؤيتنا الملهمة</h3>
+              <p>
+                أن نكون المنصة التعليمية الرائدة والمفضلة في العالم العربي
+                والعالم أجمع، نُمكِّن الأفراد والمؤسسات من تحقيق أقصى إمكاناتهم
+                التعليمية والمهنية، ونساهم بفاعلية في بناء مجتمع معرفي مزدهر
+                ومبتكر، يواكب تحديات المستقبل ويصنع فرصًا جديدة للنمو والتطور
+                المستدام.
+              </p>
+            </div>
+            <span class="icon fa-solid fa-lightbulb"></span>
+          </div>
+
+          <div class="content-block items-grid">
+            <div class="text-item">
+              <h3>رسالتنا الهادفة</h3>
+              <p>
+                توفير بيئة تعليمية رقمية شاملة، آمنة، وداعمة، تربط بكفاءة عالية
+                بين المدارس المتميزة، الطلاب الطموحين، والمعلمين ذوي الخبرة
+                العالية. نحن نقدم أدوات وموارد تعليمية مبتكرة تُعزز جودة
+                التعليم، تُسهّل الوصول إليه من أي مكان وفي أي وقت، وتُثري تجربة
+                التعلم بشكل مستمر، مع الالتزام المطلق بالشفافية والمسؤولية
+                المجتمعية تجاه كل أصحاب المصلحة.
+              </p>
+            </div>
+            <span class="icon fa-solid fa-bullseye"></span>
+          </div>
+
+          <div class="content-block">
+            <h3>قيمنا الأساسية التي نؤمن بها</h3>
+            <ul class="values-list">
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>الجودة والتميز:</strong> الالتزام الراسخ بتقديم أعلى
+                    المعايير التعليمية والخدمات التقنية المبتكرة، لضمان تجربة
+                    تعلم لا مثيل لها تتجاوز التوقعات، ورفع مستوى الإنجاز
+                    الأكاديمي.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-gem"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>الشفافية والنزاهة:</strong> الوضوح التام والصراحة في
+                    جميع تعاملاتنا، سياساتنا، وعملياتنا، لبناء الثقة والمصداقية
+                    الكاملة مع مستخدمينا وشركائنا، وتعزيز بيئة يسودها الاحترام
+                    المتبادل.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-balance-scale"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>الشمولية والإنصاف:</strong> توفير فرص تعليمية
+                    متساوية للجميع، بغض النظر عن الخلفية الاجتماعية، القدرات، أو
+                    الموقع الجغرافي، لتمكين كل فرد من تحقيق أحلامه والمساهمة في
+                    مجتمع متنوع ومزدهر.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-hands-helping"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>الابتكار والتطوير المستمر:</strong> البحث الدائم عن
+                    حلول تعليمية وتقنية رائدة، وتبني أحدث المنهجيات لتطوير تجربة
+                    التعلم والارتقاء بها لتلبية احتياجات المستقبل المتغيرة.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-lightbulb"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>المسؤولية المجتمعية والأخلاقية:</strong> الالتزام
+                    العميق تجاه مجتمعنا التعليمي والعالمي، والمساهمة الفاعلة في
+                    تنميته وتطوره، مع مراعاة القيم الأخلاقية السامية في كل جانب
+                    من جوانب عملنا اليومي.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-handshake-angle"></span>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-us-prompt section-spacing text-center">
+        <div class="container">
+          <h2>هل لديك أسئلة حول سياساتنا؟</h2>
+          <p>
+            إذا كان لديكم أي استفسارات أو كنتم بحاجة إلى توضيح بشأن أي من
+            سياساتنا، يرجى <a href="contact-us.html">التواصل مع فريقنا</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="policies.html">من نحن</a></li>
+              <li><a href="about-us.html">سياساتنا</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="student-registration.html">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="contribute.html">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

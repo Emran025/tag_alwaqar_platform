@@ -1,0 +1,286 @@
+// -----------------------------------------------------------------------------
+// Achievements Page Styling
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as var;
+
+// تنسيق قسم البطل (Hero Section)
+.achievements-hero {
+  background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+  padding: var.$spacing-xl 0;
+  color: var.$color-text-light;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: var.$font-size-h1;
+    margin-bottom: var.$spacing-md;
+    @media (max-width: var.$breakpoint-md) {
+      font-size: 3.8rem;
+    }
+  }
+
+  p {
+    font-size: 2.2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    opacity: 0.9;
+    @media (max-width: var.$breakpoint-md) {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// (Stats Section)
+.stats-section {
+  padding: var.$spacing-lg 0;
+  background-color: #fff;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var.$spacing-md;
+  text-align: center;
+
+  .stat-item {
+    padding: var.$spacing-md; // تقليل حجم البطاقة
+    border-radius: var.$border-radius-base;
+    background-color: var.$color-background-light;
+    box-shadow: var.$box-shadow-base;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: var.$box-shadow-lg;
+    }
+
+    .stat-icon-wrapper {
+      width: 6rem; // حجم أصغر للأيقونة
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: var.$spacing-md;
+      transition: transform 0.3s ease; // إضافة تأثير تحويل عند التمرير
+
+      .stat-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    h3 {
+      font-size: var.$font-size-h2;
+      color: var.$color-primary;
+      margin-bottom: var.$spacing-xs;
+      &::after {
+        content: '+';
+        color: var.$color-primary;
+        display: inline-block;
+        font-size: 2rem;
+        font-weight: bold;
+        vertical-align: top;
+      }
+    }
+
+    p {
+      font-size: 1.8rem;
+      color: var.$color-text-dark;
+      font-weight: 500;
+      margin-top: 0;
+    }
+  }
+}
+
+// تعديل إضافي لجعلك الأيقونات متجاوبة
+.stats-grid {
+    .stat-item {
+        // &:nth-child(1) .stat-icon {
+        //     // يمكن استخدام فلتر للتحكم في لون الأيقونة
+        //     filter: grayscale(100%) brightness(0.5); 
+        // }
+        // &:nth-child(2) .stat-icon {
+        //      // يمكنك هنا التحكم في لون كل ايقونة
+        // }
+        // &:nth-child(3) .stat-icon {
+        //      // يمكنك هنا التحكم في لون كل ايقونة
+        // }
+        // &:nth-child(4) .stat-icon {
+        //      // يمكنك هنا التحكم في لون كل ايقونة
+        // }
+
+        &:hover {
+            .stat-icon-wrapper {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// تنسيق أقسام المحتوى
+.section-title {
+  font-size: var.$font-size-h2;
+  color: var.$color-primary;
+  text-align: center;
+  margin-bottom: var.$spacing-lg;
+  position: relative;
+
+  &--underline {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1rem;
+      right: 50%;
+      transform: translateX(50%);
+      width: 8rem;
+      height: 4px;
+      background-color: var.$color-accent;
+      border-radius: 2px;
+    }
+  }
+}
+
+// تنسيق قسم الجوائز (Achievements Section)
+.achievements-section {
+  padding: var.$spacing-xl 0;
+  background-color: var.$color-background-light;
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var.$spacing-md;
+}
+
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: var.$border-radius-base;
+  overflow: hidden;
+  box-shadow: var.$box-shadow-base;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var.$box-shadow-lg;
+  }
+
+  img {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var.$color-border;
+  }
+
+  .card-content {
+    padding: var.$spacing-md;
+    h3 {
+      font-size: 2rem;
+      color: var.$color-primary;
+      margin-bottom: var.$spacing-sm;
+    }
+
+    p {
+      font-size: 1.6rem;
+      color: var.$color-text-dark;
+    }
+  }
+}
+
+// تنسيق قسم قصص النجاح (Testimonials Section)
+.testimonials-section {
+  padding: var.$spacing-xl 0;
+  background-color: #fff;
+}
+
+.success-stories-wrapper {
+  display: grid;
+  gap: var.$spacing-lg;
+  @media (min-width: var.$breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.success-stories-category {
+  h3 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var.$color-secondary;
+    margin-bottom: var.$spacing-md;
+    font-weight: 600;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var.$spacing-md;
+}
+
+.testimonial-card {
+  background-color: #fff;
+  border-radius: var.$border-radius-base;
+  padding: var.$spacing-md;
+  box-shadow: var.$box-shadow-base;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var.$box-shadow-lg;
+  }
+
+  .testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: var.$spacing-sm;
+    margin-bottom: var.$spacing-md;
+  }
+
+  .testimonial-avatar {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var.$color-accent;
+  }
+
+  .testimonial-info {
+    h4 {
+      font-size: 1.8rem;
+      color: var.$color-primary;
+      margin-bottom: var.$spacing-xs;
+    }
+    .role {
+      font-size: 1.4rem;
+      color: var.$color-text-dark;
+      font-weight: 500;
+    }
+  }
+
+  .quote {
+    font-size: 1.6rem;
+    color: var.$color-text-dark;
+    font-style: italic;
+    line-height: var.$line-height-base;
+    position: relative;
+    padding-right: var.$spacing-sm;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 4rem;
+      color: var.$color-accent;
+      line-height: 1;
+      opacity: 0.7;
+    }
+  }
+}

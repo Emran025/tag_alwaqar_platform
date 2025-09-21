@@ -1,0 +1,310 @@
+// -----------------------------------------------------------------------------
+// School Blog Page Styling
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+// Blog Hero Section
+.blog-hero {
+  background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+  padding: var.$spacing-xl 0;
+  color: var.$color-text-light;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: var.$font-size-h1;
+    margin-bottom: var.$spacing-md;
+    @media (max-width: var.$breakpoint-md) {
+      font-size: 3.8rem;
+    }
+  }
+
+  p {
+    font-size: 2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    opacity: 0.9;
+    @media (max-width: var.$breakpoint-md) {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+// فاصل بصري
+.section-divider {
+  border-bottom: 1px solid var.$color-border;
+  width: 90%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+
+
+// Blog Main Layout
+.blog-main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var.$spacing-md;
+
+  @media (min-width: var.$breakpoint-lg) {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var.$spacing-md;
+  }
+
+  .section-title {
+    margin-bottom: var.$spacing-lg;
+    @media (min-width: var.$breakpoint-lg) {
+      margin-top: 0;
+      width: 100%; // لضمان امتداده على عرض الحاوي الرئيسي
+    }
+  }
+}
+
+
+
+// Blog Posts Grid
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var.$spacing-md;
+  flex-grow: 1;
+
+  @media (min-width: var.$breakpoint-sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: var.$breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // هذا هو السطر الذي سيتم تعديله
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr); // تم تغيير 4 إلى 3
+  }
+}
+
+
+// Blog Post Card 
+.blog-post-card {
+  padding-bottom: 10px;
+  background-color: #fff;
+  border-radius: var.$border-radius-base;
+  box-shadow: var.$box-shadow-base;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: var.$box-shadow-lg;
+  }
+  
+  .post-thumbnail {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post-content {
+    padding: var.$spacing-sm; // تقليل الهوامش الداخلية
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    .post-title {
+      font-size: 1.8rem;
+      margin-bottom: var.$spacing-xs;
+      a {
+        color: var.$color-primary;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        font-weight: 600;
+        &:hover {
+          color: var.$color-secondary;
+        }
+      }
+    }
+
+    .post-meta {
+      font-size: 1.3rem;
+      color: var.$color-text-dark;
+      margin-bottom: var.$spacing-sm;
+    }
+
+    .post-excerpt {
+      display: none; // إخفاء الوصف المختصر لتقصير البطاقة
+    }
+    
+    .button--small {
+      margin-top: auto; // لدفع الزر إلى الأسفل
+      align-self: flex-start; // لجعله يبدأ من اليمين
+    }
+  }
+}
+
+// Featured Post Section
+.featured-post-section {
+  .featured-post-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: var.$border-radius-base;
+    box-shadow: var.$box-shadow-lg;
+    overflow: hidden;
+
+    @media (min-width: var.$breakpoint-md) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+
+    .featured-post-thumbnail {
+      width: 100%;
+      height: 30rem;
+      object-fit: cover;
+      
+      @media (min-width: var.$breakpoint-md) {
+        width: 50%;
+        height: auto;
+      }
+    }
+
+    .featured-post-content {
+      padding: var.$spacing-lg;
+
+      @media (min-width: var.$breakpoint-md) {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .post-category {
+        display: inline-block;
+        background-color: var.$color-secondary;
+        color: #fff;
+        padding: 0.4rem var.$spacing-xs;
+        border-radius: var.$border-radius-base;
+        font-size: 1.4rem;
+        margin-bottom: var.$spacing-sm;
+      }
+
+      .post-title a {
+        font-size: var.$font-size-h2;
+        @media (max-width: var.$breakpoint-md) {
+          font-size: 2.4rem;
+        }
+      }
+    }
+  }
+}
+
+// Blog Sidebar
+.blog-sidebar {
+  flex-basis: 35rem; // حجم ثابت للعمود الجانبي
+  flex-shrink: 0;
+   
+  .sidebar-module {
+    background-color: #fff;
+    padding: var.$spacing-md;
+    border-radius: var.$border-radius-base;
+    box-shadow: var.$box-shadow-base;
+    margin-bottom: var.$spacing-md;
+
+    h3 {
+      font-size: 2.2rem;
+      color: var.$color-primary;
+      margin-bottom: var.$spacing-md;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.5rem;
+        right: 0;
+        width: 5rem;
+        height: 3px;
+        background-color: var.$color-accent;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  // Categories Grid
+  .categories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var.$spacing-sm;
+
+    .category-card {
+      background-color: var.$color-background-light;
+      border: 1px solid var.$color-border;
+      border-radius: var.$border-radius-base;
+      padding: var.$spacing-sm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var.$spacing-xs;
+      text-decoration: none;
+      color: var.$color-text-dark;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var.$color-secondary;
+        color: #fff;
+        transform: translateY(-3px);
+        
+        img {
+            filter: brightness(0) invert(1);
+        }
+      }
+
+      img {
+        width: 4rem;
+        height: 4rem;
+        transition: filter 0.3s ease;
+      }
+    }
+  }
+
+  // Popular Posts List
+  .popular-posts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-bottom: 1px solid var.$color-border;
+      &:last-child {
+        border-bottom: none;
+      }
+      a {
+        display: block;
+        padding: var.$spacing-xs 0;
+        font-size: 1.6rem;
+        color: var.$color-primary;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+        &:hover {
+          color: var.$color-secondary;
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+  
+  // Newsletter Module
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: var.$spacing-sm;
+
+  }
+}

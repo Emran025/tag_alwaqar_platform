@@ -1,0 +1,92 @@
+// -----------------------------------------------------------------------------
+// أنماط صفحة الدعم والمساهمات
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+.contribute-hero {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-xl 0;
+    
+    h1 {
+        font-size: var.$font-size-h1;
+        margin-bottom: var.$spacing-sm;
+    }
+    
+    p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+    }
+}
+
+.support-options {
+
+    .options-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var.$spacing-md;
+    }
+    .option-card {
+        background-color: var.$color-text-light;
+        padding: var.$spacing-lg;
+        border-radius: var.$border-radius-lg;
+        box-shadow: var.$box-shadow-base;
+        justify-items: space-between;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: var.$box-shadow-lg;
+        }
+
+        .card-icon {
+            .fas {
+                color: var.$color-accent;
+                align-self: center;
+                font-size: 7rem;
+                justify-self: center;
+                padding: 3rem 0rem 3rem 3rem ;
+            }
+        }
+
+        .card-content {
+            h3 {
+                font-size: 2.2rem;
+                color: var.$color-primary;
+                margin-bottom: var.$spacing-xs;
+            }
+            p {
+                font-size: 1.6rem;
+                color: var.$color-text-dark;
+                margin-bottom: var.$spacing-sm;
+            }
+            .button {
+                margin-top: var.$spacing-sm;
+            }
+        }
+    }
+}
+
+.call-to-action-section {
+    background-color: var.$color-background-light;
+    .cta-box {
+        background-color: var.$color-primary-light;
+        padding: var.$spacing-lg;
+        border-radius: var.$border-radius-lg;
+        text-align: center;
+        h2 {
+            color: var.$color-primary;
+            margin-bottom: var.$spacing-sm;
+        }
+        p {
+            color: var.$color-text-dark;
+            font-size: 1.8rem;
+            margin: 0;
+        }
+    }
+}
+
+

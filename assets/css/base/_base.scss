@@ -1,0 +1,241 @@
+// -----------------------------------------------------------------------------
+// هذا الملف يحتوي على الأنماط الأساسية والعامة.
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use 'sass:color';
+
+/* أنماط الجسم والجذر العامة */
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* يسهل تحويل px إلى rem: 1rem = 10px */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body, html {
+  //=============================
+  &::-webkit-scrollbar{
+    display: none;
+  }
+  scrollbar-width: none; 
+
+  -ms-overflow-style: none;
+}
+
+body {
+  font-family: var.$font-family-primary;
+  font-size: var.$font-size-base;
+  line-height: var.$line-height-base;
+  background-color: var.$color-background-light;
+  color: var.$color-text-dark;
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+  transition: background-color 0.3s ease;
+}
+
+/* إعادة ضبط الأنماط */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var.$font-size-h1;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: var.$font-size-h2;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: var.$font-size-h3;
+  font-weight: bold;
+}
+
+p {
+  margin-bottom: var.$spacing-xs;
+}
+
+/* الروابط */
+a {
+  color: var.$color-accent;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: color.adjust(var.$color-accent, $lightness: -15%);
+  text-decoration: underline;
+}
+
+
+/*
+  تنسيق حقول الإدخال والزجاج المصنفر
+*/
+
+// التنسيق العام لحقول الإدخال
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='date'], // أضفنا حقل التاريخ هنا
+select,
+textarea {
+  width: 100%;
+  padding: var.$spacing-sm;
+  font-size: var.$font-size-base;
+  font-family: var.$font-family-primary;
+  border-radius: var.$border-radius-base;
+  
+  // تأثير الزجاج المصنفر
+  background-color: rgba(255, 255, 255, 0.1); // خلفية شفافة
+  border: 1px solid rgba(255, 255, 255, 0.3); // إطار أبيض شبه شفاف
+  color: var.$color-text-light; // لون النص أبيض من المتغيرات
+  backdrop-filter: blur(5px); // تمويه خفيف للحقل
+  -webkit-backdrop-filter: blur(5px); // دعم سفاري
+
+  transition: all 0.3s ease;
+
+  // لجعل أيقونة التقويم شفافة ومناسبة للخلفية
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1); // يعكس الألوان لجعلها بيضاء أو فاتحة
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2); // يصبح أكثر وضوحاً عند التركيز
+    border-color: rgba(255, 255, 255, 0.5); // يصبح الإطار أكثر وضوحاً
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); // ظل متوهج
+  }
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.7); // لون أفتح للنص التوضيحي
+    opacity: 1;
+  }
+}
+
+select {
+  
+  width: 100%;
+  padding: var.$spacing-sm;
+  font-size: var.$font-size-base;
+  font-family: var.$font-family-primary;
+  border-radius: var.$border-radius-base;
+  
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var.$color-text-light;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+  appearance: none; // لإزالة السهم الافتراضي
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23FFFFFF"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
+  background-repeat: no-repeat;
+  background-position: left 1rem center; // ليكون السهم على اليسار
+  background-size: 1.5rem;
+  padding-left: calc(var.$spacing-sm + 1.5rem + 0.5rem); // لترك مساحة للأيقونة
+
+  &:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+  &:hover {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  option {
+    font-family: var.$font-family-primary;
+    font-size: var.$font-size-base;
+    color: var.$color-text-dark; 
+    
+    background-color: var.$color-background-dark; 
+    
+    padding: var.$spacing-xs var.$spacing-sm;
+    
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+      
+    &:checked {
+      background-color: var.$color-accent;
+      color: var.$color-text-light;
+    }
+
+    &:hover {
+      display: nune;
+      background-color: var.$color-primary-light;
+      color: var.$color-text-dark;
+    }
+  }
+}
+
+// تنسيق الـ label
+.form-group label {
+  font-family: var.$font-family-primary;
+  font-size: var.$font-size-base;
+  color: var.$color-form-label; 
+  margin-bottom: var.$spacing-xs;
+  display: block; 
+}
+
+
+
+.text-center {
+  text-align: center;
+}
+
+.bg-light {
+  background-color: var.$color-text-light;
+}
+
+
+.registration-sub-container{
+  background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+  padding: var.$spacing-md ;
+  margin-bottom: var.$spacing-lg;
+  border-radius: var.$border-radius-lg;
+  box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.45); // ظل داكن
+}
+
+
+.section-title {
+    text-align: center;
+    font-size: var.$font-size-h2;
+    margin-bottom: var.$spacing-lg;
+    position: relative;
+    color: var.$color-primary;
+    &:after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background-color: var.$color-accent;
+        margin: var.$spacing-sm auto 0;
+        border-radius: 2px;
+    }
+}
+
+.icon{
+  color: var.$color-accent
+}

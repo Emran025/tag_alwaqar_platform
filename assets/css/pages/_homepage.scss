@@ -1,0 +1,184 @@
+// -----------------------------------------------------------------------------
+// أنماط الصفحة الرئيسية (index.html)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mixin;
+@use 'sass:color';
+
+.hero-section {
+
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-lg 0;
+  
+    .container {
+        @include mixin.flex-center;
+        flex-direction: row-reverse;
+        gap: var.$spacing-lg;
+    }
+    
+    .hero-content {
+        flex-basis: 55%;
+        text-align: right;
+    }
+    
+    .hero-image {
+        flex-basis: 45%;
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var.$border-radius-lg;
+        }
+    }
+    
+    h1 {
+        font-size: var.$font-size-h1;
+        // color: var.$color-primary;
+        margin-bottom: var.$spacing-sm;
+        line-height: 1.2;
+    }
+    
+    p {
+        font-size: 1.8rem;
+        line-height: 1.8;
+        // color: var.$color-text-dark;
+        margin-bottom: var.$spacing-md;
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: var.$spacing-sm;
+        justify-content: flex-end;
+    }
+
+    @include mixin.breakpoint-down(md) {
+        .container {
+            flex-direction: column;
+            text-align: center;
+        }
+        .hero-content, .hero-image {
+            flex-basis: 100%;
+        }
+        .hero-actions {
+            justify-content: center;
+        }
+    }
+}
+
+.features-section {
+
+
+    .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var.$spacing-md;
+    }
+
+    .feature-item {
+        text-align: center;
+        padding: var.$spacing-lg var.$spacing-md;
+        background-color: #fff;
+        border-radius: var.$border-radius-lg;
+        box-shadow: var.$box-shadow-base;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: var.$box-shadow-lg;
+        }
+        img {
+            height: 80px;
+            margin-bottom: var.$spacing-sm;
+        }
+        h3 {
+            color: var.$color-primary;
+            font-size: 2.2rem;
+            margin-bottom: var.$spacing-xs;
+        }
+        p {
+            font-size: 1.6rem;
+            color: var.$color-text-dark;
+            margin-bottom: var.$spacing-sm;
+        }
+        .link-more {
+            color: var.$color-accent;
+            font-weight: bold;
+            display: inline-block;
+            transition: color 0.3s ease;
+            &:hover {
+                text-decoration: underline;
+                color: color.adjust(var.$color-accent, $lightness: -10%);
+            }
+        }
+    }
+}
+
+.about-us-preview {
+    .about-content-grid {
+        display: flex;
+        align-items: center;
+        gap: var.$spacing-lg;
+    }
+    .about-text {
+        flex-basis: 50%;
+    }
+    .about-image {
+        flex-basis: 50%;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var.$border-radius-lg;
+        }
+    }
+    .section-title {
+        font-size: var.$font-size-h2;
+        color: var.$color-primary;
+        margin-bottom: var.$spacing-sm;
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var.$color-accent;
+            margin: var.$spacing-xs 0 0;
+            border-radius: 2px;
+        }
+    }
+    @include mixin.breakpoint-down(md) {
+        .about-content-grid {
+            flex-direction: column;
+            text-align: center;
+        }
+        .about-text, .about-image {
+            flex-basis: 100%;
+        }
+        .section-title:after {
+            margin: var.$spacing-xs auto 0;
+        }
+    }
+}
+
+.call-to-action {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    text-align: center;
+
+    h2 {
+        font-size: var.$font-size-h2;
+        margin-bottom: var.$spacing-sm;
+        line-height: 1.2;
+        color: var.$color-text-light;
+    }
+
+    p {
+        font-size: 2rem;
+        margin-bottom: var.$spacing-lg;
+    }
+}
+
+.header__elements , .header__elements .dots {
+  position:absolute;
+//   bottom: 194px;
+//   right: 0;
+}

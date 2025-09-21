@@ -6,30 +6,30 @@ The following structure is the definitive blueprint for our project's file organ
 
 ```
 /tag_alwaqar_platform
-│   .gitignore                  # Specifies files and folders to be excluded from Git version control.
-│   CONTRIBUTING.md             # A guide for new contributors on how to set up the project and adhere to coding standards.
-│   project-structure.ps1       # A PowerShell script to automate the creation of the project's standardized directory structure.
-│   README.md                   # The primary project overview, detailing its purpose, technologies, and quick-start instructions.
+│   .gitignore                           # Specifies files and folders to be excluded from Git version control.
+│   CONTRIBUTING.md                      # A guide for new contributors on how to set up the project and adhere to coding standards.
+│   project-structure.ps1                # A PowerShell script to automate the creation of the project's standardized directory structure.
+│   README.md                            # The primary project overview, detailing its purpose, technologies, and quick-start instructions.
 │
-├───assets                      # Contains all static assets, including CSS, JavaScript, and images.
-│   ├───css                     # Houses all stylesheets.
-│   │   │   main.scss           # The main Sass entry file where all other partials are imported.
+├───assets                               # Contains all static assets, including CSS, JavaScript, and images.
+│   ├───css                              # Houses all stylesheets.
+│   │   │   main.scss                    # The main Sass entry file where all other partials are imported.
 │   │   │
-│   │   ├───abstracts           # Stores Sass variables, mixins, and functions that don't output CSS directly.
-│   │   ├───base                # Contains foundational styles like typography, reset rules, and general styles.
-│   │   ├───components          # Styles for small, reusable UI components (e.g., buttons, forms, cards).
-│   │   ├───layout              # Styles for the overall page structure and grid systems.
-│   │   ├───pages               # Styles specific to individual pages.
-│   │   ├───themes              # Styles for different visual themes (e.g., dark/light mode).
-│   │   └───vendors             # Stores styles from external CSS libraries.
-│   ├───images                  # All project image files.
-│   │   ├───icons               # A dedicated folder for all SVG or PNG icon assets.
-│   │   └───illustrations       # Stores illustrations and visual graphics.
-│   └───js                      # Contains all JavaScript files.
-│       │   main.js             # The primary JavaScript entry point for the application logic.
-│       │   vendor.js           # For third-party JavaScript libraries.
-│       │
-│       ├───modules             # A collection of modular JavaScript files, each handling a specific feature.
+│   │   ├───abstracts                    # Stores Sass variables, mixins, and functions that don't output CSS directly.
+│   │   ├───base                         # Contains foundational styles like typography, reset rules, and general styles.
+│   │   ├───components                   # Styles for small, reusable UI components (e.g., buttons, forms, cards).
+│   │   ├───layout                       # Styles for the overall page structure and grid systems.
+│   │   ├───pages                        # Styles specific to individual pages.
+│   │   ├───themes                       # Styles for different visual themes (e.g., dark/light mode).
+│   │   └───vendors                      # Stores styles from external CSS libraries.
+│   ├───images                           # All project image files.
+│   │   ├───icons                        # A dedicated folder for all SVG or PNG icon assets.
+│   │   └───illustrations                # Stores illustrations and visual graphics.
+│   └───js                               # Contains all JavaScript files.
+│       │   main.js                      # The primary JavaScript entry point for the application logic.
+│       │   vendor.js                    # For third-party JavaScript libraries.
+│       │                                 
+│       ├───modules                      # A collection of modular JavaScript files, each handling a specific feature.
 │       │       about-us-and-policies.js # Handles logic for the "About Us" and "Policies" page.
 │       │       achievements.js          # Manages logic for the achievements page.
 │       │       school-blog-page.js      # Handles dynamic functionality for the blog page.
@@ -37,19 +37,19 @@ The following structure is the definitive blueprint for our project's file organ
 │       │       student-registration.js  # Manages form validation for student registration.
 │       │       teacher-registration.js  # Contains form validation for teacher registration.
 │       │
-│       └───utils               # Holds reusable utility functions and helpers.
-├───docs                        # Project documentation.
-│       srs-document.md         # The Software Requirements Specification document.
+│       └───utils                        # Holds reusable utility functions and helpers.
+├───docs                                 # Project documentation.
+│       srs-document.md                  # The Software Requirements Specification document.
 │
-└───pages                       # Contains all HTML pages that form the website's structure.
-        about-us-and-policies.html # The "About Us" and "Policies" content page.
-        achievements.html            # The page showcasing project achievements.
-        contact-us.html              # The contact form page.
-        index.html                   # The homepage and main landing page.
-        school-blog-page.html        # The school's blog page.
-        school-registration.html     # The registration page for schools.
-        student-registration.html    # The registration page for students.
-        teacher-registration.html    # The registration page for teachers.
+└───pages                                # Contains all HTML pages that form the website's structure.
+        about-us-and-policies.html       # The "About Us" and "Policies" content page.
+        achievements.html                # The page showcasing project achievements.
+        contact-us.html                  # The contact form page.
+        index.html                       # The homepage and main landing page.
+        school-blog-page.html            # The school's blog page.
+        school-registration.html         # The registration page for schools.
+        student-registration.html        # The registration page for students.
+        teacher-registration.html        # The registration page for teachers.
 ```
 
 ---
@@ -199,7 +199,7 @@ Follow these steps to get your local environment ready for development:
     ```bash
     git clone [your-repository-url]
     ```
-2.  **Run the Setup Script:** Navigate into the newly created project directory and execute the PowerShell script we created. This will automatically generate the entire file and folder structure.
+2.  **Run the Setup Script:** Navigate into the newly created project directory and execute the PowerShell script we created. -This will automatically generate the entire file and folder structure.
     ```bash
     cd tag_alwaqar_platform
     .\project-structure.ps1

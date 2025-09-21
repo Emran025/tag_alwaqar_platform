@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="اكتشف منصة الوقار التعليمية: رؤيتنا الملهمة، رسالتنا الهادفة، وقيمنا الراسخة. اطلع على سياسات الخصوصية وشروط الاستخدام وإرشادات المجتمع التي تضمن بيئة تعليمية آمنة وشفافة للجميع."
+    />
+    <meta
+      name="keywords"
+      content="من نحن, سياسات, خصوصية, شروط الخدمة, رؤية, رسالة, قيم, الوقار, تعليم, منصة تعليمية, مجتمع تعليمي"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>من نحن - منصة الوقار التعليمية</title>
+
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link rel="stylesheet" href="../assets/css/fontawesome/css/all.min.css" />
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body data-page="about-us-and-policies">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="index.html">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">من نحن</a>
+              <div class="dropdown-content">
+                <a href="about-us.html">عنا</a>
+                <a href="#">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ادعمنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="index.html" class="active">الرئيسية</a></li>
+        <li><a href="about-us.html">من نحن</a></li>
+        <li><a href="#">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="student-registration.html">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="page-hero section-spacing">
+        <div class="container text-center">
+          <h1>السياسات في منصة الوقار</h1>
+          <p>
+            التي تلهمنا، رسالتنا التي تقودنا، وقيمنا التي نرتكز عليها. كما ندعوك
+            للاطلاع على سياساتنا الشاملة المصممة لضمان بيئة تعليمية آمنة، عادلة
+            وشفافة للجميع.
+          </p>
+        </div>
+      </section>
+
+      <section id="policies-section" class="policies-section section-spacing">
+        <div class="container">
+          <h2 class="section-title">سياسات منصة الوقار التعليمية</h2>
+          <p class="section-description">
+            تُشكل سياساتنا حجر الزاوية في بناء بيئة تعليمية آمنة وموثوقة. يرجى
+            الاطلاع عليها لضمان فهم شامل لحقوقكم ومسؤولياتكم كمستخدمين لمنصة
+            الوقار.
+          </p>
+
+          <div class="policy-item" id="privacy-policy">
+            <div class="items-grid">
+              <div class="text-item">
+                <h3>
+                  <!-- <span class="icon privacy-icon"></span> -->
+                  1. سياسة الخصوصية وحماية البيانات
+                </h3>
+                <p>
+                  تلتزم منصة الوقار التزامًا مطلقًا بحماية خصوصية مستخدميها
+                  وسلامة بياناتهم الشخصية. تُشرح هذه السياسة بوضوح كيفية قيامنا
+                  بجمع واستخدام وتخزين وحماية معلوماتكم الشخصية، وكيف يمكنكم
+                  التحكم بها وممارستكم لحقوقكم المتعلقة ببياناتكم لضمان أقصى
+                  درجات الأمان والشفافية.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-shield-alt"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-database"></span> -->
+                  1.1. جمع المعلومات الشخصية
+                </h4>
+                <p>
+                  نقوم بجمع المعلومات التي تقدمونها لنا طواعية ومباشرة عند
+                  التسجيل أو استخدام خدماتنا، مثل الاسم الكامل، البريد
+                  الإلكتروني، رقم الهاتف، تاريخ الميلاد، ومعلومات خاصة بالدور
+                  (مدرسة، طالب، معلم). كما نجمع بيانات الاستخدام المتعلقة
+                  بتفاعلكم مع المنصة (مثل الصفحات التي تزورونها، وقت التصفح،
+                  الدورات التي تلتحقون بها) لتحسين تجربتكم وتقديم خدمات أكثر
+                  تخصيصًا وكفاءة.
+                </p>
+              </div>
+              <!-- <span class="icon fa-solid fa-info-circle"></span> -->
+              <span class="icon fa-solid fa-database"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-cogs"></span> -->
+                  1.2. استخدام المعلومات
+                </h4>
+                <ul>
+                  <li>
+                    <!-- <span class="icon fa-solid fa-check-circle"></span> -->
+                    لتقديم وتحسين وتخصيص خدماتنا التعليمية ومنتجاتنا بما يلبي
+                    احتياجاتكم الفردية ويساهم في تطوركم الأكاديمي والمهني.
+                  </li>
+                  <li>
+                    <!-- <span class="icon fa-solid fa-check-circle"></span> -->
+                    للتواصل معكم بخصوص حسابكم، تحديثات الخدمات، أو الإعلانات
+                    المهمة المتعلقة بمنصة الوقار لضمان اطلاعكم على كل جديد.
+                  </li>
+                  <li>
+                    <!-- <span class="icon fa-solid fa-check-circle"></span> -->
+                    لتحليل أنماط الاستخدام وتخصيص تجربتكم التعليمية، وتقديم
+                    توصيات ذات صلة بالمحتوى التعليمي والدورات التدريبية التي قد
+                    تهمكم.
+                  </li>
+                  <li>
+                    <!-- <span class="icon fa-solid fa-check-circle"></span> -->
+                    لضمان الامتثال للمتطلبات القانونية والتنظيمية وحماية حقوق
+                    المنصة والمستخدمين، والمساهمة في بيئة آمنة وخالية من
+                    المخاطر.
+                  </li>
+                </ul>
+              </div>
+              <span class="icon fa-solid fa-chart-line"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-share-alt"></span> -->
+                  1.3. مشاركة المعلومات
+                </h4>
+                <p>
+                  نحن لا نبيع، نؤجر، أو نتاجر بمعلوماتكم الشخصية لأطراف ثالثة
+                  لأغراض تسويقية بأي شكل من الأشكال. قد نشاركها فقط مع مقدمي
+                  الخدمات الموثوقين الذين يعملون بالنيابة عنا (مثل استضافة
+                  الخوادم، معالجة الدفع، تحليلات البيانات)، مع ضمان التزامهم
+                  الصارم بمعايير حماية البيانات والخصوصية المشابهة لمعاييرنا
+                  العالية.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-share-alt"></span>
+              <!-- <span class="icon fa-solid fa-user-friends"></span> -->
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-lock"></span> -->
+                  1.4. أمن وسلامة البيانات
+                </h4>
+                <p>
+                  نتخذ إجراءات أمنية تقنية وتنظيمية صارمة ومتعددة الطبقات لحماية
+                  معلوماتكم من الوصول غير المصرح به، التعديل، الكشف، أو التدمير.
+                  يشمل ذلك التشفير المتقدم (مثل HTTPS)، حماية كلمات المرور
+                  القوية، التحكم في الوصول، والمراجعات الأمنية الدورية لضمان
+                  أقصى حماية لبياناتكم.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-lock"></span>
+
+              <!-- <span class="icon fa-solid fa-shield-alt"></span> -->
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-user-cog"></span> -->
+                  1.5. حقوق المستخدم
+                </h4>
+                <p>
+                  يحق لكم الوصول إلى معلوماتكم الشخصية، تصحيحها، تحديثها، أو طلب
+                  حذفها في أي وقت. يمكنكم ممارسة هذه الحقوق من خلال إعدادات
+                  حسابكم الشخصي على المنصة أو بالتواصل معنا مباشرة عبر قنوات
+                  الدعم المخصصة.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-file-contract"></span>
+            </div>
+          </div>
+          <div class="policy-item" id="terms">
+            <div class="items-grid">
+              <div class="text-item">
+                <h3>
+                  <!-- <span class="icon fa-solid fa-file-alt"></span> -->
+                  2. شروط الخدمة والاستخدام
+                </h3>
+                <p>
+                  تحدد شروط الخدمة هذه القواعد واللوائح الأساسية التي تحكم
+                  استخدامكم لمنصة الوقار التعليمية وجميع خدماتها ومحتواها.
+                  باستخدامكم للمنصة، فإنكم تؤكدون موافقتكم على الالتزام بهذه
+                  الشروط بالكامل، والتي تهدف إلى ضمان تجربة عادلة وآمنة للجميع.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-book-open"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-gavel"></span> -->
+                  2.1. قبول الشروط
+                </h4>
+                <p>
+                  بدخولكم إلى هذه المنصة، تصفحها، أو استخدام أي من خدماتها،
+                  فإنكم توافقون صراحة على الالتزام بشروط الخدمة هذه وجميع
+                  القوانين واللوائح المعمول بها في المملكة العربية السعودية
+                  والقوانين الدولية. إذا كنتم لا توافقون على أي جزء من هذه
+                  الشروط، فيجب عليكم الامتناع عن استخدام المنصة.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-check-double"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-user-check"></span> -->
+                  2.2. الأهلية والاستخدام المشروع للمنصة
+                </h4>
+                <p>
+                  يجب أن تكونوا في السن القانوني (18 عامًا على الأقل) لاستخدام
+                  المنصة بشكل مستقل، أو الحصول على موافقة صريحة من ولي أمركم أو
+                  الوصي القانوني إذا كنتم طالبًا قاصرًا. لا يجوز استخدام المنصة
+                  لأي غرض غير قانوني، غير أخلاقي، أو غير مصرح به، بما في ذلك على
+                  سبيل المثال لا الحصر، نشر المحتوى المسيء، أو انتهاك حقوق
+                  الملكية الفكرية للآخرين، أو القيام بأي نشاط يضر بالمنصة أو
+                  بمستخدميها.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-user-shield"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-copyright"></span> -->
+                  2.3. حقوق الملكية الفكرية
+                </h4>
+                <p>
+                  جميع المحتويات المعروضة على المنصة، بما في ذلك النصوص،
+                  الرسومات، الشعارات، الأيقونات، الصور، مقاطع الفيديو، الملفات
+                  الصوتية، والبرمجيات، هي ملك حصري لمنصة الوقار أو لمرخصيها وهي
+                  محمية بموجب قوانين الملكية الفكرية الدولية والمحلية. لا يجوز
+                  نسخها، إعادة إنتاجها، توزيعها، أو استخدامها بأي شكل من الأشكال
+                  دون إذن كتابي مسبق من منصة الوقار.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-award"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-ban"></span> -->
+                  2.4. إنهاء الخدمة والتعليق
+                </h4>
+                <p>
+                  نحتفظ بالحق المطلق في إنهاء أو تعليق وصولكم إلى المنصة
+                  وخدماتها على الفور، دون إشعار مسبق أو تحمل أي مسؤولية، لأي سبب
+                  كان، بما في ذلك على سبيل المثال لا الحصر، خرقكم لأي من شروط
+                  الخدمة هذه، أو في حالة الاشتباه في نشاط غير قانوني، أو أي سلوك
+                  يُعتبر ضارًا بالمنصة أو بمجتمعها التعليمي.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-times-circle"></span>
+            </div>
+            <div class="items-grid">
+              <div class="text-item">
+                <h4>
+                  <!-- <span class="icon fa-solid fa-exclamation-triangle"></span> -->
+                  2.5. إخلاء المسؤولية وحدودها
+                </h4>
+                <p>
+                  تُقدم المنصة "كما هي" و"كما هي متاحة" دون أي ضمانات من أي نوع،
+                  صريحة أو ضمنية. منصة الوقار لا تضمن خلو المنصة من الأخطاء أو
+                  توفرها بشكل دائم ودون انقطاع. في أقصى حد يسمح به القانون، لن
+                  تكون منصة الوقار مسؤولة عن أي أضرار مباشرة أو غير مباشرة،
+                  عرضية أو تبعية، ناتجة عن استخدام المنصة أو عدم القدرة على
+                  استخدامها.
+                </p>
+              </div>
+              <span class="icon fa-solid fa-info-circle"></span>
+            </div>
+          </div>
+
+          <div class="policy-item" id="community-guidelines">
+            <div class="items-grid">
+              <div class="text-item">
+                <h3>3. إرشادات المجتمع والسلوك</h3>
+                <p>
+                  للحفاظ على بيئة تعليمية إيجابية، داعمة، ومحترمة للجميع، يرجى
+                  الالتزام بالإرشادات التالية عند التفاعل مع منصة الوقار
+                  ومستخدميها من طلاب، معلمين، وإداريين، بهدف بناء مجتمع معرفي
+                  يسوده التعاون والاحترام المتبادل:
+                </p>
+              </div>
+              <span class="icon fa-solid fa-users"></span>
+            </div>
+            <ul>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <strong>الاحترام المتبادل والتواصل الإيجابي:</strong> تعامل
+                    مع الجميع باستخدام لغة مهذبة ومحترمة. تجنب التنابز بالألقاب،
+                    الإهانات، أو أي شكل من أشكال التمييز أو التنمر التي قد تضر
+                    بمشاعر الآخرين أو تعيق العملية التعليمية.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-comment-dots"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <!-- <span class="icon fa-solid fa-file-image"></span> -->
+                    <strong>المحتوى المناسب والأصلي:</strong> تأكد من أن أي
+                    محتوى تقوم بنشره (نصوص، صور، ملفات، فيديوهات) مناسب للبيئة
+                    التعليمية، لا ينتهك حقوق الملكية الفكرية للآخرين، ولا يحتوي
+                    على مواد مسيئة، غير أخلاقية، أو غير قانونية بأي شكل من
+                    الأشكال.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-pencil-ruler"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <!-- <span class="icon fa-solid fa-user-secret"></span> -->
+                    <strong>حماية الخصوصية الشخصية:</strong> لا تشارك معلومات
+                    شخصية خاصة بك أو بالآخرين (مثل أرقام الهواتف، العناوين
+                    المنزلية، كلمات المرور، أو أي بيانات حساسة) على الملأ أو
+                    بدون موافقتهم الصريحة والواضحة، وذلك حفاظًا على أمن وسلامة
+                    الجميع.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-fingerprint"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <!-- <span class="icon fa-solid fa-bell"></span> -->
+                    <strong>الأمان والإبلاغ الفوري:</strong> إذا صادفت أي سلوك
+                    مشبوه، محتوى غير لائق، أو انتهاك لهذه الإرشادات، يرجى
+                    الإبلاغ عنه لفريق دعم الوقار فورًا للمساعدة في الحفاظ على
+                    أمان مجتمعنا وضمان بيئة تعليمية آمنة وموثوقة للجميع.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-hand-point-up"></span>
+              </div>
+              <div class="items-grid">
+                <div class="text-item">
+                  <li>
+                    <!-- <span class="icon fa-solid fa-users-gear"></span> -->
+                    <strong>التعاون والبناء:</strong> شجع على النقاش البناء،
+                    تبادل المعرفة، وتقديم الدعم لزملائك الطلاب والمعلمين لتعزيز
+                    تجربة التعلم للجميع وتحقيق أقصى استفادة من المنصة في بيئة
+                    تفاعلية وإيجابية.
+                  </li>
+                </div>
+                <span class="icon fa-solid fa-people-arrows"></span>
+              </div>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-us-prompt section-spacing text-center">
+        <div class="container">
+          <h2>هل لديك أسئلة حول سياساتنا؟</h2>
+          <p>
+            إذا كان لديكم أي استفسارات أو كنتم بحاجة إلى توضيح بشأن أي من
+            سياساتنا، يرجى <a href="contact-us.html">التواصل مع فريقنا</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="policies.html">من نحن</a></li>
+              <li><a href="about-us.html">سياساتنا</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="student-registration.html">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="contribute.html">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

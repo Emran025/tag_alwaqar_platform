@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="تسجيل الطلاب في منصة الوقار التعليمية. املأ النموذج لتقديم طلب تسجيل طالب جديد والانضمام إلى مدارسنا."
+    />
+    <meta
+      name="keywords"
+      content="تسجيل طالب, نموذج تسجيل طلاب, انضمام طلاب, تعليم, الوقار"
+    />
+    <meta name="author" content="منصة الوقار" />
+    <title>تسجيل الطلاب - منصة الوقار التعليمية</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body data-page="student-registration">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#">
+            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
+            <span>الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html" class="active">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">من نحن</a>
+              <div class="dropdown-content">
+                <a href="about-us.html">عنا</a>
+                <a href="policies.html">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="achievements.html">إنجازاتنا</a></li>
+            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="school-blog-page.html">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="school-registration.html">تسجيل مدرسة</a>
+                <a href="#">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ادعمنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
+      </div>
+    </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="about-us.html">من نحن</a></li>
+        <li><a href="policies.html">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="#">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="registration-hero section-spacing">
+        <div class="container text-center">
+          <h1>تسجيل الطلاب في منصة الوقار</h1>
+          <p>
+            مرحباً بكم في بوابة مستقبل التعليم! يرجى من ولي الأمر أو الطالب
+            تعبئة النموذج أدناه بدقة لتقديم طلب التسجيل.
+          </p>
+        </div>
+      </section>
+      <div class="bg-light">
+        <section class="main-layout container">
+          <aside class="sidebar">
+            <div class="sidebar-module popular-posts-module">
+              <h3>الأكثر قراءة</h3>
+              <ul class="popular-posts-list">
+                <li>
+                  <a href="#">10 نصائح لتعزيز الابتكار في الفصول الدراسية</a>
+                </li>
+                <li>
+                  <a href="#">كيف تساعد التكنولوجيا في تقييم أداء الطلاب؟</a>
+                </li>
+                <li>
+                  <a href="#">دور أولياء الأمور في مسيرة أبنائهم التعليمية</a>
+                </li>
+                <li>
+                  <a href="#">أهمية التعلم مدى الحياة للمعلمين</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="sidebar-module newsletter-module">
+              <h3>انضم إلى مجتمعنا</h3>
+              <p>
+                اشترك في النشرة البريدية لتصلك أحدث المقالات والنصائح الحصرية.
+              </p>
+              <form action="#" method="post" class="newsletter-form">
+                <input
+                  type="email"
+                  placeholder="أدخل بريدك الإلكتروني"
+                  required
+                />
+                <a
+                  href="school-registration.html"
+                  class="button button--primary"
+                  >اشترك الآن</a
+                >
+                <!-- <button type="submit" class="button button--primary">
+                    
+                  </button> -->
+              </form>
+            </div>
+
+            <div class="sidebar-module contact-module">
+              <h3>تحتاج مساعدة؟</h3>
+              <p>فريقنا مستعد للإجابة على جميع استفساراتك.</p>
+              <a href="#" class="button button--secondary button--block"
+                >تواصل معنا</a
+              >
+            </div>
+          </aside>
+
+          <div class="section-spacing">
+            <form id="student-registration-form" class="registration-form form">
+              <div class="registration-sub-container">
+                <fieldset>
+                  <legend>معلومات الطالب</legend>
+                  <div class="form-group">
+                    <label for="student-full-name"
+                      >الاسم الكامل للطالب (كما في الهوية/جواز السفر):</label
+                    >
+                    <input
+                      type="text"
+                      id="student-full-name"
+                      name="student-full-name"
+                      required
+                      aria-required="true"
+                      placeholder="الاسم رباعي"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="student-dob">تاريخ الميلاد:</label>
+                    <input
+                      type="date"
+                      id="student-dob"
+                      name="student-dob"
+                      required
+                      aria-required="true"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="student-nationality">الجنسية:</label>
+                    <input
+                      type="text"
+                      id="student-nationality"
+                      name="student-nationality"
+                      required
+                      aria-required="true"
+                      placeholder="المملكة العربية السعودية"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="student-gender">الجنس:</label>
+                    <select
+                      id="student-gender"
+                      name="student-gender"
+                      required
+                      aria-required="true"
+                    >
+                      <option value="">اختر الجنس</option>
+                      <option value="male">ذكر</option>
+                      <option value="female">أنثى</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="current-grade"
+                      >الصف الدراسي الحالي/المرغوب به:</label
+                    >
+                    <input
+                      type="text"
+                      id="current-grade"
+                      name="current-grade"
+                      required
+                      aria-required="true"
+                      placeholder="مثل: الصف الخامس الابتدائي"
+                    />
+                  </div>
+                </fieldset>
+              </div>
+              <div class="registration-sub-container">
+                <fieldset>
+                  <legend>معلومات ولي الأمر / الوصي</legend>
+                  <div class="form-group">
+                    <label for="guardian-full-name"
+                      >الاسم الكامل لولي الأمر:</label
+                    >
+                    <input
+                      type="text"
+                      id="guardian-full-name"
+                      name="guardian-full-name"
+                      required
+                      aria-required="true"
+                      placeholder="الاسم ثلاثي"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="guardian-relationship">الصلة بالطالب:</label>
+                    <input
+                      type="text"
+                      id="guardian-relationship"
+                      name="guardian-relationship"
+                      required
+                      aria-required="true"
+                      placeholder="أب، أم، عم، ..."
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="guardian-phone">رقم هاتف ولي الأمر:</label>
+                    <input
+                      type="tel"
+                      id="guardian-phone"
+                      name="guardian-phone"
+                      required
+                      aria-required="true"
+                      placeholder="+966 5x xxx xxxx"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="guardian-email"
+                      >البريد الإلكتروني لولي الأمر:</label
+                    >
+                    <input
+                      type="email"
+                      id="guardian-email"
+                      name="guardian-email"
+                      required
+                      aria-required="true"
+                      placeholder="example@email.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="current-address">عنوان الإقامة الحالي:</label>
+                    <input
+                      type="text"
+                      id="current-address"
+                      name="current-address"
+                      required
+                      aria-required="true"
+                      placeholder="الشارع، الحي، المدينة"
+                    />
+                  </div>
+                </fieldset>
+              </div>
+              <div class="registration-sub-container">
+                <fieldset>
+                  <legend>المستندات الداعمة (مطلوب)</legend>
+                  <div class="form-group file-upload-group">
+                    <label for="birth-certificate-upload">
+                      صورة شهادة الميلاد (PDF أو JPG):
+                    </label>
+                    <div class="file-upload-box">
+                      <input
+                        type="file"
+                        id="birth-certificate-upload"
+                        name="birth-certificate-upload"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required
+                        aria-required="true"
+                      />
+                      <span class="file-name">لم يتم اختيار أي ملف</span>
+                      <label for="license-upload" class="button button--primary"
+                        >اختر ملف</label
+                      >
+                    </div>
+                    <p class="help-text">الحد الأقصى لحجم الملف: 5 ميجابايت.</p>
+                  </div>
+                  <div class="form-group file-upload-group">
+                    <label for="id-copy-upload">
+                      صورة هوية ولي الأمر/الطالب (إن وجدت) (PDF أو JPG):
+                    </label>
+                    <div class="file-upload-box">
+                      <input
+                        type="file"
+                        id="id-copy-upload"
+                        name="id-copy-upload"
+                        accept=".pdf,.jpg,.jpeg,.png"
+                        required
+                        aria-required="true"
+                      />
+                      <span class="file-name">لم يتم اختيار أي ملف</span>
+                      <label for="license-upload" class="button button--primary"
+                        >اختر ملف</label
+                      >
+                    </div>
+                    <p class="help-text">الحد الأقصى لحجم الملف: 5 ميجابايت.</p>
+                  </div>
+                  <div class="form-group checkbox-group">
+                    <input
+                      type="checkbox"
+                      id="terms-agree"
+                      name="terms-agree"
+                      required
+                      aria-required="true"
+                    />
+                    <label for="terms-agree"
+                      >أوافق على
+                      <a href="about-us.html#terms" target="_blank"
+                        >شروط الخدمة وسياسة الخصوصية</a
+                      >
+                      لمنصة الوقار.</label
+                    >
+                  </div>
+                </fieldset>
+              </div>
+
+              <div class="form-actions">
+                <button
+                  type="submit"
+                  class="button button--primary button--large"
+                >
+                  إرسال طلب التسجيل
+                </button>
+                <button type="reset" class="button button--secondary">
+                  إعادة تعيين
+                </button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </div>
+      <section class="contact-prompt section-spacing text-center">
+        <div class="container">
+          <h2>هل تحتاج إلى مساعدة؟</h2>
+          <p>
+            إذا كان لديكم أي استفسارات أو كنتم بحاجة إلى مساعدة في عملية
+            التسجيل، فلا تترددوا في
+            <a href="contact-us.html">الاتصال بفريق الدعم لدينا</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
+            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="about-us.html">من نحن</a></li>
+              <li><a href="achievements.html">إنجازاتنا</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>خدماتنا</h3>
+            <ul>
+              <li><a href="school-registration.html">تسجيل المدارس</a></li>
+              <li><a href="#">تسجيل الطلاب</a></li>
+              <li><a href="teacher-registration.html">تسجيل المعلمين</a></li>
+              <li><a href="contribute.html">الدعم والمساهمات</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>الهاتف: +966 50 123 4567</p>
+            <address>
+              المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
+            </address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

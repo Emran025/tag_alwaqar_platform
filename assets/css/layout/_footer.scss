@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// أنماط التذييل (Footer)
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+
+.main-footer {
+    background-color: var.$color-background-dark;
+    color: var.$color-text-light;
+    padding: var.$spacing-md 0;
+    font-size: 1.4rem;
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: var.$spacing-lg;
+    }
+
+    .footer-logo-col {
+        img {
+            height: 50px;
+            margin-bottom: var.$spacing-sm;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+    .footer-links {
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: var.$spacing-sm;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li {
+                margin-bottom: var.$spacing-xs;
+            }
+        }
+        a {
+            color: var.$color-text-light;
+            &:hover {
+                color: var.$color-accent;
+            }
+        }
+    }
+
+    .social-links {
+        display: flex;
+        gap: var.$spacing-sm;
+        margin-top: var.$spacing-sm;
+        img {
+            height: 24px;
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: var.$spacing-md;
+        padding-top: var.$spacing-md;
+        border-top: 1px solid rgba(var.$color-text-light, 0.1);
+        p {
+            margin: 0;
+        }
+    }
+    
+    // استخدام breakpoint-down ليعمل بشكل صحيح
+    @include mix.breakpoint-down(lg) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @include mix.breakpoint-down(sm) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}

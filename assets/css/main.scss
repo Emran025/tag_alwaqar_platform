@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This is the main Sass entry file. It imports all other partials.
+// -----------------------------------------------------------------------------
+
+// 1. Abstracts
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/icon';
+
+// 2. Base
+@use 'base/base';
+
+// 3. Components
+@use 'components/buttons';
+@use 'components/forms';
+
+// 4. Layout
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/grid';
+
+// 5. Pages
+@use 'pages/homepage';
+@use 'pages/about';
+@use 'pages/school-registration';
+@use 'pages/achievements';
+@use 'pages/contact-us';
+@use 'pages/contribute';
+@use 'pages/school-blog';
+@use 'pages/school-page';
+@use 'pages/blog';
+
+

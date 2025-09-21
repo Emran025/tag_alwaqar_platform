@@ -1,0 +1,67 @@
+// -----------------------------------------------------------------------------
+// أنماط صفحة الاتصال
+// -----------------------------------------------------------------------------
+@use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
+@use 'sass:color';
+
+.contact-hero {
+    background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+    color: var.$color-text-light;
+    padding: var.$spacing-xl 0;
+    h1 {
+        font-size: var.$font-size-h1;
+        margin-bottom: var.$spacing-sm;
+    }
+    p {
+        font-size: 1.8rem;
+    }
+}
+
+.contact-form-section {
+    .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var.$spacing-md;
+        align-items: flex-start;
+    }
+
+    .contact-info {
+        background-color: var.$color-text-light;
+        padding: var.$spacing-lg;
+        border-radius: var.$border-radius-lg;
+        box-shadow: var.$box-shadow-base;
+        h2 {
+            color: var.$color-primary;
+            margin-bottom: var.$spacing-sm;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            margin-bottom: var.$spacing-sm;
+        }
+        .social-links-contact {
+            display: flex;
+            gap: var.$spacing-sm;
+            margin-top: var.$spacing-md;
+            img {
+                height: 32px;
+            }
+        }
+    }
+    
+    .contact-form {
+        background-color: var.$color-text-dark;
+        padding: var.$spacing-lg;
+        border-radius: var.$border-radius-lg;
+        box-shadow: var.$box-shadow-base;
+
+        h2 {
+            color: var.$color-text-light;
+            margin-bottom: var.$spacing-md;
+        }
+        textarea {
+            resize: vertical;
+        }
+    }
+}
