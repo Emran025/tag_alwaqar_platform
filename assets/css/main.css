@@ -208,6 +208,7 @@ a:hover {
 */
 input[type=text],
 input[type=email],
+input[type=number],
 input[type=tel],
 input[type=date],
 select,
@@ -226,6 +227,7 @@ textarea {
 }
 input[type=text]::-webkit-calendar-picker-indicator,
 input[type=email]::-webkit-calendar-picker-indicator,
+input[type=number]::-webkit-calendar-picker-indicator,
 input[type=tel]::-webkit-calendar-picker-indicator,
 input[type=date]::-webkit-calendar-picker-indicator,
 select::-webkit-calendar-picker-indicator,
@@ -238,6 +240,7 @@ textarea::-webkit-calendar-picker-indicator {
 }
 input[type=text]:hover::-webkit-calendar-picker-indicator,
 input[type=email]:hover::-webkit-calendar-picker-indicator,
+input[type=number]:hover::-webkit-calendar-picker-indicator,
 input[type=tel]:hover::-webkit-calendar-picker-indicator,
 input[type=date]:hover::-webkit-calendar-picker-indicator,
 select:hover::-webkit-calendar-picker-indicator,
@@ -246,6 +249,7 @@ textarea:hover::-webkit-calendar-picker-indicator {
 }
 input[type=text]:focus,
 input[type=email]:focus,
+input[type=number]:focus,
 input[type=tel]:focus,
 input[type=date]:focus,
 select:focus,
@@ -255,12 +259,28 @@ textarea:focus {
   border-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=date]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+input[type=text]::-webkit-inner-spin-button, input[type=text]::-webkit-outer-spin-button,
+input[type=email]::-webkit-inner-spin-button,
+input[type=email]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button,
+input[type=tel]::-webkit-inner-spin-button,
+input[type=tel]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button,
+select::-webkit-inner-spin-button,
+select::-webkit-outer-spin-button,
+textarea::-webkit-inner-spin-button,
+textarea::-webkit-outer-spin-button {
+  display: none;
+}
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=date]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.7);
   opacity: 1;
 }
 input[type=text]::placeholder,
 input[type=email]::placeholder,
+input[type=number]::placeholder,
 input[type=tel]::placeholder,
 input[type=date]::placeholder,
 select::placeholder,

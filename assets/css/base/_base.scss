@@ -83,6 +83,7 @@ a:hover {
 // التنسيق العام لحقول الإدخال
 input[type='text'],
 input[type='email'],
+input[type='number'],
 input[type='tel'],
 input[type='date'], // أضفنا حقل التاريخ هنا
 select,
@@ -119,6 +120,11 @@ textarea {
     background-color: rgba(255, 255, 255, 0.2); // يصبح أكثر وضوحاً عند التركيز
     border-color: rgba(255, 255, 255, 0.5); // يصبح الإطار أكثر وضوحاً
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); // ظل متوهج
+  }
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;// 
   }
 
   &::placeholder {
