@@ -2,10 +2,13 @@
 // This is the main Sass entry file. It imports all other partials.
 // -----------------------------------------------------------------------------
 
+
+
 // 1. Abstracts
 @use 'abstracts/variables';
 @use 'abstracts/mixins';
 @use 'abstracts/icon';
+@use 'abstracts/fonts';
 
 // 2. Base
 @use 'base/base';

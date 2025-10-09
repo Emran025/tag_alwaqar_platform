@@ -1,4 +1,4 @@
-
+# Emran Ghaleb Mohammed Nasser
 
 # 1. Introduction
 
@@ -850,5 +850,3 @@ The platform must support multiple languages to maximize accessibility and inclu
 - **W3C Web Standards** – Guidelines for HTML, CSS, and Accessibility.
 - Internal system architecture documentation and technical design drafts.
 - Best practices in educational platform design (collected from relevant academic and industry sources).
-
-
