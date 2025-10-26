@@ -3,6 +3,7 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/variables' as var;
+@use '../abstracts/mixins' as mix;
 
 // تنسيق قسم البطل (Hero Section)
 .achievements-hero {
@@ -16,7 +17,7 @@
   h1 {
     font-size: var.$font-size-h1;
     margin-bottom: var.$spacing-md;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(var.$breakpoint-md) {
       font-size: 3.8rem;
     }
   }
@@ -26,7 +27,7 @@
     max-width: 80rem;
     margin: 0 auto;
     opacity: 0.9;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(var.$breakpoint-md) {
       font-size: 1.8rem;
     }
   }

@@ -17,6 +17,7 @@
         <div class="logo">
           <a href="../index.html">
             <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
+
             <span>الوقار</span>
           </a>
         </div>
@@ -26,12 +27,12 @@
             <li class="dropdown">
               <a href="#" class="dropbtn">من نحن</a>
               <div class="dropdown-content">
-                <a href="about-us-and-policies.html">عنا</a>
-                <a href="about-us-and-policies.html">سياساتنا</a>
+                <a href="about-us.html">عنا</a>
+                <a href="policies.html">سياساتنا</a>
               </div>
             </li>
             <li><a href="achievements.html">إنجازاتنا</a></li>
-            <li><a href="schools.html">مدارسنا</a></li>
+            <li><a href="#">مدارسنا</a></li>
             <li><a href="school-blog-page.html">المدونة</a></li>
             <li class="dropdown">
               <a href="#" class="dropbtn">التسجيل</a>
@@ -47,11 +48,75 @@
                 >ادعمنا</a
               >
             </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
           </ul>
         </nav>
         <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
       </div>
     </header>
+
+    <!-- نافذة Dialog لتسجيل الدخول -->
+    <div class="dialog-overlay" id="loginDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="login-button mobile-login dialog-title">تسجيل الدخول</h2>
+        <form class="login-form">
+          <div class="form-group">
+            <label for="email">البريد الإلكتروني</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="example@email.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password">كلمة المرور</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              placeholder="أدخل كلمة المرور"
+            />
+          </div>
+          <div class="form-options">
+            <label> <input type="checkbox" name="remember" /> تذكرني </label>
+            <a href="#forgot-password">نسيت كلمة المرور؟</a>
+          </div>
+          <button type="submit" class="form-submit">تسجيل الدخول</button>
+          <div class="form-footer">
+            ليس لديك حساب؟ <a href="#register">إنشاء حساب</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- القائمة المتنقلة للشاشات الصغيرة -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <nav class="mobile-nav" id="mobileNav">
+      <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
+      <ul>
+        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="about-us.html">من نحن</a></li>
+        <li><a href="policies.html">سياساتنا</a></li>
+        <li><a href="achievements.html">إنجازاتنا</a></li>
+        <li><a href="schools.html">مدارسنا</a></li>
+        <li><a href="school-blog-page.html">المدونة</a></li>
+        <li><a href="#">تسجيل مدرسة</a></li>
+        <li><a href="student-registration.html">تسجيل طالب</a></li>
+        <li><a href="teacher-registration.html">تسجيل معلم</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
+        <li>
+          <a href="contribute.html" class="button button--primary">ادعمنا</a>
+        </li>
+      </ul>
+    </nav>
 
     <section class="school-hero">
       <div class="container">

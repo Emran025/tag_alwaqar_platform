@@ -9,13 +9,6 @@
     background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
     color: var.$color-text-light;
     padding: var.$spacing-xl 0;
-    h1 {
-        font-size: var.$font-size-h1;
-        margin-bottom: var.$spacing-sm;
-    }
-    p {
-        font-size: 1.8rem;
-    }
 }
 
 .contact-form-section {

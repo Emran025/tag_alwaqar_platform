@@ -140,7 +140,6 @@
   font-weight: 200;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-ExtraLight.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -148,7 +147,6 @@
   font-weight: 300;
   font-display: swap;
   src: url("../fonts/cairo/Cairo-Light.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -156,7 +154,6 @@
   font-weight: 400;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-Regular.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -164,7 +161,6 @@
   font-weight: 600;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-SemiBold.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -172,7 +168,6 @@
   font-weight: 700;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-Bold.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -180,7 +175,6 @@
   font-weight: 900;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-Black.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 @font-face {
   font-family: "Cairo";
@@ -188,7 +182,6 @@
   font-weight: 400;
   font-display: swap;
   src: url("../../fonts/cairo/Cairo-Regular.ttf") format("truetype");
-  unicode-range: U+0600-06FF, U+0750-077F, U+0870-088E, U+0890-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC, U+102E0-102FB, U+10E60-10E7E, U+10EC2-10EC4, U+10EFC-10EFF, U+1EE00-1EE03, U+1EE05-1EE1F, U+1EE21-1EE22, U+1EE24, U+1EE27, U+1EE29-1EE32, U+1EE34-1EE37, U+1EE39, U+1EE3B, U+1EE42, U+1EE47, U+1EE49, U+1EE4B, U+1EE4D-1EE4F, U+1EE51-1EE52, U+1EE54, U+1EE57, U+1EE59, U+1EE5B, U+1EE5D, U+1EE5F, U+1EE61-1EE62, U+1EE64, U+1EE67-1EE6A, U+1EE6C-1EE72, U+1EE74-1EE77, U+1EE79-1EE7C, U+1EE7E, U+1EE80-1EE89, U+1EE8B-1EE9B, U+1EEA1-1EEA3, U+1EEA5-1EEA9, U+1EEAB-1EEBB, U+1EEF0-1EEF1;
 }
 /* أنماط الجسم والجذر العامة */
 html {
@@ -233,6 +226,11 @@ h1 {
   font-size: 5.6rem;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  h1 {
+    font-size: 4.2rem;
+  }
+}
 
 h2 {
   font-size: 4rem;
@@ -243,9 +241,19 @@ h3 {
   font-size: 2.8rem;
   font-weight: bold;
 }
+@media (max-width: 768px) {
+  h3 {
+    font-size: 3.4rem;
+  }
+}
 
 p {
   margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  p {
+    font-size: 1.6;
+  }
 }
 
 /* الروابط */
@@ -637,6 +645,21 @@ select option:hover {
   color: #DEAB4E;
   text-decoration: underline;
 }
+@media (max-width: 1090px) {
+  .main-header .main-nav ul li {
+    margin-right: 1.5rem;
+  }
+}
+@media (max-width: 1010px) {
+  .main-header .main-nav ul li {
+    margin-right: 1.5rem;
+  }
+}
+@media (max-width: 920px) {
+  .main-header .main-nav ul li {
+    margin-right: 0.5rem;
+  }
+}
 .main-header .main-nav ul a {
   color: #333;
   font-weight: 500;
@@ -644,8 +667,29 @@ select option:hover {
 }
 .main-header .main-nav ul a.button--primary {
   color: #fefefe;
-  margin-left: 15px;
+  margin-left: 16px;
   border: 2px solid #333;
+}
+@media (max-width: 1010px) {
+  .main-header .main-nav ul a.button--primary {
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media (max-width: 1090px) {
+  .main-header .main-nav ul a {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1010px) {
+  .main-header .main-nav ul a {
+    font-size: 14px;
+  }
+}
+@media (max-width: 830px) {
+  .main-header .main-nav ul a {
+    padding: 0.5rem 0.6rem;
+  }
 }
 .main-header .dropdown .dropdown-content {
   display: none;
@@ -678,6 +722,13 @@ select option:hover {
   border-radius: 0.8rem;
   font-weight: 700;
   margin-right: 1.5rem;
+}
+@media (max-width: 1090px) {
+  .main-header .login-button {
+    padding: 0.8rem;
+    font-size: 12px;
+    margin-right: 1.5rem;
+  }
 }
 .main-header .login-button:hover {
   background-color: #333;
@@ -837,6 +888,7 @@ select option:hover {
   padding: 3rem;
   transition: right 0.3s ease;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 .mobile-nav.active {
   right: 0;
@@ -851,10 +903,14 @@ select option:hover {
   cursor: pointer;
   color: #333;
 }
+.mobile-nav::-webkit-scrollbar {
+  display: none;
+}
 .mobile-nav ul {
   list-style: none;
   margin-top: 3rem;
   padding: 0;
+  -ms-overflow-style: none;
 }
 .mobile-nav ul li {
   margin-bottom: 1.5rem;
@@ -915,6 +971,34 @@ select option:hover {
     display: none !important;
   }
 }
+.hero {
+  background: linear-gradient(135deg, #333, rgb(25.5, 25.5, 25.5));
+  padding: 12rem 0;
+  color: #fefefe;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 5.6rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.8rem;
+  }
+}
+.hero p {
+  font-size: 2.2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  .hero p {
+    font-size: 1.8rem;
+  }
+}
+
 .main-footer {
   background-color: rgb(25.5, 25.5, 25.5);
   color: #fefefe;
@@ -1047,13 +1131,23 @@ select option:hover {
 }
 .hero-section h1 {
   font-size: 5.6rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  margin-bottom: 3rem;
+}
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 4.2rem;
+  }
 }
 .hero-section p {
-  font-size: 1.8rem;
-  line-height: 1.8;
+  font-size: 2.2rem;
+  max-width: 80rem;
   margin-bottom: 3rem;
+  opacity: 0.9;
+}
+@media (max-width: 768px) {
+  .hero-section p {
+    font-size: 1.8rem;
+  }
 }
 .hero-section .hero-actions {
   display: flex;
@@ -1170,9 +1264,19 @@ select option:hover {
   line-height: 1.2;
   color: #fefefe;
 }
+@media (max-width: 768px) {
+  .call-to-action h2 {
+    font-size: 3.4rem;
+  }
+}
 .call-to-action p {
   font-size: 2rem;
   margin-bottom: 6rem;
+}
+@media (max-width: 768px) {
+  .call-to-action p {
+    font-size: 1.8rem;
+  }
 }
 
 .header__elements, .header__elements .dots {
@@ -1668,13 +1772,6 @@ select[dir=ltr] {
   color: #fefefe;
   padding: 12rem 0;
 }
-.contact-hero h1 {
-  font-size: 5.6rem;
-  margin-bottom: 1.5rem;
-}
-.contact-hero p {
-  font-size: 1.8rem;
-}
 
 .contact-form-section .contact-grid {
   display: grid;
@@ -1723,14 +1820,6 @@ select[dir=ltr] {
   background: linear-gradient(135deg, #333, rgb(25.5, 25.5, 25.5));
   color: #fefefe;
   padding: 12rem 0;
-}
-.contribute-hero h1 {
-  font-size: 5.6rem;
-  margin-bottom: 1.5rem;
-}
-.contribute-hero p {
-  font-size: 1.8rem;
-  line-height: 1.8;
 }
 
 .support-options .options-grid {
@@ -1798,26 +1887,6 @@ select[dir=ltr] {
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-.blog-hero h1 {
-  font-size: 5.6rem;
-  margin-bottom: 3rem;
-}
-@media (max-width: 768px) {
-  .blog-hero h1 {
-    font-size: 3.8rem;
-  }
-}
-.blog-hero p {
-  font-size: 2rem;
-  max-width: 80rem;
-  margin: 0 auto;
-  opacity: 0.9;
-}
-@media (max-width: 768px) {
-  .blog-hero p {
-    font-size: 1.6rem;
-  }
 }
 
 .section-divider {

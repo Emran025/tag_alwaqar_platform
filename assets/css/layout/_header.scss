@@ -60,9 +60,20 @@
                 }
                 
                 &:hover {
-                                        color: var.$color-accent;
+                    color: var.$color-accent;
                     text-decoration: underline; // لضمان إزالة الخط السفلي إذا كان رابط
 
+                }
+                
+                @include mix.breakpoint-down(1090px) {
+                    margin-right: var.$spacing-sm;
+                }
+
+                @include mix.breakpoint-down(1010px) {
+                    margin-right: var.$spacing-sm;
+                }
+                @include mix.breakpoint-down(920px) {
+                    margin-right: var.$spacing-xs;
                 }
             }
 
@@ -74,14 +85,25 @@
                 // transition: color 0.3s ease, background-color 0.3s ease;
                 // text-decoration: none;
 
+
                 &.button--primary {
                     color: var.$color-text-light;
-                    margin-left:  15px;
+                    margin-left:  16px;
                     border: 2px solid var.$color-primary;
-
+                    @include mix.breakpoint-down(1010px) {margin-left:  12px; margin-right:  12px;}
                 }
 
+                @include mix.breakpoint-down(1090px) {
+                    font-size: 16px;
+                }
 
+                @include mix.breakpoint-down(1010px) {
+                    font-size: 14px;
+                }
+
+                @include mix.breakpoint-down(830px) {
+                    padding: 0.5rem 0.6rem ;
+                }
             }
         }
     }
@@ -126,6 +148,11 @@
         border-radius: var.$border-radius-base;
         font-weight: 700;
         margin-right: var.$spacing-sm; // مسافة بينه وبين العناصر الأخرى
+        @include mix.breakpoint-down(1090px) {
+            padding: 0.8rem ;
+            font-size: 12px;
+            margin-right:  var.$spacing-sm; 
+        }
 
         &:hover {
             background-color: var.$color-primary;
@@ -330,6 +357,11 @@
         color: var.$color-text-dark;
     }
 
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    scrollbar-width: none; 
+
     ul {
         list-style: none;
         margin-top: var.$spacing-md;
@@ -343,6 +375,7 @@
             }
         }
 
+        -ms-overflow-style: none;
         a {
             display: block;
             padding: 1rem;
@@ -406,3 +439,31 @@
     }
 }
 
+
+.hero {
+// تنسيق قسم البطل (Hero Section)
+
+  background: linear-gradient(135deg, var.$color-primary, var.$color-secondary);
+  padding: var.$spacing-xl 0;
+  color: var.$color-text-light;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-size: var.$font-size-h1;
+    margin-bottom: var.$spacing-md;
+    @include mix.breakpoint-down(var.$breakpoint-md) {
+      font-size: 3.8rem;
+    }
+  }
+
+  p {
+    font-size: 2.2rem;
+    max-width: 80rem;
+    margin: 0 auto;
+    opacity: 0.9;
+    @include mix.breakpoint-down(var.$breakpoint-md) {
+      font-size: 1.8rem;
+    }
+  }
+}
