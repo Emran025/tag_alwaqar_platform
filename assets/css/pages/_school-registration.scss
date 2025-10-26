@@ -34,25 +34,22 @@
 
 // Main Layout
 .main-layout {
-    display: grid;
-    grid-template-columns: 1fr; 
+    display: flex;
+    flex-direction: column-reverse;
     gap: var.$spacing-md;
     padding: var.$spacing-xm 0;
 
     @include mixin.breakpoint-up(lg) {
-        grid-template-columns: 2fr 5fr;
+        flex-direction: row;
         align-items: flex-start;
         gap: var.$spacing-xm;
     }
 }
 
-
 .registration-form {
-  // max-width: 90rem;
-  
+  max-width: 90rem;
   margin: 0 auto;
-  margin-top: -6rem;
-  
+  padding: var.$spacing-lg;
   background-color: #fff;
   
   border-radius: var.$border-radius-lg;

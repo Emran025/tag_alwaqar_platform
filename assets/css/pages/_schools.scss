@@ -1,0 +1,57 @@
+// -----------------------------------------------------------------------------
+// School Details Page Styling
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mix;
+
+.school-hero-section {
+    position: relative;
+    padding: v.$spacing-xl 0;
+    color: v.$color-text-light;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.school-stats-section {
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: v.$spacing-md;
+        text-align: center;
+    }
+    .stat-item {
+        .stat-number {
+            font-size: v.$font-size-h2;
+            font-weight: 700;
+        }
+        .stat-label {
+            display: block;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.school-support-section {
+    background: linear-gradient(135deg, v.$color-primary, v.$color-secondary);
+    color: v.$color-text-light;
+    text-align: center;
+    border-radius: v.$border-radius-lg;
+    padding: v.$spacing-lg;
+}

@@ -156,3 +156,38 @@ document.addEventListener("keydown", (e) => {
     closeMobileNav();
   }
 });
+// -----------------------------------------------------------------------------
+// School Page-Specific JavaScript
+// -----------------------------------------------------------------------------
+
+/**
+ * Initializes the animated counters for school statistics.
+ */
+function initSchoolCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; // The lower the number, the faster the count
+
+    counters.forEach(counter => {
+        const animate = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            // Calculate the increment
+            const inc = target / speed;
+
+            if (count < target) {
+                // Add increment to count and ceil it
+                counter.innerText = Math.ceil(count + inc);
+                // Call function every ms
+                setTimeout(animate, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        animate();
+    });
+}
+
+// Run the counter initialization when the page loads
+document.addEventListener('DOMContentLoaded', initSchoolCounters);
