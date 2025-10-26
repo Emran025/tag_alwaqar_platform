@@ -139,13 +139,15 @@
         color: var.$color-primary;
         margin-bottom: var.$spacing-sm;
         position: relative;
+        text-align: start;
+
         &:after {
             content: '';
             display: block;
             width: 80px;
             height: 4px;
             background-color: var.$color-accent;
-            margin: var.$spacing-xs 0 0;
+            margin: var.$spacing-sm 0 0 0;
             border-radius: 2px;
         }
     }

@@ -195,12 +195,12 @@ html {
   box-sizing: inherit;
 }
 
-body::-webkit-scrollbar, html::-webkit-scrollbar {
-  display: none;
-}
 body, html {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -301,6 +301,7 @@ textarea::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
   opacity: 0.8;
+  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 input[type=text]:hover::-webkit-calendar-picker-indicator,
@@ -339,6 +340,10 @@ textarea::-webkit-inner-spin-button,
 textarea::-webkit-outer-spin-button {
   display: none;
 }
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=date]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
 input[type=text]::placeholder,
 input[type=email]::placeholder,
 input[type=number]::placeholder,
@@ -362,7 +367,9 @@ select {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   transition: all 0.3s ease;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23FFFFFF"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
   background-position: left 1rem center;
@@ -491,9 +498,8 @@ select option:hover {
 }
 
 .form {
-  max-width: 90rem;
   margin: 0 auto;
-  padding: 6rem;
+  padding: 3rem;
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -506,7 +512,7 @@ select option:hover {
   padding: 3rem;
 }
 .form legend {
-  font-size: 2.8rem;
+  font-size: 2rem;
   font-weight: bold;
   color: #fff;
   padding: 0 1.5rem;
@@ -817,6 +823,10 @@ select option:hover {
   outline: none;
   box-shadow: 0 0 0 2px rgba(222, 171, 78, 0.2);
 }
+.dialog-overlay .login-form .form-group input::-moz-placeholder {
+  color: rgb(25.5, 25.5, 25.5);
+  opacity: 1;
+}
 .dialog-overlay .login-form .form-group input::placeholder {
   color: rgb(25.5, 25.5, 25.5);
   opacity: 1;
@@ -878,6 +888,7 @@ select option:hover {
   padding: 3rem;
   transition: right 0.3s ease;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 .mobile-nav.active {
   right: 0;
@@ -895,22 +906,17 @@ select option:hover {
 .mobile-nav::-webkit-scrollbar {
   display: none;
 }
-.mobile-nav {
-  scrollbar-width: none;
-}
 .mobile-nav ul {
   list-style: none;
   margin-top: 3rem;
   padding: 0;
+  -ms-overflow-style: none;
 }
 .mobile-nav ul li {
   margin-bottom: 1.5rem;
 }
 .mobile-nav ul li:last-child {
   margin-bottom: 0;
-}
-.mobile-nav ul {
-  -ms-overflow-style: none;
 }
 .mobile-nav ul a {
   display: block;
@@ -1224,6 +1230,7 @@ select option:hover {
   color: #333;
   margin-bottom: 1.5rem;
   position: relative;
+  text-align: start;
 }
 .about-us-preview .section-title:after {
   content: "";
@@ -1231,7 +1238,7 @@ select option:hover {
   width: 80px;
   height: 4px;
   background-color: #DEAB4E;
-  margin: 0.5rem 0 0;
+  margin: 1.5rem 0 0 0;
   border-radius: 2px;
 }
 @media (max-width: 768px) {
@@ -1425,23 +1432,22 @@ select option:hover {
 }
 
 .main-layout {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 3rem;
   padding: 4.5rem 0;
 }
 @media (min-width: 992px) {
   .main-layout {
-    flex-direction: row;
+    grid-template-columns: 2fr 5fr;
     align-items: flex-start;
     gap: 4.5rem;
   }
 }
 
 .registration-form {
-  max-width: 90rem;
   margin: 0 auto;
-  padding: 6rem;
+  margin-top: -6rem;
   background-color: #fff;
   border-radius: 1.5rem;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -1587,7 +1593,8 @@ select[dir=ltr] {
 .stats-grid .stat-item .stat-icon-wrapper .stat-icon {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .stats-grid .stat-item h3 {
   font-size: 4rem;
@@ -1659,7 +1666,8 @@ select[dir=ltr] {
 .achievement-card img {
   width: 100%;
   height: 20rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
 }
@@ -1726,7 +1734,8 @@ select[dir=ltr] {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 3px solid #DEAB4E;
 }
 .testimonial-card .testimonial-info h4 {
@@ -1767,7 +1776,7 @@ select[dir=ltr] {
 .contact-form-section .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 3rem;
+  gap: 1.5rem;
   align-items: flex-start;
 }
 .contact-form-section .contact-info {
@@ -1779,6 +1788,15 @@ select[dir=ltr] {
 .contact-form-section .contact-info h2 {
   color: #333;
   margin-bottom: 1.5rem;
+}
+.contact-form-section .contact-info h2:after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background-color: #DEAB4E;
+  margin: 1.5rem 0 0 0;
+  border-radius: 2px;
 }
 .contact-form-section .contact-info p {
   font-size: 1.6rem;
@@ -1795,7 +1813,7 @@ select[dir=ltr] {
 }
 .contact-form-section .contact-form {
   background-color: #333;
-  padding: 6rem;
+  padding: 4.5rem;
   border-radius: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
@@ -1969,7 +1987,8 @@ select[dir=ltr] {
 .blog-post-card .post-thumbnail {
   width: 100%;
   height: 20rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .blog-post-card .post-content {
@@ -2021,7 +2040,8 @@ select[dir=ltr] {
 .featured-post-section .featured-post-card .featured-post-thumbnail {
   width: 100%;
   height: 30rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 768px) {
   .featured-post-section .featured-post-card .featured-post-thumbnail {
@@ -2282,7 +2302,8 @@ select[dir=ltr] {
 .school-card--horizontal .school-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .school-card--horizontal .school-card__tag {
@@ -2459,7 +2480,9 @@ select[dir=ltr] {
   border: 1px solid rgba(255, 255, 255, 0.3019607843);
   border-radius: 0.8rem;
   font-size: 1.6rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
@@ -2547,7 +2570,9 @@ select[dir=ltr] {
   border: 1px solid rgb(25.5, 25.5, 25.5);
   border-radius: 0.8rem;
   font-size: 1.6rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
@@ -2603,16 +2628,10 @@ select[dir=ltr] {
   width: 100%;
   height: 100%;
   mix-blend-mode: screen;
-  -webkit-animation: moving 10s linear infinite both;
   animation: moving 10s linear infinite both;
   display: block;
   position: absolute;
   content: "";
-}
-@-webkit-keyframes moving {
-  to {
-    background-position: 100vmin 20vmin, -100vmin -25vmin;
-  }
 }
 @keyframes moving {
   to {
@@ -2650,7 +2669,8 @@ select[dir=ltr] {
 .post-content-section .post-featured-image {
   width: 100%;
   max-height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -2717,6 +2737,4 @@ select[dir=ltr] {
   border-radius: 0.8rem;
   margin-bottom: 1.5rem;
   resize: vertical;
-}
-
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

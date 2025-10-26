@@ -5,9 +5,9 @@
 
 
 .form {
-  max-width: 90rem;
+  // max-width: 90rem;
   margin: 0 auto;
-  padding: var.$spacing-lg;
+  padding: var.$spacing-md;
   // تنسيق الزجاج المصنفر (Glassmorphism)
   background-color: rgba(255, 255, 255, 0.15); // خلفية شبه شفافة
   border-radius: var.$border-radius-lg;
@@ -26,7 +26,7 @@
 
   // تنسيق عنوان مجموعة الحقول (legend)
   legend {
-    font-size: var.$font-size-h3;
+    font-size: var.$font-size-h4;
     font-weight: bold;
     color: #fff;
     padding: 0 var.$spacing-sm;
