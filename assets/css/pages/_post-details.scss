@@ -1,0 +1,98 @@
+// -----------------------------------------------------------------------------
+// Post Details Page Styling
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as mix;
+
+.post-details-hero {
+  background-color: v.$color-background-light;
+  padding: v.$spacing-lg 0;
+  border-bottom: 1px solid v.$color-border;
+}
+
+.post-content-section {
+  .post-featured-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: v.$border-radius-lg;
+    margin-bottom: v.$spacing-md;
+  }
+
+  .post-body {
+    font-size: 1.8rem;
+    line-height: 1.8;
+
+    blockquote {
+      border-right: 4px solid v.$color-accent;
+      padding-right: v.$spacing-sm;
+      margin: v.$spacing-md 0;
+      font-size: 2rem;
+      font-style: italic;
+    }
+  }
+}
+
+.comments-section {
+  margin-top: v.$spacing-lg;
+
+  .comment-thread {
+    margin-bottom: v.$spacing-md;
+  }
+
+  .comment {
+    display: flex;
+    gap: v.$spacing-sm;
+    padding: v.$spacing-sm;
+    background-color: #fff;
+    border-radius: v.$border-radius-base;
+    box-shadow: v.$box-shadow-base;
+
+    .comment-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+
+    .comment-body {
+      .comment-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: v.$spacing-xs;
+
+        .comment-author {
+          font-weight: 700;
+          color: v.$color-primary;
+        }
+
+        .comment-date {
+          font-size: 1.4rem;
+          color: v.$color-text-dark;
+        }
+      }
+    }
+  }
+
+  .comment-reply {
+    margin-right: 50px;
+    margin-top: v.$spacing-sm;
+    padding-right: v.$spacing-sm;
+    border-right: 2px solid v.$color-accent;
+  }
+}
+
+.add-comment-form {
+  margin-top: v.$spacing-lg;
+
+  textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: v.$spacing-sm;
+    border: 1px solid v.$color-border;
+    border-radius: v.$border-radius-base;
+    margin-bottom: v.$spacing-sm;
+    resize: vertical;
+  }
+}

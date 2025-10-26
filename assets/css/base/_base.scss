@@ -69,7 +69,7 @@ h3 {
 }
 
 p {
-  font-size: var.$line-height-h4;
+  font-size: var.$font-size-h4;
   margin-bottom: var.$spacing-xs;
   @include mix.breakpoint-down(var.$breakpoint-md) {
     font-size: var.$line-height-base;
