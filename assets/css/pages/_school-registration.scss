@@ -31,24 +31,24 @@
     }
     }
 }
-
 // Main Layout
 .main-layout {
-    display: flex;
-    flex-direction: column-reverse;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
     gap: var.$spacing-md;
     padding: var.$spacing-xm 0;
 
     @include mixin.breakpoint-up(lg) {
-        flex-direction: row;
-        align-items: flex-start;
+        // flex-direction: row;
+        align-items: start;
         gap: var.$spacing-xm;
     }
 }
 
 .registration-form {
-  max-width: 90rem;
-  margin: 0 auto;
+  max-width: 100rem;
+  // margin: 0 auto;
+  margin-top: -6rem;
   padding: var.$spacing-lg;
   background-color: #fff;
   

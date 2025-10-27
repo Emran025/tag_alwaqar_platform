@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/variables' as var;
-@use '../abstracts/mixins' as mixin;
+@use '../abstracts/mixins' as mix;
 @use 'sass:color';
 
 
@@ -21,7 +21,7 @@
   h1 {
     font-size: var.$font-size-h1;
     margin-bottom: var.$spacing-md;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(md) {
       font-size: 3.8rem;
     }
   }
@@ -31,7 +31,7 @@
     max-width: 80rem;
     margin: 0 auto;
     opacity: 0.9;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(md) {
       font-size: 1.6rem;
     }
   }
@@ -94,10 +94,10 @@
     grid-template-columns: 1fr;
     gap: var.$spacing-md;
 
-    @include mixin.breakpoint-up(md) {
+    @include mix.breakpoint-up(md) {
         grid-template-columns: repeat(2, 1fr);
     }
-    @include mixin.breakpoint-up(lg) { // Changed from 1024px to lg
+    @include mix.breakpoint-up(lg) { // Changed from 1024px to lg
         grid-template-columns: repeat(3, 1fr); 
     }
 }
@@ -118,10 +118,10 @@
         box-shadow: var.$box-shadow-lg;
     }
 
-    @include mixin.breakpoint-up(sm) {
+    @include mix.breakpoint-up(sm) {
         flex-direction: row;
     }
-    @include mixin.breakpoint-up(lg) {
+    @include mix.breakpoint-up(lg) {
         flex-direction: column;
     }
 
@@ -131,12 +131,12 @@
         width: 100%;
         height: 20rem;
         
-        @include mixin.breakpoint-up(sm) {
+        @include mix.breakpoint-up(sm) {
             width: 20rem;
             height: auto;
         }
         
-        @include mixin.breakpoint-up(lg) {
+        @include mix.breakpoint-up(lg) {
             width: 100%;
             height: 20rem;
         }
@@ -295,7 +295,7 @@
             position: relative;
             padding-bottom: var.$spacing-sm;
 
-            @include mixin.breakpoint-down(sm) {
+            @include mix.breakpoint-down(sm) {
                 font-size: var.$font-size-h3;
             }
             
@@ -363,7 +363,7 @@
     z-index: 1000; // ليكون فوق كل شيء آخر
 
     &.show {
-        @include mixin.flex-center; // لتوسيط المحتوى
+        @include mix.flex-center; // لتوسيط المحتوى
     }
 
     .filter-modal-content {

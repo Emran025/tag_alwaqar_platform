@@ -7,7 +7,7 @@
 @use '../abstracts/mixins' as mix;
 
 .school-hero {
-    background-color: v.$color-background-dark;
+  background-color: v.$color-background-dark;
   position: relative;
   background-size: cover;
   background-position: center;
@@ -66,9 +66,23 @@
   }
 
   // responsive stacking
-//   @include mix.respond-to("tablet") {
-//     .hero-inner { flex-direction: column; align-items: flex-start; }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .hero-inner { flex-direction: column; align-items: flex-start; }
+  }
+}
+
+// Main Layout
+.main-layout-school {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var.$spacing-md;
+    padding: var.$spacing-xm 0;
+
+    @include mixin.breakpoint-up(lg) {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: var.$spacing-xm;
+    }
 }
 
 /* Quick actions sticky */
@@ -119,9 +133,9 @@
     }
   }
 
-//   @include mix.respond-to("tablet") {
-//     .stats-list { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .stats-list { grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); }
+  }
 }
 
 /* Overview (two column) */
@@ -153,9 +167,9 @@
     .map-placeholder { margin-top: v.$spacing-md; img { width:100%; height:auto; display:block; border-radius: v.$border-radius-sm; } }
   }
 
-//   @include mix.respond-to("tablet") {
-//     .grid-two { grid-template-columns: 1fr; }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .grid-two { grid-template-columns: 1fr; }
+  }
 }
 
 /* Achievements cards grid */
@@ -177,9 +191,9 @@
     }
   }
 
-//   @include mix.respond-to("tablet") {
-//     .cards-grid { grid-template-columns: repeat(1, 1fr); }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .cards-grid { grid-template-columns: repeat(1, 1fr); }
+  }
 }
 
 /* Graduates (alumni) */
@@ -203,9 +217,9 @@
     }
   }
 
-//   @include mix.respond-to("tablet") {
-//     .graduates-grid { grid-template-columns: 1fr; }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .graduates-grid { grid-template-columns: 1fr; }
+  }
 
   /* Modal */
  .graduates .modal {
@@ -254,11 +268,11 @@
     .progress-meta{ margin-top:v.$spacing-xs; font-size:v.$font-size-h4; color:inherit;}
   }
 
-//   @include mix.respond-to("tablet") {
-//     .support-inner { flex-direction:column; align-items:flex-start; }
-//     .support-text{ max-width:100%; }
-//     .support-progress{ width:100%; margin-top:v.$spacing-md; }
-//   }
+  @include mix.breakpoint-down( v.$breakpoint-xm) {
+    .support-inner { flex-direction:column; align-items:flex-start; }
+    .support-text{ max-width:100%; }
+    .support-progress{ width:100%; margin-top:v.$spacing-md; }
+  }
 }
 
 /* Generic helpers */
@@ -266,8 +280,8 @@
 .section-title { font-size: v.$font-size-h1; margin-bottom: v.$spacing-md; }
 
 /* Small screens */
-// @include mix.respond-to("phone") {
-//   .quick-actions { display: none; }
-//   .school-hero { padding: v.$spacing-lg 0; .hero-inner { padding-inline: v.$spacing-sm; } }
-//   .school-stats .stats-list { gap: v.$spacing-sm; }
-// }
+@include mix.breakpoint-down( md) {
+  .quick-actions { display: none; }
+  .school-hero { padding: v.$spacing-lg 0; .hero-inner { padding-inline: v.$spacing-sm; } }
+  .school-stats .stats-list { gap: v.$spacing-sm; }
+}

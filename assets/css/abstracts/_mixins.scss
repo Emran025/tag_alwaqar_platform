@@ -16,6 +16,8 @@
         @media (min-width: var.$breakpoint-lg) { @content; }
     } @else if $size == xl {
         @media (min-width: var.$breakpoint-xl) { @content; }
+    } @else {
+        @media (max-width: $size) { @content; }
     }
 }
 
