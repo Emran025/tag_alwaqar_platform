@@ -195,12 +195,12 @@ html {
   box-sizing: inherit;
 }
 
-body::-webkit-scrollbar, html::-webkit-scrollbar {
-  display: none;
-}
 body, html {
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+body::-webkit-scrollbar, html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -238,7 +238,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: bold;
 }
 @media (max-width: 768px) {
@@ -301,6 +301,7 @@ textarea::-webkit-calendar-picker-indicator {
   filter: invert(1);
   cursor: pointer;
   opacity: 0.8;
+  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 input[type=text]:hover::-webkit-calendar-picker-indicator,
@@ -339,6 +340,10 @@ textarea::-webkit-inner-spin-button,
 textarea::-webkit-outer-spin-button {
   display: none;
 }
+input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=date]::-moz-placeholder, select::-moz-placeholder, textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  opacity: 1;
+}
 input[type=text]::placeholder,
 input[type=email]::placeholder,
 input[type=number]::placeholder,
@@ -362,7 +367,9 @@ select {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   transition: all 0.3s ease;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23FFFFFF"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
   background-position: left 1rem center;
@@ -506,7 +513,7 @@ select option:hover {
   padding: 3rem;
 }
 .form legend {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: bold;
   color: #fff;
   padding: 0 1.5rem;
@@ -817,6 +824,10 @@ select option:hover {
   outline: none;
   box-shadow: 0 0 0 2px rgba(222, 171, 78, 0.2);
 }
+.dialog-overlay .login-form .form-group input::-moz-placeholder {
+  color: rgb(25.5, 25.5, 25.5);
+  opacity: 1;
+}
 .dialog-overlay .login-form .form-group input::placeholder {
   color: rgb(25.5, 25.5, 25.5);
   opacity: 1;
@@ -878,6 +889,7 @@ select option:hover {
   padding: 3rem;
   transition: right 0.3s ease;
   overflow-y: auto;
+  scrollbar-width: none;
 }
 .mobile-nav.active {
   right: 0;
@@ -895,22 +907,17 @@ select option:hover {
 .mobile-nav::-webkit-scrollbar {
   display: none;
 }
-.mobile-nav {
-  scrollbar-width: none;
-}
 .mobile-nav ul {
   list-style: none;
   margin-top: 3rem;
   padding: 0;
+  -ms-overflow-style: none;
 }
 .mobile-nav ul li {
   margin-bottom: 1.5rem;
 }
 .mobile-nav ul li:last-child {
   margin-bottom: 0;
-}
-.mobile-nav ul {
-  -ms-overflow-style: none;
 }
 .mobile-nav ul a {
   display: block;
@@ -1587,7 +1594,8 @@ select[dir=ltr] {
 .stats-grid .stat-item .stat-icon-wrapper .stat-icon {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .stats-grid .stat-item h3 {
   font-size: 4rem;
@@ -1659,7 +1667,8 @@ select[dir=ltr] {
 .achievement-card img {
   width: 100%;
   height: 20rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
 }
@@ -1726,7 +1735,8 @@ select[dir=ltr] {
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 3px solid #DEAB4E;
 }
 .testimonial-card .testimonial-info h4 {
@@ -1969,7 +1979,8 @@ select[dir=ltr] {
 .blog-post-card .post-thumbnail {
   width: 100%;
   height: 20rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .blog-post-card .post-content {
@@ -1997,7 +2008,7 @@ select[dir=ltr] {
   margin-bottom: 1.5rem;
 }
 .blog-post-card .post-content .post-excerpt {
-  display: none;
+  font-size: 1.6rem;
 }
 .blog-post-card .post-content .button--small {
   margin-top: auto;
@@ -2021,7 +2032,8 @@ select[dir=ltr] {
 .featured-post-section .featured-post-card .featured-post-thumbnail {
   width: 100%;
   height: 30rem;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media (min-width: 768px) {
   .featured-post-section .featured-post-card .featured-post-thumbnail {
@@ -2282,7 +2294,8 @@ select[dir=ltr] {
 .school-card--horizontal .school-card__image {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   display: block;
 }
 .school-card--horizontal .school-card__tag {
@@ -2425,7 +2438,7 @@ select[dir=ltr] {
 }
 @media (max-width: 576px) {
   .sidebar .sidebar-module h3 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
   }
 }
 .sidebar .sidebar-module h3::after {
@@ -2459,7 +2472,9 @@ select[dir=ltr] {
   border: 1px solid rgba(255, 255, 255, 0.3019607843);
   border-radius: 0.8rem;
   font-size: 1.6rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
@@ -2513,7 +2528,7 @@ select[dir=ltr] {
   color: #dc3545;
 }
 .filter-modal .filter-modal-content h3 {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   color: #333;
   margin-bottom: 3rem;
   text-align: right;
@@ -2547,7 +2562,9 @@ select[dir=ltr] {
   border: 1px solid rgb(25.5, 25.5, 25.5);
   border-radius: 0.8rem;
   font-size: 1.6rem;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   background-color: #fff;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="%23333"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>');
   background-repeat: no-repeat;
@@ -2603,16 +2620,10 @@ select[dir=ltr] {
   width: 100%;
   height: 100%;
   mix-blend-mode: screen;
-  -webkit-animation: moving 10s linear infinite both;
   animation: moving 10s linear infinite both;
   display: block;
   position: absolute;
   content: "";
-}
-@-webkit-keyframes moving {
-  to {
-    background-position: 100vmin 20vmin, -100vmin -25vmin;
-  }
 }
 @keyframes moving {
   to {
@@ -2650,7 +2661,8 @@ select[dir=ltr] {
 .post-content-section .post-featured-image {
   width: 100%;
   max-height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 1.5rem;
   margin-bottom: 3rem;
 }
@@ -2719,49 +2731,318 @@ select[dir=ltr] {
   resize: vertical;
 }
 
-.school-hero-section {
+.school-hero {
+  background-color: rgb(25.5, 25.5, 25.5);
   position: relative;
-  padding: 12rem 0;
-  color: #fefefe;
-  text-align: center;
   background-size: cover;
   background-position: center;
+  color: #fefefe;
+  padding: 12rem 0;
+  margin-bottom: 6rem;
 }
-.school-hero-section::before {
+.school-hero .overlay {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.25));
 }
-.school-hero-section .container {
+.school-hero .hero-inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: space-between;
+}
+.school-hero .hero-inner .school-title {
+  font-size: 5.6rem;
+  margin: 0 0 1.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+.school-hero .hero-inner .school-tagline {
+  margin: 0 0 3rem;
+  max-width: 60ch;
+  opacity: 0.95;
+}
+.school-hero .hero-inner .hero-ctas {
+  display: flex;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+.school-hero .hero-inner .hero-ctas .button {
+  min-width: 160px;
+}
+.school-hero .hero-inner .hero-quick {
+  text-align: right;
+}
+.school-hero .hero-inner .hero-quick .hero-address,
+.school-hero .hero-inner .hero-quick .hero-contact {
+  margin: 0;
+  font-size: 2rem;
+  opacity: 0.95;
 }
 
-.school-stats-section .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+/* Quick actions sticky */
+.quick-actions {
+  display: flex;
   gap: 3rem;
+  align-items: center;
+  margin: 0 auto 3rem;
+  justify-content: center;
+}
+.quick-actions .qa-item {
+  padding: 1.5rem 3rem;
+  border-radius: 0.8rem;
+  background: rgb(25.5, 25.5, 25.5);
+  box-shadow: #d4d4d4;
+  text-decoration: none;
+}
+
+/* Stats */
+.school-stats {
+  margin-top: 3rem;
+}
+.school-stats .stats-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   text-align: center;
 }
-.school-stats-section .stat-item .stat-number {
+.school-stats .stats-list .stat {
+  padding: 3rem;
+  border-radius: 1.2rem;
+  box-shadow: #d4d4d4;
+}
+.school-stats .stats-list .stat .stat-number {
+  display: block;
   font-size: 4rem;
+  font-weight: 800;
+  color: #333;
+}
+.school-stats .stats-list .stat .stat-label {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  color: #DEAB4E;
+}
+
+/* Overview (two column) */
+.school-overview .grid-two {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.school-overview .overview-text {
+  border-radius: 1.2rem;
+  padding: 3.2rem;
+}
+.school-overview .overview-text .section-title {
+  margin-bottom: 3rem;
+}
+.school-overview .overview-text p {
+  margin-bottom: 3rem;
+  line-height: 1.7;
+  color: #333;
+}
+.school-overview .overview-text .quick-facts {
+  margin: 3rem 0;
+  padding: 0;
+  list-style: none;
+}
+.school-overview .overview-text .quick-facts li {
+  margin-bottom: 1.5rem;
+}
+.school-overview .overview-text .overview-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.school-overview .overview-card {
+  padding: 3rem;
+  border-radius: 1.2rem;
+  box-shadow: #d4d4d4;
+}
+.school-overview .overview-card .contact-list dt {
   font-weight: 700;
 }
-.school-stats-section .stat-item .stat-label {
+.school-overview .overview-card .contact-list dd {
+  margin: 0 0 1.5rem 0;
+  color: #DEAB4E;
+}
+.school-overview .overview-card .map-placeholder {
+  margin-top: 3rem;
+}
+.school-overview .overview-card .map-placeholder img {
+  width: 100%;
+  height: auto;
   display: block;
-  font-size: 1.8rem;
+  border-radius: 0.8rem;
 }
 
-.school-support-section {
-  background: linear-gradient(135deg, #333, rgb(25.5, 25.5, 25.5));
-  color: #fefefe;
-  text-align: center;
-  border-radius: 1.5rem;
+/* Achievements cards grid */
+.school-achievements .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 3rem;
+}
+.school-achievements .cards-grid .achievement-card {
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+.school-achievements .cards-grid .achievement-card img {
+  width: 100%;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.school-achievements .cards-grid .achievement-card .card-body {
+  padding: 3rem;
+}
+.school-achievements .cards-grid .achievement-card .card-body h3h3 {
+  margin: 0 0 0.5rem;
+  font-size: 2.6rem;
+}
+.school-achievements .cards-grid .achievement-card .card-body p {
+  margin: 0 0 1.5rem;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+/* Graduates (alumni) */
+.graduates .graduates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.graduates .graduates-grid .alumni-card {
+  border-radius: 1.2rem;
+  box-shadow: #d4d4d4;
+  overflow: hidden;
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  padding: 3rem;
+}
+.graduates .graduates-grid .alumni-card img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 120px;
+}
+.graduates .graduates-grid .alumni-card .alumni-body h3 {
+  margin: 0 0 0.5rem;
+}
+.graduates .graduates-grid .alumni-card .alumni-body p {
+  margin: 0 0 1.5rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+.graduates .graduates-grid .alumni-card .alumni-body .link-more {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+}
+
+/* Modal */
+.graduates .modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(2, 6, 23, 0.6);
+  z-index: 1200;
+}
+.graduates .modal .graduates .open {
+  display: flex;
+}
+.graduates .modal .graduates .modal-content {
+  background: rgb(25.5, 25.5, 25.5);
   padding: 6rem;
+  border-radius: 1.2rem;
+  max-width: 760px;
+  width: 95%;
+  box-shadow: #d4d4d4;
+}
+.graduates .modal .graduates .modal-content .modal-close {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
 
-/*# sourceMappingURL=main.css.map */
+/* Support / Donate */
+.support .support-inner {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #333 0%, rgb(25.5, 25.5, 25.5) 100%);
+  color: #fefefe;
+  padding: 6rem;
+  border-radius: 1.5rem;
+  box-shadow: #d4d4d4;
+}
+.support .support-text {
+  max-width: 60%;
+}
+.support .support-text .section-title {
+  color: #fefefe;
+}
+.support .support-text h2 {
+  margin: 0 0 1.5rem;
+}
+.support .support-text p {
+  opacity: 0.95;
+}
+.support .support-text .support-actions {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+.support .support-progress {
+  width: 35%;
+}
+.support .support-progress label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: inherit;
+}
+.support .support-progress .progress-bar {
+  background: rgba(255, 255, 255, 0.12);
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.support .support-progress .progress-bar .progress-fill {
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+}
+.support .support-progress .progress-meta {
+  margin-top: 0.5rem;
+  font-size: 2rem;
+  color: inherit;
+}
+
+/* Generic helpers */
+.section-spacing {
+  padding: 6rem 0;
+}
+
+.section-title {
+  font-size: 5.6rem;
+  margin-bottom: 3rem;
+}
+
+/* Small screens *//*# sourceMappingURL=main.css.map */

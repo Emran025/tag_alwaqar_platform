@@ -139,7 +139,8 @@
     }
 
     .post-excerpt {
-      display: none; // إخفاء الوصف المختصر لتقصير البطاقة
+     // display: none; // إخفاء الوصف المختصر لتقصير البطاقة
+     font-size: var.$font-size-base;
     }
     
     .button--small {
