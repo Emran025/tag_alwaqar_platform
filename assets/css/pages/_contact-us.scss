@@ -14,9 +14,9 @@
 .contact-form-section {
     .contact-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        grid-template-columns: 2fr 5fr;
         gap: var.$spacing-md;
-        align-items: flex-start;
+        align-items: start;
     }
 
     .contact-info {
@@ -45,7 +45,7 @@
     
     .contact-form {
         background-color: var.$color-text-dark;
-        padding: var.$spacing-lg;
+        padding: var.$spacing-md;
         border-radius: var.$border-radius-lg;
         box-shadow: var.$box-shadow-base;
 

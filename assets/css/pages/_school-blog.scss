@@ -17,7 +17,7 @@
   h1 {
     font-size: var.$font-size-h1;
     margin-bottom: var.$spacing-md;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(md) {
       font-size: 3.8rem;
     }
   }
@@ -27,7 +27,7 @@
     max-width: 80rem;
     margin: 0 auto;
     opacity: 0.9;
-    @media (max-width: var.$breakpoint-md) {
+    @include mix.breakpoint-down(md) {
       font-size: 1.6rem;
     }
   }
@@ -73,16 +73,16 @@
   gap: var.$spacing-md;
   flex-grow: 1;
 
-  @media (min-width: var.$breakpoint-sm) {
+  @include mix.breakpoint-up(sm) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: var.$breakpoint-md) {
+  @include mix.breakpoint-up(md) {
     grid-template-columns: repeat(2, 1fr);
   }
 
   // هذا هو السطر الذي سيتم تعديله
-  @media (min-width: 1200px) {
+  @include mix.breakpoint-up(1200px) {
     grid-template-columns: repeat(2, 1fr); // تم تغيير 4 إلى 3
   }
 }
@@ -160,7 +160,7 @@
     box-shadow: var.$box-shadow-lg;
     overflow: hidden;
 
-    @media (min-width: var.$breakpoint-md) {
+    @include mix.breakpoint-up(md) {
       flex-direction: row-reverse;
       justify-content: space-between;
     }
@@ -170,7 +170,7 @@
       height: 30rem;
       object-fit: cover;
       
-      @media (min-width: var.$breakpoint-md) {
+      @include mix.breakpoint-up(md) {
         width: 50%;
         height: auto;
       }
@@ -179,7 +179,7 @@
     .featured-post-content {
       padding: var.$spacing-lg;
 
-      @media (min-width: var.$breakpoint-md) {
+      @include mix.breakpoint-up(md) {
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -198,7 +198,7 @@
 
       .post-title a {
         font-size: var.$font-size-h2;
-        @media (max-width: var.$breakpoint-md) {
+        @include mix.breakpoint-down(md) {
           font-size: 2.4rem;
         }
       }

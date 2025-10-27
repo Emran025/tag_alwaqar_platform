@@ -498,9 +498,8 @@ select option:hover {
 }
 
 .form {
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: 6rem;
+  max-width: 100rem;
+  padding: 3rem;
   background-color: rgba(255, 255, 255, 0.15);
   border-radius: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -1432,22 +1431,21 @@ select option:hover {
 }
 
 .main-layout {
-  display: flex;
-  flex-direction: column-reverse;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
   gap: 3rem;
   padding: 4.5rem 0;
 }
 @media (min-width: 992px) {
   .main-layout {
-    flex-direction: row;
-    align-items: flex-start;
+    align-items: start;
     gap: 4.5rem;
   }
 }
 
 .registration-form {
-  max-width: 90rem;
-  margin: 0 auto;
+  max-width: 100rem;
+  margin-top: -6rem;
   padding: 6rem;
   background-color: #fff;
   border-radius: 1.5rem;
@@ -1776,9 +1774,9 @@ select[dir=ltr] {
 
 .contact-form-section .contact-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: 2fr 5fr;
   gap: 3rem;
-  align-items: flex-start;
+  align-items: start;
 }
 .contact-form-section .contact-info {
   background-color: #fefefe;
@@ -1805,7 +1803,7 @@ select[dir=ltr] {
 }
 .contact-form-section .contact-form {
   background-color: #333;
-  padding: 6rem;
+  padding: 3rem;
   border-radius: 1.5rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
@@ -1955,7 +1953,7 @@ select[dir=ltr] {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (min-width: 1200px) {
+@media (max-width: 1200px) {
   .blog-posts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2782,6 +2780,12 @@ select[dir=ltr] {
   font-size: 2rem;
   opacity: 0.95;
 }
+@media (max-width: 810px) {
+  .school-hero .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 
 /* Quick actions sticky */
 .quick-actions {
@@ -2828,6 +2832,11 @@ select[dir=ltr] {
   margin-top: 0.5rem;
   font-size: 2rem;
   color: #DEAB4E;
+}
+@media (max-width: 810px) {
+  .school-stats .stats-list {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
 
 /* Overview (two column) */
@@ -2883,6 +2892,11 @@ select[dir=ltr] {
   display: block;
   border-radius: 0.8rem;
 }
+@media (max-width: 810px) {
+  .school-overview .grid-two {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* Achievements cards grid */
 .school-achievements .cards-grid {
@@ -2913,6 +2927,11 @@ select[dir=ltr] {
   margin: 0 0 1.5rem;
   color: #333;
   font-size: 1.6rem;
+}
+@media (max-width: 810px) {
+  .school-achievements .cards-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 /* Graduates (alumni) */
@@ -2951,6 +2970,11 @@ select[dir=ltr] {
   font-size: 0.8rem;
 }
 
+@media (max-width: 810px) {
+  .graduates-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* Modal */
 .graduates .modal {
   position: fixed;
@@ -3034,6 +3058,19 @@ select[dir=ltr] {
   font-size: 2rem;
   color: inherit;
 }
+@media (max-width: 810px) {
+  .support .support-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .support .support-text {
+    max-width: 100%;
+  }
+  .support .support-progress {
+    width: 100%;
+    margin-top: 3rem;
+  }
+}
 
 /* Generic helpers */
 .section-spacing {
@@ -3045,4 +3082,18 @@ select[dir=ltr] {
   margin-bottom: 3rem;
 }
 
-/* Small screens *//*# sourceMappingURL=main.css.map */
+/* Small screens */
+@media (max-width: 768px) {
+  .quick-actions {
+    display: none;
+  }
+  .school-hero {
+    padding: 6rem 0;
+  }
+  .school-hero .hero-inner {
+    padding-inline: 1.5rem;
+  }
+  .school-stats .stats-list {
+    gap: 1.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */

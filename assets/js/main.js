@@ -33,18 +33,6 @@ function closeModal() {
   document.body.classList.remove("modal-open");
 }
 
-// دالة لفتح القائمة المتنقلة
-function openMobileNav() {
-  mainNav.classList.add("active");
-  document.body.style.overflow = "hidden";
-}
-
-// دالة لإغلاق القائمة المتنقلة
-function closeMobileNav() {
-  mainNav.classList.remove("active");
-  document.body.style.overflow = "";
-}
-
 // مستمعي الأحداث
 if (openFilterModalBtn) {
   openFilterModalBtn.addEventListener("click", (event) => {
@@ -86,74 +74,71 @@ if (applyFiltersBtn) {
 
 // فتح القائمة المتنقلة
 if (menuToggle) {
-  menuToggle.addEventListener("click", openMobileNav);
+    menuToggle.addEventListener("click", () => {
+        if (mobileNav) mobileNav.classList.add("active");
+        if (mobileOverlay) mobileOverlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    });
 }
-
-// إغلاق القائمة المتنقلة عند الضغط على أي رابط داخلها
-if (mainNav) {
-  mainNav.addEventListener("click", (event) => {
-    if (event.target.tagName === "A") {
-      closeMobileNav();
-    }
-  });
-}
-
-// إغلاق النوافذ عند الضغط على مفتاح Escape
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    if (filterModal.classList.contains("show")) {
-      closeModal();
-    }
-    if (mainNav.classList.contains("active")) {
-      closeMobileNav();
-    }
-  }
-});
-
-// فتح القائمة المتنقلة
-menuToggle.addEventListener("click", () => {
-  mobileNav.classList.add("active");
-  mobileOverlay.classList.add("active");
-  document.body.style.overflow = "hidden";
-});
 
 // إغلاق القائمة المتنقلة
 function closeMobileNav() {
-  mobileNav.classList.remove("active");
-  mobileOverlay.classList.remove("active");
+  if (mobileNav) mobileNav.classList.remove("active");
+  if (mobileOverlay) mobileOverlay.classList.remove("active");
   document.body.style.overflow = "";
 }
 
-mobileNavClose.addEventListener("click", closeMobileNav);
-mobileOverlay.addEventListener("click", closeMobileNav);
+if (mobileNavClose) {
+    mobileNavClose.addEventListener("click", closeMobileNav);
+}
+
+if (mobileOverlay) {
+    mobileOverlay.addEventListener("click", closeMobileNav);
+}
 
 // فتح نافذة تسجيل الدخول
-loginButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    loginDialog.classList.add("active");
-    document.body.style.overflow = "hidden";
-  });
-});
+if (loginButtons) {
+    loginButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        if (loginDialog) loginDialog.classList.add("active");
+        document.body.style.overflow = "hidden";
+      });
+    });
+}
+
 
 // إغلاق نافذة تسجيل الدخول
-dialogClose.addEventListener("click", () => {
-  loginDialog.classList.remove("active");
-  document.body.style.overflow = "";
-});
+if (dialogClose) {
+    dialogClose.addEventListener("click", () => {
+      if (loginDialog) loginDialog.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+}
 
 // إغلاق النافذة عند النقر خارجها
-loginDialog.addEventListener("click", (e) => {
-  if (e.target === loginDialog) {
-    loginDialog.classList.remove("active");
-    document.body.style.overflow = "";
-  }
-});
+if (loginDialog) {
+    loginDialog.addEventListener("click", (e) => {
+      if (e.target === loginDialog) {
+        loginDialog.classList.remove("active");
+        document.body.style.overflow = "";
+      }
+    });
+}
+
 
 // إغلاق النوافذ عند الضغط على مفتاح Escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    loginDialog.classList.remove("active");
-    closeMobileNav();
+    if (filterModal && filterModal.classList.contains("show")) {
+      closeModal();
+    }
+    if (loginDialog && loginDialog.classList.contains("active")) {
+      loginDialog.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+    if (mobileNav && mobileNav.classList.contains("active")) {
+      closeMobileNav();
+    }
   }
 });
 // -----------------------------------------------------------------------------

@@ -5,9 +5,9 @@
 
 
 .form {
-  max-width: 90rem;
-  margin: 0 auto;
-  padding: var.$spacing-lg;
+  max-width: 100rem;
+  // margin: 0 auto;
+  padding: var.$spacing-md;
   // تنسيق الزجاج المصنفر (Glassmorphism)
   background-color: rgba(255, 255, 255, 0.15); // خلفية شبه شفافة
   border-radius: var.$border-radius-lg;
