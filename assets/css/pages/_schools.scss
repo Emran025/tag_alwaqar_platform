@@ -75,13 +75,13 @@
 .main-layout-school {
     display: flex;
     flex-direction: column-reverse;
-    gap: var.$spacing-md;
-    padding: var.$spacing-xm 0;
+    gap: v.$spacing-md;
+    padding: v.$spacing-xm 0;
 
-    @include mixin.breakpoint-up(lg) {
+    @include mix.breakpoint-up(lg) {
         flex-direction: row;
         align-items: flex-start;
-        gap: var.$spacing-xm;
+        gap: v.$spacing-xm;
     }
 }
 
