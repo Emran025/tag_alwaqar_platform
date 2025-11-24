@@ -1,24 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="مدونة أكاديمية تاج الوقار - مقالات ونصائح حول حفظ القرآن الكريم، علوم التجويد، وقصص ملهمة من أهل القرآن."
+    />
+    <meta
+      name="keywords"
+      content="مدونة, مقالات, تحفيظ القرآن, تجويد, قصص ملهمة, نصائح, أكاديمية تاج الوقار"
+    />
+    <meta name="author" content="أكاديمية تاج الوقار" />
+    <title>المدونة - أكاديمية تاج الوقار</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
-    <title>Online Course</title>
+    <link
+      rel="icon"
+      href="../assets/images/icons/favicon.ico"
+      type="image/x-icon"
+    />
   </head>
-  <body>
-    <div class="bg-light">
-      <div class="blog container">
-        <div class="number">404</div>
-        <div class="text"><span>Ooops...</span><span>page not found</span></div>
-        <a class="button button--primary" href="./index.html"
-          >Go Back</a
-        >
+  <body data-page="blog">
+    <header class="main-header">
+      <div class="container">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo.svg"
+              alt="شعار أكاديمية تاج الوقار"
+            />
+            <span>تاج الوقار</span>
+          </a>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="../index.html">الرئيسية</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">عن الأكاديمية</a>
+              <div class="dropdown-content">
+                <a href="about-us.html">من نحن</a>
+                <a href="policies.html">سياساتنا</a>
+              </div>
+            </li>
+            <li><a href="programs.html">برامجنا</a></li>
+            <li><a href="blog.html" class="active">المدونة</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropbtn">التسجيل</a>
+              <div class="dropdown-content">
+                <a href="student-registration.html">تسجيل طالب</a>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </div>
+            </li>
+            <li><a href="contact-us.html">اتصل بنا</a></li>
+            <li>
+              <a href="contribute.html" class="button button--primary"
+                >ساهم معنا</a
+              >
+            </li>
+            <li>
+              <button class="login-button button button--secondary">
+                تسجيل الدخول
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
       </div>
-    </div>
-    <!-- <script src="./js/script.min.js"> </script>
-    <script src="./js/slick.min.js"> </script>
-    <script src="./js/script.js"> </script> -->
+    </header>
+
+    <main>
+      <section class="blog-hero section-spacing">
+        <div class="container text-center">
+          <h1>مدونة أكاديمية تاج الوقار</h1>
+          <p>
+            مقالات ونصائح وإضاءات في رحاب القرآن الكريم، لمساعدتك على إتقان
+            الحفظ وتدبر الآيات.
+          </p>
+        </div>
+      </section>
+
+      <section class="blog-section section-spacing">
+        <div class="container">
+          <div class="blog-grid">
+            <div class="blog-post-card">
+              <img
+                src="../assets/images/blog/post1.jpg"
+                alt="أهمية التجويد في تلاوة القرآن"
+                class="blog-post-image"
+              />
+              <div class="blog-post-content">
+                <h3 class="blog-post-title">
+                  <a href="post-details.html">أهمية التجويد في تلاوة القرآن الكريم</a>
+                </h3>
+                <p class="blog-post-excerpt">
+                  التجويد ليس مجرد قواعد نطبقها، بل هو فن وعلم يعطي كل حرف حقه
+                  ومستحقه، ويجعل التلاوة أكثر خشوعاً وتأثيراً. في هذا المقال،
+                  نستعرض أهمية تعلم التجويد وأثره على علاقتنا بكتاب الله.
+                </p>
+                <a href="post-details.html" class="link-more">اقرأ المزيد</a>
+              </div>
+            </div>
+            <div class="blog-post-card">
+              <img
+                src="../assets/images/blog/post2.jpg"
+                alt="نصائح عملية لتثبيت حفظ القرآن"
+                class="blog-post-image"
+              />
+              <div class="blog-post-content">
+                <h3 class="blog-post-title">
+                  <a href="post-details.html">7 نصائح عملية لتثبيت حفظ القرآن الكريم</a>
+                </h3>
+                <p class="blog-post-excerpt">
+                  الحفظ المتقن هو غاية كل من يسلك طريق القرآن. لكن كيف نصل إلى
+                  هذه المرحلة؟ نقدم لكم سبع نصائح عملية ومجربة تساعدكم على تثبيت
+                  حفظكم وجعله راسخاً في الصدور.
+                </p>
+                <a href="post-details.html" class="link-more">اقرأ المزيد</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-logo-col">
+            <img
+              src="../assets/images/logo.svg"
+              alt="شعار أكاديمية تاج الوقار"
+            />
+            <p>أكاديمية تاج الوقار: نبني جيلاً حافظاً لكتاب الله.</p>
+            <div class="social-links">
+              <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
+              <a class="icon-twitter" href="#" aria-label="تويتر"></a>
+              <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
+            </div>
+          </div>
+          <div class="footer-links">
+            <h3>روابط سريعة</h3>
+            <ul>
+              <li><a href="../index.html">الرئيسية</a></li>
+              <li><a href="about-us.html">عن الأكاديمية</a></li>
+              <li><a href="programs.html">برامجنا</a></li>
+              <li><a href="blog.html">المدونة</a></li>
+              <li><a href="contact-us.html">اتصل بنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>التسجيل</h3>
+            <ul>
+              <li>
+                <a href="student-registration.html">تسجيل طالب</a>
+              </li>
+              <li>
+                <a href="teacher-registration.html">تسجيل معلم</a>
+              </li>
+              <li><a href="policies.html">سياسة الخصوصية</a></li>
+              <li><a href="contribute.html">ادعمنا</a></li>
+            </ul>
+          </div>
+          <div class="footer-contact">
+            <h3>تواصل معنا</h3>
+            <p>البريد الإلكتروني: info@tajalwaqar.com</p>
+            <p>الهاتف: +967 777 123 456</p>
+            <address>صنعاء، الجمهورية اليمنية</address>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 أكاديمية تاج الوقار. جميع الحقوق محفوظة.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

@@ -3,15 +3,15 @@
 // -----------------------------------------------------------------------------
 @use 'sass:color';
 // Colors
-$color-primary: #333; // A deep blue for primary actions and branding.
+$color-primary: #2c5b4c; // A deep green for primary actions and branding.
 $color-text-dark: #333; // Main text color.
 $color-text-light: #fefefe; // Light text for dark backgrounds.
 $color-background-light: #f0f4f7; // A light grey for section backgrounds.
-$color-accent: #DEAB4E;
+$color-accent: #d4a056;
 $color-background-dark:  color.adjust($color-primary, $lightness: -10%); // Dark background for the footer.
 $color-border: #ffffff4d; // Subtle borders.
 $color-primary-light: #d4d4d4; // 
-$color-secondary: color.adjust($color-primary, $lightness: -10%); 
+$color-secondary: color.adjust($color-primary, $lightness: -5%);
 
 // Other variables for colors
 $color-form-label: #555; 
