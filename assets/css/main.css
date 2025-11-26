@@ -2510,14 +2510,14 @@ select[dir=ltr] {
   }
 }
 
-.main-layout-school {
+.main-layout {
   display: flex;
   flex-direction: column-reverse;
   gap: 3rem;
-  padding: 4.5rem 0;
+  padding: 4.5rem;
 }
 @media (min-width: 992px) {
-  .main-layout-school {
+  .main-layout {
     flex-direction: row;
     align-items: flex-start;
     gap: 4.5rem;

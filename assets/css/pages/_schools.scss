@@ -72,11 +72,11 @@
 }
 
 // Main Layout
-.main-layout-school {
+.main-layout {
     display: flex;
     flex-direction: column-reverse;
     gap: v.$spacing-md;
-    padding: v.$spacing-xm 0;
+    padding: v.$spacing-xm ;
 
     @include mix.breakpoint-up(lg) {
         flex-direction: row;
