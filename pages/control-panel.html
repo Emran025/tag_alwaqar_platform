@@ -3,24 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="تواصل معنا للحصول على الدعم أو للاستفسار عن خدمات أكاديمية تاج الوقار. املأ النموذج أو استخدم معلومات الاتصال المباشرة."
-    />
-    <meta
-      name="keywords"
-      content="اتصل بنا, دعم, استفسار, تواصل, نموذج اتصال, بريد إلكتروني, هاتف"
-    />
-    <meta name="author" content="أكاديمية تاج الوقار" />
-    <title>اتصل بنا - أكاديمية تاج الوقار</title>
+    <title>مدارسنا</title>
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- Font Awesome for icons -->
     <link
-      rel="icon"
-      href="../assets/images/icons/favicon.ico"
-      type="image/x-icon"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
-  <body data-page="contact-us">
+  <body>
     <header class="main-header">
       <div class="container">
         <div class="logo">
@@ -44,7 +35,7 @@
               </div>
             </li>
             <li><a href="achievements.html">إنجازاتنا</a></li>
-            <li><a href="school-listing.html">مدارسنا</a></li>
+            <li><a href="#">مدارسنا</a></li>
 
             <li class="dropdown">
               <a href="#" class="dropbtn">التسجيل</a>
@@ -114,107 +105,163 @@
     <nav class="mobile-nav" id="mobileNav">
       <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
       <ul>
-        <li><a href="../index.html" class="active">الرئيسية</a></li>
+        <li><a href="#" class="active">الرئيسية</a></li>
         <li><a href="about-us.html">من نحن</a></li>
         <li><a href="policies.html">سياساتنا</a></li>
         <li><a href="achievements.html">إنجازاتنا</a></li>
         <li><a href="school-listing.html">مدارسنا</a></li>
 
-        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
+        <li><a href="#">تسجيل مدرسة</a></li>
         <li><a href="student-registration.html">تسجيل طالب</a></li>
         <li><a href="teacher-registration.html">تسجيل معلم</a></li>
-        <li><a href="#">اتصل بنا</a></li>
+        <li><a href="contact-us.html">اتصل بنا</a></li>
         <li>
           <a href="contribute.html" class="button button--primary">ادعمنا</a>
         </li>
       </ul>
     </nav>
 
-    <main>
-      <section class="contact-hero section-spacing">
-        <div class="container text-center">
-          <h1>تواصل معنا</h1>
+    <main class="container">
+      <div class="control-panel">
+        <aside class="control-panel__sidebar">
+          <h2 class="sidebar__title">لوحة التحكم</h2>
+          <nav class="sidebar__nav">
+            <ul>
+              <li>
+                <a href="#" class="sidebar__link active"
+                  ><i class="fas fa-school"></i>إدارة المدارس</a
+                >
+              </li>
+              <li>
+                <a href="#" class="sidebar__link"
+                  ><i class="fas fa-users"></i>إدارة المستخدمين</a
+                >
+              </li>
+              <li>
+                <a href="#" class="sidebar__link"
+                  ><i class="fas fa-cog"></i>الإعدادات</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </aside>
+        <section class="control-panel__content">
+          <div class="tabs">
+            <button class="tabs__button active" data-tab="existing-schools">
+              المدارس الحالية
+            </button>
+            <button class="tabs__button" data-tab="school-applicants">
+              طلبات المدارس
+            </button>
+          </div>
+
+          <div class="tab-content active" id="existing-schools">
+            <h3 class="tab-content__title">قائمة المدارس الحالية</h3>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>اسم المدرسة</th>
+                    <th>المدينة</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>مدرسة الفرقان</td>
+                    <td>الرياض</td>
+                    <td><span class="status--approved">مفعلة</span></td>
+                    <td>
+                      <button class="button button--secondary button--small">
+                        تعديل
+                      </button>
+                      <button class="button button--danger button--small">
+                        حذف
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-content" id="school-applicants">
+            <h3 class="tab-content__title">قائمة طلبات المدارس</h3>
+            <div class="table-container">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>اسم المدرسة</th>
+                    <th>المدينة</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>مدرسة النور</td>
+                    <td>جدة</td>
+                    <td>
+                      <span class="status--pending">قيد المراجعة</span>
+                    </td>
+                    <td>
+                      <button
+                        class="button button--primary button--small view-applicant"
+                      >
+                        عرض الطلب
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <div class="dialog-overlay" id="applicantProfileDialog">
+      <div class="dialog-container">
+        <button class="dialog-close" aria-label="إغلاق">×</button>
+        <h2 class="dialog-title">ملف المدرسة المتقدمة</h2>
+        <div class="profile-details">
+          <p><strong>اسم المدرسة:</strong> مدرسة النور</p>
+          <p><strong>المدينة:</strong> جدة</p>
           <p>
-            نحن هنا للإجابة على جميع استفساراتكم ومساعدتكم. لا تترددوا في
-            التواصل معنا عبر النموذج أدناه أو باستخدام قنوات الاتصال الأخرى.
+            <strong>المنهج:</strong> برنامج شامل يجمع بين تحفيظ القرآن الكريم
+            وتدريس علومه.
+          </p>
+          <p>
+            <strong>الرؤية:</strong> توفير بيئة تعليمية محفزة لتربية جيل واعٍ
+            ومتمسك بالقيم الإسلامية.
           </p>
         </div>
-      </section>
-
-      <section class="contact-form-section section-spacing bg-light">
-        <div class="container">
-          <div class="contact-grid">
-            <div class="contact-info">
-              <h2>معلومات الاتصال</h2>
-              <p><strong>البريد الإلكتروني:</strong> info@tajalwaqar.com</p>
-              <p><strong>الهاتف:</strong> +966 50 123 4567</p>
-              <p>
-                <strong>العنوان:</strong> المملكة العربية السعودية، الرياض، شارع
-                الأمير محمد بن سلمان
-              </p>
-              <div class="social-links-contact">
-                <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
-                <a class="icon-twitter" href="#" aria-label="تويتر"></a>
-                <a class="icon-linkedin" href="#" aria-label="لينكدإن"></a>
-              </div>
-            </div>
-            <form id="contact-form" class="contact-form form">
-              <fieldset>
-                <legend>أرسل رسالة</legend>
-                <div class="form-group">
-                  <label for="full-name">الاسم الكامل:</label>
-                  <input
-                    type="text"
-                    id="full-name"
-                    name="full-name"
-                    required
-                    placeholder="اسمك الكامل"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="email">البريد الإلكتروني:</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="name@example.com"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="subject">الموضوع:</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    required
-                    placeholder="موضوع الرسالة"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="message">رسالتك:</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    placeholder="اكتب رسالتك هنا..."
-                  ></textarea>
-                </div>
-                <div class="form-actions">
-                  <a
-                    type="submit"
-                    class="button button--primary button--horizontal-large"
-                  >
-                    إرسال الرسالة
-                  </a>
-                </div>
-              </fieldset>
-            </form>
-          </div>
+        <div class="dialog-actions">
+          <button class="button button--primary" id="acceptApplicant">
+            قبول
+          </button>
+          <button class="button button--danger" id="rejectApplicant">
+            رفض
+          </button>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
+
+    <div class="dialog-overlay" id="confirmationDialog">
+      <div class="dialog-container">
+        <h2 class="dialog-title">تأكيد القبول</h2>
+        <p>هل أنت متأكد من قبول هذه المدرسة؟</p>
+        <div class="dialog-actions">
+          <button class="button button--primary" id="confirmAcceptance">
+            تأكيد
+          </button>
+          <button class="button button--secondary" id="cancelAcceptance">
+            إلغاء
+          </button>
+        </div>
+      </div>
+    </div>
 
     <footer class="main-footer">
       <div class="container">
@@ -261,7 +308,6 @@
         </div>
       </div>
     </footer>
-
     <script src="../assets/js/main.js"></script>
   </body>
 </html>

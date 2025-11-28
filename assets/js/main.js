@@ -176,3 +176,131 @@ function initSchoolCounters() {
 
 // Run the counter initialization when the page loads
 document.addEventListener('DOMContentLoaded', initSchoolCounters);
+
+// -----------------------------------------------------------------------------
+// Control Panel-Specific JavaScript
+// -----------------------------------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Tab switching
+  const tabs = document.querySelectorAll('.tabs__button');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  if (tabs.length > 0) {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = document.getElementById(tab.dataset.tab);
+
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        tabContents.forEach(c => c.classList.remove('active'));
+        if (target) {
+          target.classList.add('active');
+        }
+      });
+    });
+  }
+
+  // Dialog management
+  const applicantProfileDialog = document.getElementById('applicantProfileDialog');
+  const confirmationDialog = document.getElementById('confirmationDialog');
+
+  const viewApplicantButtons = document.querySelectorAll('.view-applicant');
+  const closeDialogButtons = document.querySelectorAll('.dialog-close');
+
+  const acceptApplicantButton = document.getElementById('acceptApplicant');
+  const rejectApplicantButton = document.getElementById('rejectApplicant');
+
+  const confirmAcceptanceButton = document.getElementById('confirmAcceptance');
+  const cancelAcceptanceButton = document.getElementById('cancelAcceptance');
+
+  // Function to open a dialog
+  const openDialog = (dialog) => {
+    if (dialog) {
+      dialog.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+  };
+
+  // Function to close a dialog
+  const closeDialog = (dialog) => {
+    if (dialog) {
+      dialog.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  };
+
+  // Open applicant profile dialog
+  if (viewApplicantButtons.length > 0) {
+    viewApplicantButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        openDialog(applicantProfileDialog);
+      });
+    });
+  }
+
+  // Close any dialog
+  if (closeDialogButtons.length > 0) {
+    closeDialogButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        closeDialog(button.closest('.dialog-overlay'));
+      });
+    });
+  }
+
+  // Handle 'Accept' button click
+  if (acceptApplicantButton) {
+    acceptApplicantButton.addEventListener('click', () => {
+      closeDialog(applicantProfileDialog);
+      openDialog(confirmationDialog);
+    });
+  }
+
+  // Handle 'Reject' button click
+  if (rejectApplicantButton) {
+    rejectApplicantButton.addEventListener('click', () => {
+      closeDialog(applicantProfileDialog);
+      // You might want to add a confirmation for rejection as well
+      console.log('Applicant rejected.');
+    });
+  }
+
+  // Handle confirmation dialog actions
+  if (confirmAcceptanceButton) {
+    confirmAcceptanceButton.addEventListener('click', () => {
+      closeDialog(confirmationDialog);
+      // Add logic to handle the acceptance here
+      console.log('Applicant accepted!');
+    });
+  }
+
+  if (cancelAcceptanceButton) {
+    cancelAcceptanceButton.addEventListener('click', () => {
+      closeDialog(confirmationDialog);
+    });
+  }
+
+  // Close dialog on overlay click
+  [applicantProfileDialog, confirmationDialog].forEach(dialog => {
+    if (dialog) {
+      dialog.addEventListener('click', (e) => {
+        if (e.target === dialog) {
+          closeDialog(dialog);
+        }
+      });
+    }
+  });
+
+  // Close dialog on Escape key press
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (applicantProfileDialog && applicantProfileDialog.classList.contains('active')) {
+        closeDialog(applicantProfileDialog);
+      }
+      if (confirmationDialog && confirmationDialog.classList.contains('active')) {
+        closeDialog(confirmationDialog);
+      }
+    }
+  });
+});
