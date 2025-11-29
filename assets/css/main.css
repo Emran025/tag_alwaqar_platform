@@ -592,10 +592,14 @@ select option:hover {
   direction: ltr;
 }
 
+body.control-panel-page {
+  background-color: #f0f4f7;
+}
+
 .control-panel {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  padding: 2rem 0;
 }
 .control-panel__sidebar {
   flex: 0 0 250px;
@@ -719,6 +723,9 @@ select option:hover {
   transform: scale(0.9);
   transition: transform 0.3s ease;
 }
+.dialog-container--large {
+  max-width: 800px;
+}
 .dialog-overlay.active .dialog-container {
   transform: scale(1);
 }
@@ -737,16 +744,52 @@ select option:hover {
   margin-bottom: 2rem;
   text-align: center;
 }
-.dialog-container .profile-details {
+.dialog-container .applicant-profile__header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   margin-bottom: 2rem;
 }
-.dialog-container .profile-details p {
+.dialog-container .applicant-profile__logo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.dialog-container .applicant-profile__name {
+  font-size: 4rem;
+}
+.dialog-container .profile-section {
+  margin-bottom: 2rem;
+}
+.dialog-container .profile-section__title {
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3019607843);
+  padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+.dialog-container .document-list {
+  list-style: none;
+  padding: 0;
+}
+.dialog-container .document-list li {
+  margin-bottom: 1rem;
+}
+.dialog-container .document-list a {
+  color: #333;
+  text-decoration: none;
+}
+.dialog-container .document-list a:hover {
+  text-decoration: underline;
+}
+.dialog-container .document-list a i {
+  margin-left: 1rem;
 }
 .dialog-container .dialog-actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
+  margin-top: 2rem;
 }
 
 .main-header {

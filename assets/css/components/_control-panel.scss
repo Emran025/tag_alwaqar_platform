@@ -1,10 +1,14 @@
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
 
+body.control-panel-page {
+  background-color: v.$color-background-light;
+}
+
 .control-panel {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  padding: 2rem 0;
 
   &__sidebar {
     flex: 0 0 250px;
