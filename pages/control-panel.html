@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مدارسنا | لوحة التحكم</title>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="control-panel-page">
+    <div class="app-layout">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar__header">
+          <i class="fas fa-shield-alt sidebar__logo-icon"></i>
+          <h2 class="sidebar__title">لوحة التحكم</h2>
+        </div>
+        <nav class="sidebar__nav">
+          <ul class="nav-list">
+            <li>
+              <a href="#" class="nav-link active">
+                <i class="fas fa-school nav-icon"></i>
+                <span>إدارة المدارس</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fas fa-users nav-icon"></i>
+                <span>إدارة المستخدمين</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="nav-link">
+                <i class="fas fa-cog nav-icon"></i>
+                <span>الإعدادات</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <div class="sidebar__footer">
+          <a href="#" class="nav-link logout">
+            <i class="fas fa-sign-out-alt nav-icon"></i>
+            <span>تسجيل خروج</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <header class="page-header">
+          <div class="header-welcome">
+            <h1>أهلاً بك، المشرف العام</h1>
+            <p>إدارة طلبات المدارس والبيانات الحالية</p>
+          </div>
+          <div class="header-actions">
+            <button class="icon-btn"><i class="fas fa-bell"></i></button>
+            <div class="user-avatar">
+              <img src="../assets/images/logo-placeholder.svg" alt="Admin" />
+            </div>
+          </div>
+        </header>
+
+        <section class="content-wrapper">
+          <div class="card">
+            <div class="tabs-header">
+              <button class="tab-btn active" data-tab="existing-schools">
+                <i class="fas fa-list"></i> المدارس الحالية
+              </button>
+              <button class="tab-btn" data-tab="school-applicants">
+                <i class="fas fa-file-contract"></i> طلبات الانضمام
+                <span class="badge-count">3</span>
+              </button>
+            </div>
+
+            <div class="card-body">
+              <!-- Tab 1: Existing Schools -->
+              <div class="tab-content active" id="existing-schools">
+                <div class="table-actions-bar">
+                    <h3 class="section-title-sm">قائمة المدارس المفعلة</h3>
+                    <div class="search-box">
+                        <input type="text" placeholder="بحث عن مدرسة..." />
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                  <table class="modern-table">
+                    <thead>
+                      <tr>
+                        <th>اسم المدرسة</th>
+                        <th>المدينة</th>
+                        <th>تاريخ الانضمام</th>
+                        <th>الحالة</th>
+                        <th>الإجراءات</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <div class="school-info-cell">
+                                <div class="school-icon"><i class="fas fa-school"></i></div>
+                                <span>مدرسة الفرقان الأهلية</span>
+                            </div>
+                        </td>
+                        <td>الرياض</td>
+                        <td>2023/10/01</td>
+                        <td><span class="status-badge status-success">مفعلة</span></td>
+                        <td>
+                          <div class="action-buttons">
+                            <button class="btn-icon btn-edit" title="تعديل"><i class="fas fa-pen"></i></button>
+                            <button class="btn-icon btn-delete" title="حذف"><i class="fas fa-trash"></i></button>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- صف إضافي للتجربة -->
+                      <tr>
+                        <td>
+                            <div class="school-info-cell">
+                                <div class="school-icon"><i class="fas fa-school"></i></div>
+                                <span>مدرسة المناهج</span>
+                            </div>
+                        </td>
+                        <td>الدمام</td>
+                        <td>2023/09/15</td>
+                        <td><span class="status-badge status-success">مفعلة</span></td>
+                        <td>
+                          <div class="action-buttons">
+                            <button class="btn-icon btn-edit" title="تعديل"><i class="fas fa-pen"></i></button>
+                            <button class="btn-icon btn-delete" title="حذف"><i class="fas fa-trash"></i></button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- Tab 2: Applicants -->
+              <div class="tab-content" id="school-applicants">
+                <div class="table-actions-bar">
+                    <h3 class="section-title-sm">طلبات قيد الانتظار</h3>
+                </div>
+                <div class="table-responsive">
+                  <table class="modern-table">
+                    <thead>
+                      <tr>
+                        <th>اسم المدرسة</th>
+                        <th>المدينة</th>
+                        <th>تاريخ الطلب</th>
+                        <th>الحالة</th>
+                        <th>الإجراءات</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                            <div class="school-info-cell">
+                                <div class="school-icon pending"><i class="fas fa-clock"></i></div>
+                                <span>مدرسة النور العالمية</span>
+                            </div>
+                        </td>
+                        <td>جدة</td>
+                        <td>2023/12/04</td>
+                        <td>
+                          <span class="status-badge status-pending">قيد المراجعة</span>
+                        </td>
+                        <td>
+                          <button class="button button--primary button--small view-applicant">
+                             مراجعة الطلب
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Modals (Dialogs) - Same logic, improved styling classes -->
+    <div class="dialog-overlay" id="applicantProfileDialog">
+      <div class="dialog-container dialog-container--large fade-in-up">
+        <button class="dialog-close" aria-label="إغلاق"><i class="fas fa-times"></i></button>
+        <div class="applicant-profile">
+          <div class="applicant-header">
+            <div class="applicant-logo">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="applicant-title">
+                <h2>مدرسة النور العالمية</h2>
+                <span class="status-badge status-pending">طلب جديد</span>
+            </div>
+          </div>
+          
+          <div class="applicant-grid">
+            <div class="info-card">
+              <h3 class="info-title"><i class="fas fa-map-marker-alt"></i> معلومات المدرسة</h3>
+              <ul class="info-list">
+                  <li><strong>العنوان:</strong> الرياض، حي النخيل</li>
+                  <li><strong>المبنى:</strong> 123</li>
+                  <li><strong>الرمز البريدي:</strong> 12345</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <h3 class="info-title"><i class="fas fa-user-tie"></i> معلومات المشرف</h3>
+              <ul class="info-list">
+                  <li><strong>الاسم:</strong> عبد الله بن محمد</li>
+                  <li><strong>الهوية:</strong> 1234567890</li>
+                  <li><strong>الجوال:</strong> +966 50 123 4567</li>
+              </ul>
+            </div>
+            <div class="info-card full-width">
+              <h3 class="info-title"><i class="fas fa-paperclip"></i> المستندات</h3>
+              <div class="documents-grid">
+                <a href="#" class="doc-link">
+                    <i class="fas fa-file-pdf doc-icon pdf"></i>
+                    <span>ترخيص الوزارة.pdf</span>
+                </a>
+                <a href="#" class="doc-link">
+                    <i class="fas fa-id-card doc-icon img"></i>
+                    <span>الهوية الوطنية.jpg</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="dialog-footer">
+            <button class="button button--primary" id="acceptApplicant">
+                <i class="fas fa-check"></i> قبول الطلب
+            </button>
+            <button class="button button--danger" id="rejectApplicant">
+                <i class="fas fa-times"></i> رفض
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Dialog -->
+    <div class="dialog-overlay" id="confirmationDialog">
+      <div class="dialog-container dialog-container--small zoom-in">
+        <div class="confirm-content">
+            <div class="icon-circle success">
+                <i class="fas fa-check"></i>
+            </div>
+            <h2 class="dialog-title">تأكيد القبول</h2>
+            <p>هل أنت متأكد من منح الصلاحية لهذه المدرسة؟</p>
+        </div>
+        <div class="dialog-actions centered">
+          <button class="button button--secondary" id="cancelAcceptance">إلغاء</button>
+          <button class="button button--primary" id="confirmAcceptance">نعم، تفعيل</button>
+        </div>
+      </div>
+    </div>
+    
+    <script src="../assets/js/main.js"></script>
+  </body>
+</html>

@@ -3,17 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>تفاصيل المدرسة — منصة الوقار التعليمية</title>
+    <title>تفاصيل المدرسة — أكاديمية تاج الوقار</title>
     <meta
       name="description"
-      content="صفحة تعريفية متكاملة لمدرسة نموذجية على منصة الوقار: نبذة، إحصاءات، إنجازات، خريجون، آراء، أخبار ودعم المدرسة."
+      content="صفحة تعريفية متكاملة لمدرسة قرآنية نموذجية على أكاديمية تاج الوقار: نبذة، إحصاءات، إنجازات، خريجون، آراء، أخبار ودعم المدرسة."
     />
-    <meta name="author" content="منصة الوقار" />
+    <meta name="author" content="أكاديمية تاج الوقار" />
     <!-- Open Graph -->
-    <meta property="og:title" content="اسم المدرسة النموذجية — الوقار" />
+    <meta property="og:title" content="مدرسة الفرقان النموذجية — تاج الوقار" />
     <meta
       property="og:description"
-      content="تعرف على المدرسة، إنجازاتها، خريجيها، وأحدث أخبارها على منصة الوقار."
+      content="تعرف على المدرسة، إنجازاتها، خريجيها، وأحدث أخبارها على أكاديمية تاج الوقار."
     />
     <meta
       property="og:image"
@@ -33,8 +33,8 @@
       {
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "المدرسة النموذجية — الوقار",
-        "url": "https://example.com/pages/schools.html",
+        "name": "مدرسة الفرقان النموذجية — تاج الوقار",
+        "url": "https://example.com/pages/school_page.html",
         "logo": "https://example.com/assets/images/logo.svg",
         "contactPoint": [
           {
@@ -58,28 +58,30 @@
       <div class="container">
         <div class="logo">
           <a href="#">
-            <img src="../assets/images/logo.svg" alt="شعار منصة الوقار" />
-
-            <span>الوقار</span>
+            <img
+              src="../assets/images/logo.svg"
+              alt="شعار أكاديمية تاج الوقار"
+            />
+            <span>تاج الوقار</span>
           </a>
         </div>
         <nav class="main-nav">
           <ul>
             <li><a href="../index.html" class="active">الرئيسية</a></li>
             <li class="dropdown">
-              <a href="#" class="dropbtn">من نحن</a>
+              <a href="#" class="dropbtn">عن الأكاديمية</a>
               <div class="dropdown-content">
-                <a href="about-us.html">عنا</a>
+                <a href="about-us.html">من نحن</a>
                 <a href="policies.html">سياساتنا</a>
               </div>
             </li>
             <li><a href="achievements.html">إنجازاتنا</a></li>
             <li><a href="school-listing.html">مدارسنا</a></li>
-            <li><a href="school-blog-page.html">المدونة</a></li>
+
             <li class="dropdown">
               <a href="#" class="dropbtn">التسجيل</a>
               <div class="dropdown-content">
-                <a href="#">تسجيل مدرسة</a>
+                <a href="school-registration.html">تسجيل مدرسة</a>
                 <a href="student-registration.html">تسجيل طالب</a>
                 <a href="teacher-registration.html">تسجيل معلم</a>
               </div>
@@ -90,11 +92,7 @@
                 >ادعمنا</a
               >
             </li>
-            <li>
-              <button class="login-button button button--secondary">
-                تسجيل الدخول
-              </button>
-            </li>
+            <li></li>
           </ul>
         </nav>
         <button class="menu-toggle" aria-label="فتح قائمة التنقل">☰</button>
@@ -144,13 +142,13 @@
     <nav class="mobile-nav" id="mobileNav">
       <button class="mobile-nav-close" aria-label="إغلاق القائمة">×</button>
       <ul>
-        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="../index.html" class="active">الرئيسية</a></li>
         <li><a href="about-us.html">من نحن</a></li>
         <li><a href="policies.html">سياساتنا</a></li>
         <li><a href="achievements.html">إنجازاتنا</a></li>
         <li><a href="school-listing.html">مدارسنا</a></li>
-        <li><a href="school-blog-page.html">المدونة</a></li>
-        <li><a href="#">تسجيل مدرسة</a></li>
+
+        <li><a href="school-registration.html">تسجيل مدرسة</a></li>
         <li><a href="student-registration.html">تسجيل طالب</a></li>
         <li><a href="teacher-registration.html">تسجيل معلم</a></li>
         <li><a href="contact-us.html">اتصل بنا</a></li>
@@ -173,10 +171,10 @@
         <div class="container hero-inner">
           <div class="hero-meta">
             <h1 id="school-name" class="school-title">
-              المدرسة النموذجية للقرآن والعلوم
+              مدرسة الفرقان لتحفيظ القرآن
             </h1>
             <p class="school-tagline">
-              تعليم قرآني راسخ مع منهج عصري — نُنشئ حافظًا ومواطنًا منتجًا.
+              صناعة الجيل القرآني المتخلق بأخلاق القرآن.
             </p>
             <div class="hero-ctas">
               <a href="#school-overview" class="button button--primary"
@@ -197,21 +195,6 @@
         </div>
       </section>
 
-      <!-- QUICK ACTIONS BAR (sticky on wide screens)
-      <div
-        class="quick-actions container"
-        role="navigation"
-        aria-label="أزرار سريعة"
-      >
-        <a href="tel:+966501234567" class="qa-item" aria-label="اتصال بالمدرسة"
-          >📞 اتصل</a
-        >
-        <a href="#support" class="qa-item" aria-label="ادعم المدرسة">🤝 ادعم</a>
-        <a href="#school-news" class="qa-item" aria-label="أخبار المدرسة"
-          >📰 الأخبار</a
-        >
-      </div> -->
-
       <!-- STAT COUNTERS -->
       <section
         id="school-stats"
@@ -220,28 +203,28 @@
       >
         <ul class="stats-list" role="list">
           <li class="stat bg-light">
-            <strong class="stat-number" data-target="420" aria-live="polite"
+            <strong class="stat-number" data-target="50" aria-live="polite"
               >0</strong
             >
             <span class="stat-label">خريج حافظ للقرآن</span>
           </li>
           <li class="stat bg-light">
-            <strong class="stat-number" data-target="1520" aria-live="polite"
+            <strong class="stat-number" data-target="120" aria-live="polite"
               >0</strong
             >
             <span class="stat-label">طالب حالي</span>
           </li>
           <li class="stat bg-light">
-            <strong class="stat-number" data-target="78" aria-live="polite"
+            <strong class="stat-number" data-target="10" aria-live="polite"
               >0</strong
             >
             <span class="stat-label">معلم</span>
           </li>
           <li class="stat bg-light">
-            <strong class="stat-number" data-target="24" aria-live="polite"
+            <strong class="stat-number" data-target="8" aria-live="polite"
               >0</strong
             >
-            <span class="stat-label">حلقة دراسية</span>
+            <span class="stat-label">فصل دراسي</span>
           </li>
         </ul>
       </section>
@@ -256,21 +239,21 @@
           <article class="overview-text bg-light">
             <h2 id="overview-title" class="section-title">نبذة عن المدرسة</h2>
             <p>
-              تأسست المدرسة النموذجية عام 1428 هـ، وتعمل منذ أكثر من 15 سنة على
-              تقديم تعليم متوازن يجمع بين الحفظ القرآني والتعليم العام. نؤمن
-              بقيم الانضباط العلمي، والرحمة، وتحفيز الطلبة للابتكار والعمل
+              تأسست مدرسة الفرقان عام 1428 هـ، وتعمل منذ أكثر من 15 سنة على
+              تقديم تعليم قرآني متكامل يجمع بين الحفظ المتقن والتجويد الصحيح.
+              نؤمن بقيم الانضباط العلمي، والرحمة، وتحفيز الطلبة للابتكار والعمل
               المجتمعي.
             </p>
             <p>
-              تقدّم المدرسة برامج تعليمية معتمدة، ومسارات تحفيظ قرآني متكاملة،
-              ودعمًا نفسياً وتربوياً للطلاب. هدفنا تخريج جيل يتميز بمعرفة شرعية
-              راسخة وكفاءات مستقبلية قابلة للتطبيق.
+              تقدّم المدرسة برامج تحفيظ معتمدة، ومسارات مراجعة متكاملة، ودعمًا
+              نفسياً وتربوياً للطلاب. هدفنا تخريج جيل يتميز بمعرفة شرعية راسخة
+              وكفاءات مستقبلية قابلة للتطبيق.
             </p>
 
             <ul class="quick-facts" role="list">
               <li><strong>سنة التأسيس:</strong> 1428 هـ</li>
-              <li><strong>سعة المدرسة:</strong> حتى 2000 طالب</li>
-              <li><strong>الاعتماد:</strong> محلي وإقليمي</li>
+              <li><strong>سعة المدرسة:</strong> حتى 200 طالب</li>
+              <li><strong>الاعتماد:</strong> محلي</li>
             </ul>
 
             <div class="overview-actions">
@@ -298,35 +281,16 @@
                 <li>
                   <dt>البريد</dt>
                   <dd>
-                    <a href="mailto:info@alwaqarplatform.com"
-                      >info@alwaqarplatform.com</a
-                    >
+                    <a href="mailto:info@tajalwaqar.com">info@tajalwaqar.com</a>
                   </dd>
                 </li>
               </ul>
             </div>
-            <!-- <div class="sidebar-module popular-posts-module">
-                <h3>الأكثر قراءة</h3>
-                <ul class="popular-posts-list">
-                  <li>
-                    <a href="#">10 نصائح لتعزيز الابتكار في الفصول الدراسية</a>
-                  </li>
-                    <li>
-                      <a href="#">كيف تساعد التكنولوجيا في تقييم أداء الطلاب؟</a>
-                    </li>
-                    <li>
-                      <a href="#">دور أولياء الأمور في مسيرة أبنائهم التعليمية</a>
-                    </li>
-                    <li>
-                      <a href="#">أهمية التعلم مدى الحياة للمعلمين</a>
-                    </li>
-                  </ul>
-                </div> -->
 
             <div class="sidebar-module newsletter-module">
               <h3>انضم إلى مجتمعنا</h3>
               <p>
-                اشترك في النشرة البريدية لتصلك أحدث المقالات والنصائح الحصرية.
+                اشترك في النشرة البريدية لتصلك أحدث أخبارنا ومقالاتنا الحصرية.
               </p>
               <form action="#" method="post" class="newsletter-form">
                 <input
@@ -335,13 +299,10 @@
                   required
                 />
                 <a
-                  href="school-registration.html"
+                  href="student-registration.html"
                   class="button button--primary"
                   >اشترك الآن</a
                 >
-                <!-- <button type="submit" class="button button--primary">
-                  
-                </button> -->
               </form>
             </div>
           </aside>
@@ -354,16 +315,16 @@
         class="school-achievements container section-spacing"
         aria-labelledby="achieve-title"
       >
-        <h2 id="achieve-title" class="section-title">أبرز الإنجازات</h2>
+        <h2 id="achieve-title" class="section-title">أبرز إنجازات المدرسة</h2>
         <div class="cards-grid">
           <article class="card achievement-card bg-light" aria-labelledby="a1">
             <img
               src="../assets/images/certificate/certificate_1.jpg"
-              alt="جائزة التميز التعليمي 2022"
+              alt="جائزة التميز في الحفظ 2022"
               loading="lazy"
             />
             <div class="card-body">
-              <h3 id="a1">الفوز بجائزة التميز التعليمي (2022)</h3>
+              <h3 id="a1">الفوز بجائزة التميز في الحفظ (2022)</h3>
               <p class="">
                 تقديراً لنتائج الطلاب المتفوقة وبرامج الدعم المجتمعي، حصلت
                 المدرسة على المركز الأول على مستوى المنطقة.
@@ -375,14 +336,14 @@
           <article class="card achievement-card bg-light" aria-labelledby="a2">
             <img
               src="../assets/images/certificate/certificate_02.jpg"
-              alt="النسبة الأعلى في حفظ القرآن"
+              alt="النسبة الأعلى في الإتقان"
               loading="lazy"
             />
             <div class="card-body">
-              <h3 id="a2">أعلى نسبة حفظ للقرآن بين المدارس المحلية</h3>
+              <h3 id="a2">أعلى نسبة إتقان للتجويد بين المدارس المحلية</h3>
               <p>
-                برامج الحفظ المكثفة والتابعة لمسار تربوي متقدم حققت نسب حفظ
-                ومتانة في التلاوة.
+                برامج التجويد المكثفة والتابعة لمسار تربوي متقدم حققت نسب إتقان
+                عالية.
               </p>
               <time datetime="2021">2021</time>
             </div>
@@ -397,7 +358,7 @@
             <div class="card-body">
               <h3 id="a3">مبادرات خدمة المجتمع</h3>
               <p>
-                أطلقت المدرسة مبادرات للتبرع بالقرطاسية والمشاركة المجتمعية مع
+                أطلقت المدرسة مبادرات للتبرع بالمصاحف والمشاركة المجتمعية مع
                 الجمعيات المحلية.
               </p>
               <time datetime="2020">2020</time>
@@ -427,9 +388,9 @@
             />
             <div class="alumni-body">
               <h4 id="g1">محمد العبد</h4>
-              <p class="alumni-role">حافظ للقرآن كاملاً — باحث شرعي</p>
+              <p class="alumni-role">حافظ للقرآن كاملاً — مجاز بالقراءات</p>
               <p>
-                تخرج محمد بشهادة التخصص والتحق بمعهدٍ شرعي، يشارك اليوم في حلقات
+                تخرج محمد بشهادة الإجازة والتحق بمعهد شرعي، يشارك اليوم في مدارس
                 تدريس محلية ويعمل على مشروع رقمي لنشر القراءات.
               </p>
               <button
@@ -539,9 +500,9 @@
                     </div>
                   </div>
                   <p class="quote">
-                    "بفضل منصة الوقار، تحسّن مستواي الدراسي بشكل ملحوظ. الدروس
-                    التفاعلية والاختبارات القصيرة ساعدتني على فهم المواد الصعبة
-                    بسهولة."
+                    "بفضل الله ثم مدرسة الفرقان، تحسّن مستواي في الحفظ بشكل
+                    ملحوظ. الدروس التفاعلية والمتابعة المستمرة ساعدتني على إتقان
+                    التجويد."
                   </p>
                 </div>
                 <div class="testimonial-card">
@@ -557,42 +518,42 @@
                     </div>
                   </div>
                   <p class="quote">
-                    "أعشق طريقة التدريس في منصة الوقار! لقد ساعدني تنوع الدروس
+                    "أعشق طريقة التدريس في مدرسة الفرقان! لقد ساعدني تنوع الدروس
                     والمصادر على التفوق في امتحاناتي وتحقيق أعلى الدرجات."
                   </p>
                 </div>
               </div>
             </div>
             <div class="success-stories-category">
-              <h3>تجارب معلمي حلقات</h3>
+              <h3>تجارب أولياء الأمور</h3>
               <div class="testimonials-grid">
                 <div class="testimonial-card">
                   <div class="testimonial-header">
                     <img
                       src="../assets/images/icons/school_03.svg"
-                      alt="صورة حلقة"
+                      alt="صورة ولي أمر"
                       class="testimonial-avatar"
                     />
                     <div class="testimonial-info">
-                      <h4>سعدي الشيخ</h4>
-                      <p class="role">معلم حلقة البيان</p>
+                      <h4>والد أحمد</h4>
+                      <p class="role">ولي أمر</p>
                     </div>
                   </div>
                   <p class="quote">
-                    "الشراكة مع منصة الوقار كانت خطوة ناجحة لمدرستنا. لقد ساهمت
-                    في تحقيق نقلة نوعية في جودة التعليم المقدم لطلابنا."
+                    "الشراكة مع أكاديمية تاج الوقار كانت خطوة ناجحة لابني. لقد
+                    ساهمت في تحقيق نقلة نوعية في جودة تعليم القرآن المقدم له."
                   </p>
                 </div>
                 <div class="testimonial-card">
                   <div class="testimonial-header">
                     <img
                       src="../assets/images/icons/school_02.svg"
-                      alt="صورة حلقة الإبداع"
+                      alt="صورة ولي أمر"
                       class="testimonial-avatar"
                     />
                     <div class="testimonial-info">
-                      <h4>محمد الأسعد</h4>
-                      <p class="role">معلم حلقة النور</p>
+                      <h4>والدة نورة</h4>
+                      <p class="role">ولي أمر</p>
                     </div>
                   </div>
                   <p class="quote">
@@ -603,189 +564,6 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- NEWS -->
-      <div class="section-divider"></div>
-      <section class="blog-content section-spacing bg-light">
-        <div class="container">
-          <h2 id="news-title" class="section-title section-title--underline">
-            أخبار المدرسة
-          </h2>
-          <div class="blog-main-layout">
-            <div class="blog-posts-grid">
-              <article class="blog-post-card">
-                <img
-                  src="../assets/images/blog/student-life.jpg"
-                  alt="نتائج المسابقة القرآنية"
-                  loading="lazy"
-                />
-                <div class="post-content">
-                  <h3 class="post-title">
-                    <a href="#"> نتائج المسابقة القرآنية المحلية </a>
-                  </h3>
-                  <p class="post-excerpt">
-                    حقق طلابنا مراكز متقدمة في المسابقة السنوية بترتيب متقدم على
-                    مستوى المحافظة.
-                  </p>
-                  <p class="post-meta">
-                    نشر في: <time datetime="2023-11-15">15 نوفمبر 2023</time> |
-                    بقلم: د. محمد العلي
-                  </p>
-                  <a href="#" class="button button--secondary button--small">
-                    اقرأ المزيد
-                  </a>
-                </div>
-              </article>
-
-              <article class="blog-post-card">
-                <img
-                  src="../assets/images/blog/blog-post-1.jpg"
-                  alt="ورشة تطوير مهارات المعلمين"
-                  class="post-thumbnail"
-                />
-                <div class="post-content">
-                  <h3 class="post-title">
-                    <a href="#"> ورشة تطوير مهارات المعلمين </a>
-                  </h3>
-                  <p class="post-excerpt">
-                    نظمت المدرسة ورشة لتطوير استراتيجيات التدريس والتقويم.
-                  </p>
-                  <p class="post-meta">
-                    نشر في: <time datetime="2023-11-10">10 نوفمبر 2023</time> |
-                    بقلم: فريق الوقار
-                  </p>
-                  <a href="#" class="button button--secondary button--small">
-                    اقرأ المزيد
-                  </a>
-                </div>
-              </article>
-
-              <article class="blog-post-card">
-                <img
-                  src="../assets/images/blog/blog-post-3.jpg"
-                  alt="صورة مقال عن التربية والتقنية"
-                  class="post-thumbnail"
-                />
-                <div class="post-content">
-                  <h3 class="post-title">
-                    <a href="#"
-                      >التربية والتقنية: تكامل لا غنى عنه لمستقبل مدارسنا</a
-                    >
-                  </h3>
-                  <p class="post-meta">
-                    نشر في: <time datetime="2023-11-05">05 نوفمبر 2023</time> |
-                    بقلم: أ. سارة الفيصل
-                  </p>
-                  <a href="#" class="button button--secondary button--small">
-                    اقرأ المزيد
-                  </a>
-                </div>
-              </article>
-
-              <article class="blog-post-card">
-                <img
-                  src="../assets/images/blog/blog-post-5.png"
-                  alt="افتتاح معرض المشاريع الطلابية"
-                  loading="lazy"
-                />
-                <div class="post-content">
-                  <h3 class="post-title">
-                    <a href="#"> افتتاح معرض المشاريع الطلابية السنوي </a>
-                  </h3>
-                  <p class="post-excerpt">
-                    عرضت المدرسة مشاريع طلابية مبتكرة تجمع بين المعرفة الشرعية
-                    والتقنية.
-                  </p>
-                  <p class="post-meta">
-                    نشر في: <time datetime="2023-10-30">30 أكتوبر 2023</time> |
-                    بقلم: فريق الوقار
-                  </p>
-                  <a href="#" class="button button--secondary button--small">
-                    اقرأ المزيد
-                  </a>
-                </div>
-              </article>
-            </div>
-
-            <aside class="blog-sidebar">
-              <div class="sidebar-module">
-                <h3>تصفح حسب المواضيع</h3>
-                <div class="categories-grid">
-                  <a href="#" class="category-card">
-                    <img
-                      src="../assets/images/blog/quran.jpg"
-                      alt="أيقونة قرآن"
-                    />
-                    <span>تحفيظ القرآن</span>
-                  </a>
-                  <a href="#" class="category-card">
-                    <img
-                      src="../assets/images/blog/technology.webp"
-                      alt="أيقونة تقنية"
-                    />
-                    <span>التقنية والتعليم</span>
-                  </a>
-                  <a href="#" class="category-card">
-                    <img
-                      src="../assets/images/blog/professional.jpg"
-                      alt="أيقونة مهني"
-                    />
-                    <span>التطوير المهني</span>
-                  </a>
-                  <a href="#" class="category-card">
-                    <img
-                      src="../assets/images/blog/student-life.jpg"
-                      alt="أيقونة طالب"
-                    />
-                    <span>حياة الطالب</span>
-                  </a>
-                </div>
-              </div>
-
-              <div class="sidebar-module popular-posts-module">
-                <h3>الأكثر قراءة</h3>
-                <ul class="popular-posts-list">
-                  <li>
-                    <a href="#">10 نصائح لتعزيز الابتكار في الفصول الدراسية</a>
-                  </li>
-                  <li>
-                    <a href="#">كيف تساعد التكنولوجيا في تقييم أداء الطلاب؟</a>
-                  </li>
-                  <li>
-                    <a href="#">دور أولياء الأمور في مسيرة أبنائهم التعليمية</a>
-                  </li>
-                  <li>
-                    <a href="#">أهمية التعلم مدى الحياة للمعلمين</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="sidebar-module newsletter-module">
-                <h3>انضم إلى مجتمعنا</h3>
-                <p>
-                  اشترك في النشرة البريدية لتصلك أحدث المقالات والنصائح الحصرية.
-                </p>
-                <form action="#" method="post" class="newsletter-form">
-                  <input
-                    type="email"
-                    placeholder="أدخل بريدك الإلكتروني"
-                    required
-                  />
-                  <a
-                    href="school-registration.html"
-                    class="button button--primary"
-                  >
-                    اشترك الآن
-                  </a>
-                  <!-- <button type="submit" class="button button--primary">
-                    
-                  </button> -->
-                </form>
-              </div>
-            </aside>
           </div>
         </div>
       </section>
@@ -835,8 +613,8 @@
       <div class="container">
         <div class="footer-grid">
           <div class="footer-logo-col">
-            <img src="../assets/images/logo.svg" alt="شعار الوقار أبيض" />
-            <p>منصة الوقار: نبني المستقبل بالتعليم.</p>
+            <img src="../assets/images/logo.svg" alt="شعار تاج الوقار أبيض" />
+            <p>أكاديمية تاج الوقار: نبني المستقبل بالقرآن.</p>
             <div class="social-links">
               <a class="icon-facebook" href="#" aria-label="فيسبوك"></a>
               <a class="icon-twitter" href="#" aria-label="تويتر"></a>
@@ -847,7 +625,7 @@
             <h3>روابط سريعة</h3>
             <ul>
               <li><a href="../index.html">الرئيسية</a></li>
-              <li><a href="policies.html">من نحن</a></li>
+              <li><a href="policies.html">عن الأكاديمية</a></li>
               <li><a href="about-us.html">سياساتنا</a></li>
               <li><a href="achievements.html">إنجازاتنا</a></li>
               <li><a href="contact-us.html">اتصل بنا</a></li>
@@ -864,7 +642,7 @@
           </div>
           <div class="footer-contact">
             <h3>تواصل معنا</h3>
-            <p>البريد الإلكتروني: info@alwaqarplatform.com</p>
+            <p>البريد الإلكتروني: info@tajalwaqar.com</p>
             <p>الهاتف: +966 50 123 4567</p>
             <address>
               المملكة العربية السعودية، الرياض، شارع الأمير محمد بن سلمان
@@ -872,7 +650,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2023 منصة الوقار التعليمية. جميع الحقوق محفوظة.</p>
+          <p>&copy; 2023 أكاديمية تاج الوقار. جميع الحقوق محفوظة.</p>
         </div>
       </div>
     </footer>
@@ -882,8 +660,8 @@
       // small bootstrapping for counters, current year, and basic interactivity
       (function () {
         // current year
-        document.getElementById("current-year").textContent =
-          new Date().getFullYear();
+        // document.getElementById("current-year").textContent =
+        //   new Date().getFullYear();
 
         // counters (simple intersection + increment)
         const counters = document.querySelectorAll(".stat-number");

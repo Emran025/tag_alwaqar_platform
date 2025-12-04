@@ -1,0 +1,118 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.dialog-container {
+  background-color: v.$color-background-light;
+  padding: 3rem;
+  border-radius: v.$border-radius-base;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+
+  &--large {
+    max-width: 800px;
+  }
+
+  .dialog-overlay.active & {
+    transform: scale(1);
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: v.$color-text-dark;
+  }
+
+  .dialog-title {
+    font-size: v.$font-size-h3;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .applicant-profile {
+    &__header {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    &__logo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    &__name {
+      font-size: v.$font-size-h2;
+    }
+  }
+
+  .profile-section {
+    margin-bottom: 2rem;
+
+    &__title {
+      font-size: v.$font-size-h4;
+      border-bottom: 1px solid v.$color-border;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .document-list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      margin-bottom: 1rem;
+    }
+
+    a {
+      color: v.$color-primary;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      i {
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+}

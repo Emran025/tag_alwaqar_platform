@@ -16,6 +16,8 @@
 // 3. Components
 @use 'components/buttons';
 @use 'components/forms';
+@use 'components/control-panel';
+@use 'components/dialog';
 
 // 4. Layout
 @use 'layout/header';
@@ -29,7 +31,6 @@
 @use 'pages/achievements';
 @use 'pages/contact-us';
 @use 'pages/contribute';
-@use 'pages/school-blog';
 @use 'pages/school-page';
 @use 'pages/blog';
 @use 'pages/post-details';
