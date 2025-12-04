@@ -1,4 +1,8 @@
-// عناصر DOM
+// -----------------------------------------------------------------------------
+// General Site Logic (Navigation, Filters, Login)
+// -----------------------------------------------------------------------------
+
+// عناصر DOM العامة
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileNav = document.getElementById("mobileNav");
 const mobileOverlay = document.getElementById("mobileOverlay");
@@ -7,7 +11,7 @@ const loginButtons = document.querySelectorAll(".login-button");
 const loginDialog = document.getElementById("loginDialog");
 const dialogClose = document.querySelector(".dialog-close");
 
-// عناصر DOM
+// عناصر الفلترة
 const mainNav = document.querySelector(".main-nav");
 const filterModal = document.getElementById("filterModal");
 const openFilterModalBtn = document.querySelector(".search-button");
@@ -17,26 +21,23 @@ const citySelect = document.getElementById("modal-city");
 const curriculumSelect = document.getElementById("modal-curriculum");
 const stageSelect = document.getElementById("modal-stage");
 
-// دالة لإظهار نافذة الفلاتر
+// --- منطق الفلترة ---
 function openModal() {
-  // استخدام فئة 'show' الموجودة في CSS
-  filterModal.classList.add("show");
-  // إضافة فئة لتعتيم الخلفية
-  document.body.classList.add("modal-open");
+  if (filterModal) {
+    filterModal.classList.add("show");
+    document.body.classList.add("modal-open");
+  }
 }
 
-// دالة لإخفاء نافذة الفلاتر
 function closeModal() {
-  // إزالة فئة 'show' لإخفاء النافذة
-  filterModal.classList.remove("show");
-  // إزالة فئة تعتيم الخلفية
-  document.body.classList.remove("modal-open");
+  if (filterModal) {
+    filterModal.classList.remove("show");
+    document.body.classList.remove("modal-open");
+  }
 }
 
-// مستمعي الأحداث
 if (openFilterModalBtn) {
   openFilterModalBtn.addEventListener("click", (event) => {
-    // منع السلوك الافتراضي لزر الإرسال داخل النموذج
     event.preventDefault();
     openModal();
   });
@@ -46,7 +47,6 @@ if (closeFilterModalBtn) {
   closeFilterModalBtn.addEventListener("click", closeModal);
 }
 
-// إغلاق النافذة عند الضغط خارج محتوى النافذة
 if (filterModal) {
   filterModal.addEventListener("click", (event) => {
     if (event.target === filterModal) {
@@ -55,33 +55,22 @@ if (filterModal) {
   });
 }
 
-// معالجة حدث الضغط على زر "تطبيق الفلاتر"
 if (applyFiltersBtn) {
   applyFiltersBtn.addEventListener("click", () => {
-    const selectedCity = citySelect.value;
-    const selectedCurriculum = curriculumSelect.value;
-    const selectedStage = stageSelect.value;
-
-    console.log("--- Filter Values Applied ---");
-    console.log("City:", selectedCity);
-    console.log("Curriculum:", selectedCurriculum);
-    console.log("Stage:", selectedStage);
-    console.log("------------------------------");
-
+    // يمكنك إضافة منطق الفلترة هنا
     closeModal();
   });
 }
 
-// فتح القائمة المتنقلة
+// --- القائمة المتنقلة (Mobile Nav) ---
 if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-        if (mobileNav) mobileNav.classList.add("active");
-        if (mobileOverlay) mobileOverlay.classList.add("active");
-        document.body.style.overflow = "hidden";
-    });
+  menuToggle.addEventListener("click", () => {
+    if (mobileNav) mobileNav.classList.add("active");
+    if (mobileOverlay) mobileOverlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+  });
 }
 
-// إغلاق القائمة المتنقلة
 function closeMobileNav() {
   if (mobileNav) mobileNav.classList.remove("active");
   if (mobileOverlay) mobileOverlay.classList.remove("active");
@@ -89,202 +78,211 @@ function closeMobileNav() {
 }
 
 if (mobileNavClose) {
-    mobileNavClose.addEventListener("click", closeMobileNav);
+  mobileNavClose.addEventListener("click", closeMobileNav);
 }
 
 if (mobileOverlay) {
-    mobileOverlay.addEventListener("click", closeMobileNav);
+  mobileOverlay.addEventListener("click", closeMobileNav);
 }
 
-// فتح نافذة تسجيل الدخول
+// --- نافذة تسجيل الدخول ---
 if (loginButtons) {
-    loginButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        if (loginDialog) loginDialog.classList.add("active");
-        document.body.style.overflow = "hidden";
-      });
+  loginButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (loginDialog) loginDialog.classList.add("active");
+      document.body.style.overflow = "hidden";
     });
+  });
 }
 
-
-// إغلاق نافذة تسجيل الدخول
+// إغلاق عام للنوافذ عند الضغط على زر الإغلاق
+// ملاحظة: هذا يعالج زر الإغلاق العام، وسيتم معالجة أزرار لوحة التحكم لاحقاً بشكل منفصل
 if (dialogClose) {
-    dialogClose.addEventListener("click", () => {
-      if (loginDialog) loginDialog.classList.remove("active");
-      document.body.style.overflow = "";
-    });
+  dialogClose.addEventListener("click", () => {
+    if (loginDialog) loginDialog.classList.remove("active");
+    document.body.style.overflow = "";
+  });
 }
 
-// إغلاق النافذة عند النقر خارجها
 if (loginDialog) {
-    loginDialog.addEventListener("click", (e) => {
-      if (e.target === loginDialog) {
-        loginDialog.classList.remove("active");
-        document.body.style.overflow = "";
-      }
-    });
+  loginDialog.addEventListener("click", (e) => {
+    if (e.target === loginDialog) {
+      loginDialog.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+  });
 }
 
-
-// إغلاق النوافذ عند الضغط على مفتاح Escape
+// إغلاق النوافذ بمفتاح Escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    if (filterModal && filterModal.classList.contains("show")) {
-      closeModal();
-    }
+    if (filterModal && filterModal.classList.contains("show")) closeModal();
     if (loginDialog && loginDialog.classList.contains("active")) {
       loginDialog.classList.remove("active");
       document.body.style.overflow = "";
     }
-    if (mobileNav && mobileNav.classList.contains("active")) {
-      closeMobileNav();
-    }
+    if (mobileNav && mobileNav.classList.contains("active")) closeMobileNav();
   }
 });
+
 // -----------------------------------------------------------------------------
-// School Page-Specific JavaScript
+// School Page-Specific JavaScript (Counters)
 // -----------------------------------------------------------------------------
 
-/**
- * Initializes the animated counters for school statistics.
- */
 function initSchoolCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    const speed = 200; // The lower the number, the faster the count
+  const counters = document.querySelectorAll(".stat-number");
+  const speed = 200;
 
-    counters.forEach(counter => {
-        const animate = () => {
-            const target = +counter.getAttribute('data-target');
-            const count = +counter.innerText;
+  if (counters.length === 0) return;
 
-            // Calculate the increment
-            const inc = target / speed;
+  counters.forEach((counter) => {
+    const animate = () => {
+      const target = +counter.getAttribute("data-target");
+      const count = +counter.innerText;
+      const inc = target / speed;
 
-            if (count < target) {
-                // Add increment to count and ceil it
-                counter.innerText = Math.ceil(count + inc);
-                // Call function every ms
-                setTimeout(animate, 1);
-            } else {
-                counter.innerText = target;
-            }
-        };
-
-        animate();
-    });
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(animate, 1);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    animate();
+  });
 }
 
-// Run the counter initialization when the page loads
-document.addEventListener('DOMContentLoaded', initSchoolCounters);
+document.addEventListener("DOMContentLoaded", initSchoolCounters);
 
 // -----------------------------------------------------------------------------
-// Control Panel-Specific JavaScript
+// Control Panel-Specific JavaScript (Updated for New UI)
 // -----------------------------------------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () => {
-  // Tab switching
-  const tabs = document.querySelectorAll('.tabs__button');
-  const tabContents = document.querySelectorAll('.tab-content');
+document.addEventListener("DOMContentLoaded", () => {
+  // 1. Tab Switching Logic (Updated Class Name: .tab-btn)
+  const tabs = document.querySelectorAll(".tab-btn");
+  const tabContents = document.querySelectorAll(".tab-content");
 
   if (tabs.length > 0) {
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = document.getElementById(tab.dataset.tab);
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const targetId = tab.dataset.tab;
+        const targetContent = document.getElementById(targetId);
 
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+        // إزالة التفعيل من جميع الأزرار والمحتوى
+        tabs.forEach((t) => t.classList.remove("active"));
+        tabContents.forEach((c) => c.classList.remove("active"));
 
-        tabContents.forEach(c => c.classList.remove('active'));
-        if (target) {
-          target.classList.add('active');
+        // تفعيل الزر المضغوط والمحتوى المستهدف
+        tab.classList.add("active");
+        if (targetContent) {
+          targetContent.classList.add("active");
         }
       });
     });
   }
 
-  // Dialog management
-  const applicantProfileDialog = document.getElementById('applicantProfileDialog');
-  const confirmationDialog = document.getElementById('confirmationDialog');
+  // 2. Dialog Management (Control Panel Specific)
+  const applicantProfileDialog = document.getElementById(
+    "applicantProfileDialog"
+  );
+  const confirmationDialog = document.getElementById("confirmationDialog");
 
-  const viewApplicantButtons = document.querySelectorAll('.view-applicant');
-  const closeDialogButtons = document.querySelectorAll('.dialog-close');
+  // أزرار الفتح والإغلاق
+  const viewApplicantButtons = document.querySelectorAll(".view-applicant");
+  const closeDialogButtons = document.querySelectorAll(".dialog-close"); // يعمل مع الزر الجديد الذي يحتوي على أيقونة
 
-  const acceptApplicantButton = document.getElementById('acceptApplicant');
-  const rejectApplicantButton = document.getElementById('rejectApplicant');
+  // أزرار الإجراءات داخل المودال
+  const acceptApplicantButton = document.getElementById("acceptApplicant");
+  const rejectApplicantButton = document.getElementById("rejectApplicant");
+  const confirmAcceptanceButton = document.getElementById("confirmAcceptance");
+  const cancelAcceptanceButton = document.getElementById("cancelAcceptance");
 
-  const confirmAcceptanceButton = document.getElementById('confirmAcceptance');
-  const cancelAcceptanceButton = document.getElementById('cancelAcceptance');
-
-  // Function to open a dialog
+  // دالة مساعدة لفتح النافذة
   const openDialog = (dialog) => {
     if (dialog) {
-      dialog.classList.add('active');
-      document.body.style.overflow = 'hidden';
+      dialog.classList.add("active");
+      document.body.style.overflow = "hidden"; // منع التمرير في الخلفية
     }
   };
 
-  // Function to close a dialog
+  // دالة مساعدة لإغلاق النافذة
   const closeDialog = (dialog) => {
     if (dialog) {
-      dialog.classList.remove('active');
-      document.body.style.overflow = '';
+      dialog.classList.remove("active");
+      document.body.style.overflow = ""; // إعادة التمرير
     }
   };
 
-  // Open applicant profile dialog
+  // فتح نافذة تفاصيل المدرسة عند الضغط على "عرض الطلب"
   if (viewApplicantButtons.length > 0) {
-    viewApplicantButtons.forEach(button => {
-      button.addEventListener('click', () => {
+    viewApplicantButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault(); // منع أي سلوك افتراضي
         openDialog(applicantProfileDialog);
       });
     });
   }
 
-  // Close any dialog
+  // إغلاق أي نافذة عند الضغط على زر الإغلاق (X)
   if (closeDialogButtons.length > 0) {
-    closeDialogButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        closeDialog(button.closest('.dialog-overlay'));
+    closeDialogButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const dialog = button.closest(".dialog-overlay");
+        closeDialog(dialog);
       });
     });
   }
 
-  // Handle 'Accept' button click
+  // التعامل مع زر "قبول الطلب" -> يفتح نافذة التأكيد
   if (acceptApplicantButton) {
-    acceptApplicantButton.addEventListener('click', () => {
-      closeDialog(applicantProfileDialog);
-      openDialog(confirmationDialog);
+    acceptApplicantButton.addEventListener("click", () => {
+      closeDialog(applicantProfileDialog); // إغلاق البروفايل أولاً
+      setTimeout(() => {
+        openDialog(confirmationDialog); // فتح التأكيد
+      }, 200); // تأخير بسيط لجمالية الحركة
     });
   }
 
-  // Handle 'Reject' button click
+  // التعامل مع زر "رفض الطلب"
   if (rejectApplicantButton) {
-    rejectApplicantButton.addEventListener('click', () => {
-      closeDialog(applicantProfileDialog);
-      // You might want to add a confirmation for rejection as well
-      console.log('Applicant rejected.');
+    rejectApplicantButton.addEventListener("click", () => {
+      if (confirm("هل أنت متأكد من رفض هذا الطلب؟")) {
+        closeDialog(applicantProfileDialog);
+        console.log("Applicant rejected.");
+      }
     });
   }
 
-  // Handle confirmation dialog actions
+  // التعامل مع زر "تأكيد" النهائي
   if (confirmAcceptanceButton) {
-    confirmAcceptanceButton.addEventListener('click', () => {
+    confirmAcceptanceButton.addEventListener("click", () => {
+      // هنا تضع منطق إرسال البيانات للسيرفر
+      console.log("Applicant accepted!");
+
+      // إغلاق النافذة
       closeDialog(confirmationDialog);
-      // Add logic to handle the acceptance here
-      console.log('Applicant accepted!');
+
+      // (اختياري) إظهار رسالة نجاح أو تحديث الجدول
+      alert("تم تفعيل المدرسة بنجاح!");
     });
   }
 
+  // التعامل مع زر "إلغاء" في نافذة التأكيد
   if (cancelAcceptanceButton) {
-    cancelAcceptanceButton.addEventListener('click', () => {
+    cancelAcceptanceButton.addEventListener("click", () => {
       closeDialog(confirmationDialog);
+      // اختياري: إعادة فتح نافذة البروفايل
+      setTimeout(() => {
+        openDialog(applicantProfileDialog);
+      }, 200);
     });
   }
 
-  // Close dialog on overlay click
-  [applicantProfileDialog, confirmationDialog].forEach(dialog => {
+  // إغلاق النافذة عند الضغط على المساحة المظللة (Overlay)
+  [applicantProfileDialog, confirmationDialog].forEach((dialog) => {
     if (dialog) {
-      dialog.addEventListener('click', (e) => {
+      dialog.addEventListener("click", (e) => {
         if (e.target === dialog) {
           closeDialog(dialog);
         }
@@ -292,13 +290,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Close dialog on Escape key press
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      if (applicantProfileDialog && applicantProfileDialog.classList.contains('active')) {
+  // إضافة دعم زر Escape لنوافذ لوحة التحكم أيضاً
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      if (
+        applicantProfileDialog &&
+        applicantProfileDialog.classList.contains("active")
+      ) {
         closeDialog(applicantProfileDialog);
       }
-      if (confirmationDialog && confirmationDialog.classList.contains('active')) {
+      if (
+        confirmationDialog &&
+        confirmationDialog.classList.contains("active")
+      ) {
         closeDialog(confirmationDialog);
       }
     }
