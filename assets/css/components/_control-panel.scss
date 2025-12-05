@@ -6,6 +6,107 @@
 body.control-panel-page {
   background-color: v.$color-background-light;
   min-height: 100vh;
+
+    
+    // -----------------------------------------------------------------------------
+    // Sidebar Styles
+    // -----------------------------------------------------------------------------
+    .sidebar {
+        width: 280px;
+        background-color: #fff; // White sidebar for clean look
+        border-left: 1px solid rgba(0, 0, 0, 0.05);
+        display: flex;
+        flex-direction: column;
+        padding: v.$spacing-md;
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        flex-shrink: 0;
+        z-index: 100;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.03);
+
+        @include m.breakpoint-down(v.$breakpoint-md) {
+            display: none; // Needs a toggler for mobile (handled in JS usually)
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: v.$spacing-xl; // More space
+            padding: 0 v.$spacing-xs;
+            color: v.$color-primary;
+
+            .sidebar__logo-icon {
+                font-size: 3rem;
+                color: v.$color-accent;
+            }
+
+            .sidebar__title {
+            font-size: v.$font-size-h3;
+            margin: 0;
+            font-weight: 800;
+            }
+        }
+
+        &__nav {
+            flex: 1;
+            
+            .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            }
+
+            .nav-link {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 0.5rem;
+            color: v.$color-text-dark; // Changed to dark text on white
+            border-radius: v.$border-radius-base;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: v.$font-size-base;
+
+            .nav-icon {
+                width: 25px;
+                font-size: 1.8rem;
+                margin-left: 1rem;
+                color: #999;
+                transition: color 0.3s ease;
+            }
+
+            &:hover {
+                background-color: v.$color-background-light;
+                color: v.$color-primary;
+                transform: translateX(-3px);
+                
+                .nav-icon {
+                    color: v.$color-accent;
+                }
+            }
+
+            &.active {
+                background: linear-gradient(135deg, v.$color-primary, color.adjust(v.$color-primary, $lightness: 10%));
+                color: v.$color-text-light;
+                box-shadow: 0 4px 10px rgba(v.$color-primary, 0.2);
+
+                .nav-icon {
+                color: v.$color-text-light;
+                }
+            }
+            
+            &.logout {
+                color: v.$color-error;
+                &:hover {
+                    background-color: rgba(v.$color-error, 0.05);
+                }
+                .nav-icon { color: v.$color-error; }
+            }
+            }
+        }
+    }
 }
 
 // Layout Grid (Sidebar + Main)
@@ -15,105 +116,6 @@ body.control-panel-page {
   position: relative;
 }
 
-// -----------------------------------------------------------------------------
-// Sidebar Styles
-// -----------------------------------------------------------------------------
-.sidebar {
-  width: 280px;
-  background-color: #fff; // White sidebar for clean look
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
-  display: flex;
-  flex-direction: column;
-  padding: v.$spacing-md;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  flex-shrink: 0;
-  z-index: 100;
-  box-shadow: 5px 0 15px rgba(0,0,0,0.03);
-
-  @include m.breakpoint-down(v.$breakpoint-md) {
-    display: none; // Needs a toggler for mobile (handled in JS usually)
-  }
-
-  &__header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: v.$spacing-xl; // More space
-    padding: 0 v.$spacing-xs;
-    color: v.$color-primary;
-
-    .sidebar__logo-icon {
-        font-size: 3rem;
-        color: v.$color-accent;
-    }
-
-    .sidebar__title {
-      font-size: v.$font-size-h3;
-      margin: 0;
-      font-weight: 800;
-    }
-  }
-
-  &__nav {
-    flex: 1;
-    
-    .nav-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .nav-link {
-      display: flex;
-      align-items: center;
-      padding: 1.2rem 1.5rem;
-      margin-bottom: 0.5rem;
-      color: v.$color-text-dark; // Changed to dark text on white
-      border-radius: v.$border-radius-base;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      font-size: v.$font-size-base;
-
-      .nav-icon {
-        width: 25px;
-        font-size: 1.8rem;
-        margin-left: 1rem;
-        color: #999;
-        transition: color 0.3s ease;
-      }
-
-      &:hover {
-        background-color: v.$color-background-light;
-        color: v.$color-primary;
-        transform: translateX(-3px);
-        
-        .nav-icon {
-            color: v.$color-accent;
-        }
-      }
-
-      &.active {
-        background: linear-gradient(135deg, v.$color-primary, color.adjust(v.$color-primary, $lightness: 10%));
-        color: v.$color-text-light;
-        box-shadow: 0 4px 10px rgba(v.$color-primary, 0.2);
-
-        .nav-icon {
-          color: v.$color-text-light;
-        }
-      }
-      
-      &.logout {
-          color: v.$color-error;
-          &:hover {
-              background-color: rgba(v.$color-error, 0.05);
-          }
-          .nav-icon { color: v.$color-error; }
-      }
-    }
-  }
-}
 
 // -----------------------------------------------------------------------------
 // Main Content Area
